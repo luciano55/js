@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+            <h1>This </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=NWt6-iYJJnA&t=447s">Video 57</a></li>              
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this">This MDN</a></li>
+             <li><a href="https://www.etnassoft.com/2012/01/12/el-valor-de-this-en-javascript-como-manejarlo-correctamente/">This etnassoft</a></li>
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>);&nbsp;</span><span>//&nbsp;window</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>&nbsp;===&nbsp;</span><span>window</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>"Contexto&nbsp;Global"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>.</span><span>nombre</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>imprimir</span><span>(){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>.</span><span>nombre</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>imprimir</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre&nbsp;:</span><span>&nbsp;</span><span>"Contexto&nbsp;Objecto"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>imprimir</span><span>&nbsp;:</span><span>function</span><span>(){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>.</span><span>nombre</span><span>)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>imprimir</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>obj2</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre&nbsp;:</span><span>&nbsp;</span><span>"Contexto&nbsp;Objecto2"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>imprimir</span><span>//imprimir&nbsp;:&nbsp;imprimir&nbsp;Shorthand</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj2</span><span>.</span><span>imprimir</span><span>();&nbsp;</span><span>//&nbsp;Contexto&nbsp;Objecto2</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Lo&nbsp;explica&nbsp;fatal&nbsp;min&nbsp;9</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>obj3</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre&nbsp;:</span><span>&nbsp;</span><span>"Contexto&nbsp;Objecto3"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>imprimir</span><span>:</span><span>()</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>.</span><span>nombre</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj3</span><span>.</span><span>imprimir</span><span>();&nbsp;</span><span>//&nbsp;Contexto&nbsp;Global</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Conclusion&nbsp;las&nbsp;()=&gt;&nbsp;NO&nbsp;crean&nbsp;scope&nbsp;&nbsp;hacen&nbsp;hoisting</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>Persona</span><span>(</span><span>nombre</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>nombre</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;return&nbsp;&nbsp;console.log(this.nombre);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>function</span><span>(){</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>.</span><span>nombre</span><span>,</span><span>22</span><span>);}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;return&nbsp;()=&gt;&nbsp;console.log(this.nombre,33);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;min&nbsp;15:30&nbsp;clausure&nbsp;&nbsp;fatal&nbsp;fatal&nbsp;fatal</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>jon</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Persona</span><span>(</span><span>"Jon"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>jon</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>Gato</span><span>(</span><span>nombre</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>that</span><span>&nbsp;=&nbsp;</span><span>this</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>nombre</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>function</span><span>(){</span><span>console</span><span>.</span><span>log</span><span>(</span><span>that</span><span>.</span><span>nombre</span><span>,</span><span>44</span><span>);}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>misifu</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Gato</span><span>(</span><span>"Misifu"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>misifu</span><span>();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>Can</span><span>(</span><span>nombre</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>nombre</span><span>;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>function</span><span>(){</span><span>console</span><span>.</span><span>log</span><span>(</span><span>nombre</span><span>,</span><span>55</span><span>);}&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Ahora&nbsp;si&nbsp;es&nbsp;clausure</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>bobi</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Can</span><span>(</span><span>"Boby"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>bobi</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+<script>
+     console.log(this); // window
+     console.log(window);
+     console.log(this === window);
+    this.nombre = "Contexto Global";
+    console.log(this.nombre);
+    function imprimir(){
+        console.log(this.nombre);
+    }
+    imprimir();
+    const obj = {
+        nombre : "Contexto Objecto",
+        imprimir :function(){
+                console.log(this.nombre)
+            }
+    }
+    obj.imprimir();
+    const obj2 = {
+        nombre : "Contexto Objecto2",
+        imprimir//imprimir : imprimir Shorthand
+    }
+    obj2.imprimir(); // Contexto Objecto2
+    // Lo explica fatal min 9
+    const obj3 = {
+            nombre : "Contexto Objecto3",
+            imprimir:()=>{
+                console.log(this.nombre);
+            }
+        }
+        obj3.imprimir(); // Contexto Global
+    // Conclusion las ()=> NO crean scope  hacen hoisting
+    function Persona(nombre){
+        this.nombre = nombre;
+        // return  console.log(this.nombre);
+        return function(){console.log(this.nombre,22);}
+    // return ()=> console.log(this.nombre,33);
+
+    }
+    // min 15:30 clausure  fatal fatal fatal
+    let jon = new Persona("Jon");
+    jon();
+    function Gato(nombre){
+        const that = this;
+        this.nombre = nombre;
+        return function(){console.log(that.nombre,44);}
+    }
+    let misifu = new Gato("Misifu");
+    misifu();
+
+    function Can(nombre){
+        this.nombre = nombre;   
+        return function(){console.log(nombre,55);}    // Ahora si es clausure
+    }
+    let bobi = new Can("Boby");
+    bobi();
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Valores Booleanos: Boolean</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=Csu9tRuuX0M">Video 08</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean"> Boolean es un Object</a></li>
+                <li>Se pude crear mediante asignación directa:  a = expresión; </li>
+                <li>Se pude crear mediante constructor: new Boolean(expresión); </li>
+                <li>Se pude crear mediante función: Boolean(expresión) </li>
+                <li><a href="https://developer.mozilla.org/es/docs/Glossary/Truthy">Valor Verdadero</a></li>        
+                <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">Valor Falso</a></li>           
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        // Asignacion directa
+        let sw11 = true;
+        let sw12 = false;
+        console.log(sw11,sw12); // true  false
+        console.log(typeof sw11, typeof sw12); // boolean boolean
+
+        // mediante function
+        let sw21 = Boolean(true);
+        let sw22 = Boolean(false);
+        console.log(sw21,sw22); // true  false
+        console.log(typeof sw21, typeof sw22); // boolean boolean
+
+        // mediante constructor
+        let sw31 = new Boolean(true);
+        let sw32 = new Boolean(false);
+        console.log(sw31,sw32);    // Boolean{true}  Boolean{false}
+        console.log(typeof sw31, typeof sw32);  // object object
+
+        // Ejemplos
+
+        console.log(Boolean(0)); // false
+        console.log(Boolean(-7));  // true
+        console.log(Boolean(""));  // false
+        console.log(Boolean(" "));  // true
+        console.log(Boolean(null)); // false
+        console.log(Boolean(undefined)); // false
+        console.log(Boolean("abc")); // true
+        console.log(Boolean("0034")); // true
+
+    </script>
+</body>
+</html>

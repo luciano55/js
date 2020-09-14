@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Async - Await</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=PbI5EEpodPM">Video 48</a></li>   
+                <li><a href="http://www.paulomogollon.com/promises-vs-async-await-vs-callbacks-en-javascript-espanol/">Callbacks vs Promise vs Async/Await en JavaScript</a></li>
+                
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>value</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>typeof</span><span>&nbsp;</span><span>value</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;{</span><span>return</span><span>&nbsp;</span><span>Promise</span><span>.</span><span>reject</span><span>(</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>`Error,&nbsp;el&nbsp;valor"&nbsp;</span><span>${</span><span>value</span><span>}</span><span>&nbsp;"&nbsp;Ingresado&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>new</span><span>&nbsp;</span><span>Promise</span><span>((</span><span>resolve</span><span>,</span><span>reject</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>setTimeout</span><span>(()</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resolve</span><span>({</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value:</span><span>value</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>result:</span><span>value</span><span>&nbsp;*&nbsp;</span><span>value</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span><span>0</span><span>|</span><span>Math</span><span>.</span><span>random</span><span>()&nbsp;*&nbsp;</span><span>100</span><span>)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>async</span><span>&nbsp;</span><span>function</span><span>&nbsp;</span><span>funcionAsincronaDeclarada</span><span>(){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>try</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Inicio&nbsp;Async&nbsp;Function&nbsp;Declarada"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>0</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>1</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//obj&nbsp;=&nbsp;await&nbsp;cuadradoPromise("3");</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>4</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>5</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"FIN&nbsp;Async&nbsp;Function"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span>catch</span><span>(</span><span>err</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>err</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>funcionAsincronaDeclarada</span><span>();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>funcionAsincronaExpresada</span><span>&nbsp;=&nbsp;</span><span>async</span><span>()</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>try</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Inicio&nbsp;Async&nbsp;Function&nbsp;Expresada"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>6</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>7</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>8</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>9</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>10</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>await</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>11</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Async&nbsp;Function:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"FIN&nbsp;Async&nbsp;Function&nbsp;Expresada"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span>catch</span><span>(</span><span>err</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>err</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>funcionAsincronaExpresada</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+  <script>
+     function cuadradoPromise(value){
+          if (typeof value !== "number") {return Promise.reject(
+              `Error, el valor" ${value} " Ingresado NO es un número`
+          );}
+          return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve({
+                    value:value,
+                    result:value * value
+                })
+            
+            },0|Math.random() * 100)
+          });  
+      }
+    async function funcionAsincronaDeclarada(){
+        try{
+            console.log("Inicio Async Function Declarada");
+            let obj = await cuadradoPromise(0);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(1);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(2);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                //obj = await cuadradoPromise("3");
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(4);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(5);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                console.log("FIN Async Function");
+            }catch(err){
+                console.error(err);
+        }
+    }
+    funcionAsincronaDeclarada();
+
+    const funcionAsincronaExpresada = async()=>{
+        try{
+            console.log("Inicio Async Function Expresada");
+            let obj = await cuadradoPromise(6);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(7);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(8);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(9);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(10);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise(11);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                console.log("FIN Async Function Expresada");
+            }catch(err){
+                console.error(err);
+        }
+    }
+    funcionAsincronaExpresada();
+  </script>
+</body>
+</html>

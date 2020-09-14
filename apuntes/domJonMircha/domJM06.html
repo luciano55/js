@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">  
+    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM VI: Texto y HTML</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=ezjxA4o2-Ck&t=13s">Video 66</a></li>        
+           <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">HTMLElement.innerText</a></li>
+           <li><a href="https://developer.mozilla.org/es/docs/Web/API/Node/textContent">Node.textContent</a></li>
+           <li><a href="https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML">element.innerHTML</a></li>  
+        <li><a href="https://developer.mozilla.org/es/docs/Web/API/Element/outerHTML">Element.outerHTML</a></li>
+        </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$whatIsDOM</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"que-es"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>text</span><span>&nbsp;=</span><span>`&lt;p&gt;&nbsp;El&nbsp;Modelo&nbsp;de&nbsp;Objectos&nbsp;del&nbsp;Cocumento&nbsp;(&lt;b&gt;&lt;i&gt;DOM&nbsp;-&nbsp;Document&nbsp;Object&nbsp;Model&nbsp;&lt;/i&gt;&lt;/b&gt;)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es&nbsp;una&nbsp;API&nbsp;para&nbsp;documentos&nbsp;HTML&nbsp;y&nbsp;XML&lt;/p&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&nbsp;&Eacute;ste&nbsp;prove&eacute;&nbsp;una&nbsp;representaci&oacute;n&nbsp;estructural&nbsp;del&nbsp;documento,&nbsp;permitiendo&nbsp;modificar&nbsp;su&nbsp;contenido&nbsp;y</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;representaci&oacute;n&nbsp;visual&nbsp;mediante&nbsp;c&oacute;digo&nbsp;JS.&lt;/p&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&nbsp;&lt;mark&gt;&nbsp;El&nbsp;DOM&nbsp;no&nbsp;es&nbsp;parte&nbsp;de&nbsp;la&nbsp;especificaci&oacute;n&nbsp;de&nbsp;Javascript,&nbsp;es&nbsp;una&nbsp;API&nbsp;para&nbsp;los&nbsp;navegadores</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/mark&gt;&lt;/p&gt;`</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//innerText&nbsp;recupera&nbsp;y&nbsp;establece&nbsp;el&nbsp;contenido&nbsp;de&nbsp;la&nbsp;etiqueta&nbsp;como&nbsp;texto&nbsp;sin&nbsp;formato,&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//mientras&nbsp;que&nbsp;innerHTML&nbsp;recupera&nbsp;y&nbsp;establece&nbsp;el&nbsp;contenido&nbsp;en&nbsp;formato&nbsp;HTML.</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$whatIsDOM</span><span>.</span><span>innerText</span><span>&nbsp;=&nbsp;</span><span>text</span><span>;&nbsp;</span><span>//Internet&nbsp;Explore</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$whatIsDOM</span><span>.</span><span>textContent</span><span>&nbsp;=&nbsp;</span><span>text</span><span>;&nbsp;&nbsp;</span><span>//&nbsp;todo&nbsp;como&nbsp;texto</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$whatIsDOM</span><span>.</span><span>innerHTML</span><span>&nbsp;=&nbsp;</span><span>text</span><span>;&nbsp;</span><span>//&nbsp;ejecuta&nbsp;las&nbsp;etiquetas&nbsp;html&nbsp;y&nbsp;Los&nbsp;p&aacute;rrafos&nbsp;se&nbsp;ven&nbsp;anidados</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$whatIsDOM</span><span>.</span><span>outerHTML</span><span>&nbsp;=&nbsp;</span><span>text</span><span>;&nbsp;</span><span>//&nbsp;Los&nbsp;p&aacute;rrafos&nbsp;se&nbsp;ven&nbsp;de&nbsp;forma&nbsp;independiente</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+  
+ 
+   <h3>Manejo del Texto y HTML</h3><br><br>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   
+
+  <script>
+        const $whatIsDOM = document.getElementById("que-es");
+        let text =`<p> El Modelo de Objectos del Cocumento (<b><i>DOM - Document Object Model </i></b>)
+        es una API para documentos HTML y XML</p>
+        <p> Éste proveé una representación estructural del documento, permitiendo modificar su contenido y
+        representación visual mediante código JS.</p>
+        <p> <mark> El DOM no es parte de la especificación de Javascript, es una API para los navegadores
+        </mark></p>`;
+        //innerText recupera y establece el contenido de la etiqueta como texto sin formato, 
+        //mientras que innerHTML recupera y establece el contenido en formato HTML.
+
+        $whatIsDOM.innerText = text; //Internet Explore
+        $whatIsDOM.textContent = text;  // todo como texto
+        $whatIsDOM.innerHTML = text; // ejecuta las etiquetas html y Los párrafos se ven anidados
+
+        $whatIsDOM.outerHTML = text; // Los párrafos se ven de forma independiente
+  </script>
+</body>
+</html>

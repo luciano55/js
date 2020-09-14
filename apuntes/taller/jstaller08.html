@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 08: Herencia Prototype</h1>
+            <div class = "paragraph05">                 
+                <ul class="list-item-1">
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/new">El operador new</a></li>
+                   <p>Hace 5 cosas:
+                    <li>1. Crea un nuevo objeto. El tipo de este objeto es simplemente objeto.</li>
+                    <li>2.  Establece la propiedad interna, inaccesible, [[prototipo]] (es decir, __proto__ ) de este nuevo objeto
+                         para que sea el objeto prototipo externo, accesible y accesible de la 
+                         función constructora (cada objeto de función tiene automáticamente una propiedad prototipo ).</li>
+                    <li>3. Hace que (la variable objecto o referencia) this  apunte al objeto recién creado.</li>
+                    <li>4. Ejecuta la función constructora, utilizando el objeto recién creado cada vez que this se menciona.</li>
+                    <li>5. Devuelve el objeto recién creado, a menos que la función constructora quiera devolver explicitamente una  nueva referencia.
+                         En este caso, se devuelve esa referencia.</li></p>
+                   
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object">El constructor  Object</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/prototype">Object.prototype</a> </li>
+                   <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/proto">Object.prototype.__proto__</a></li>
+                   <li><a href="https://medium.com/javascript-in-plain-english/proto-vs-prototype-in-js-140b9b9c8cd5">¿Cuál es la diferencia entre prototype y __proto__ en JavaScript?</a></li>
+                   <li><a href="https://medium.com/better-programming/what-is-object-object-in-javascript-object-prototype-tostring-1db888c695a4">Qué es [objeto Object] en JavaScript: Object.prototype.toString</a></li>
+                   <li><a href="Cadena_Prototípica_I.docx">Cadena Prototípica I.docx</a></li>
+                   <li><a href="Cadena_Prototípica_II.docx">Cadena Prototípica II.docx</a></li>
+                 
+                    <li class='dropDown'> 
+                        <span class='colapse' id="semanaFather">1. Días de Clase</span>   
+                        <ul class="list-item-1" id="semana" >
+                            <li>Lunes</li> 
+                            <li>Martes</li>
+                            <li>Miércoles</li>
+                            <li>Jueves</li>
+                            <li>Viernes</li>
+                        </ul> 
+                    </li>
+
+
+                    <li class='dropDown'>  
+                        <span class='colapse' id="trimestre1Father">2. Trimestre I</span>   
+                        <ul class="list-item-1" id="trimestre1" >
+                            <li>Septiembre</li> 
+                            <li>Octubre</li>
+                            <li>Noviembre</li>
+                            <li>Diciembre</li>
+                          </ul>  
+                    </li>
+                
+                    <li class='dropDown'>  <span class='colapse' id="trimestre2Father">3. Trimestre II</span>   
+                        <ul class="list-item-1" id="trimestre2" >
+                            <li>Enero</li> 
+                            <li>Febrero</li>
+                            <li>Marzo</li>
+                          </ul>  
+                    </li>
+                    <li class='dropDown'>  <span class='colapse' id="trimestre3Father">4. Trimestre III</span>   
+                        <ul class="list-item-1" id="trimestre3" >
+                            <li>Abril</li> 
+                            <li>Mayo</li>
+                            <li>Junio</li>
+                          </ul>  
+                     </li> 
+                </ul> 
+                <div>
+                    <div><span>&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>'use&nbsp;strict'</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>$</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>stringId</span><span>){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>stringId</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>funcDelegate</span><span>(</span><span>obj</span><span>,&nbsp;</span><span>methodName</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>function</span><span>&nbsp;(</span><span>e</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>e</span><span>&nbsp;=&nbsp;</span><span>e</span><span>&nbsp;||&nbsp;</span><span>window</span><span>.</span><span>event</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>obj</span><span>[</span><span>methodName</span><span>](</span><span>this</span><span>,&nbsp;</span><span>e</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>myMenu</span><span>&nbsp;=&nbsp;{};</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenu</span><span>.</span><span>Look</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>id</span><span>){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>_node</span><span>&nbsp;=&nbsp;</span><span>$</span><span>(</span><span>id</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>this</span><span>.</span><span>_node</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>_node</span><span>.</span><span>onmouseover</span><span>&nbsp;=&nbsp;</span><span>funcDelegate</span><span>(&nbsp;</span><span>this</span><span>,&nbsp;</span><span>"customOnMouseOver"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>_node</span><span>.</span><span>onmouseout</span><span>&nbsp;=&nbsp;</span><span>funcDelegate</span><span>(&nbsp;</span><span>this</span><span>,&nbsp;</span><span>"customOnMouseOut"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenu</span><span>.</span><span>Look</span><span>.</span><span>prototype</span><span>.</span><span>customOnMouseOver</span><span>&nbsp;=&nbsp;</span><span>function</span><span>&nbsp;(</span><span>obj</span><span>,&nbsp;</span><span>event</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>cursor</span><span>&nbsp;=&nbsp;</span><span>"help"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>color</span><span>&nbsp;=&nbsp;</span><span>"olive"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>fontSize</span><span>&nbsp;=&nbsp;</span><span>"2em"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>background</span><span>&nbsp;=&nbsp;</span><span>"#EAEDEE"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>borderRadius</span><span>&nbsp;=&nbsp;</span><span>"25px&nbsp;25px&nbsp;25px&nbsp;25px"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>className</span><span>&nbsp;=&nbsp;</span><span>"colapse"</span><span>;</span><span>//"boton&nbsp;s9";</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenu</span><span>.</span><span>Look</span><span>.</span><span>prototype</span><span>.</span><span>customOnMouseOut</span><span>&nbsp;=&nbsp;</span><span>function</span><span>&nbsp;(</span><span>obj</span><span>,&nbsp;</span><span>event</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>cursor</span><span>&nbsp;=&nbsp;</span><span>"pointer"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>color</span><span>&nbsp;=&nbsp;</span><span>"#88B3BB"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>fontSize</span><span>&nbsp;=&nbsp;</span><span>"1em"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>borderRadius</span><span>&nbsp;=&nbsp;</span><span>"0px&nbsp;0px&nbsp;0px&nbsp;0px"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>background</span><span>&nbsp;=&nbsp;</span><span>""</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>className</span><span>&nbsp;=&nbsp;</span><span>"colapse"</span><span>;</span><span>//"boton&nbsp;s12";</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>b1</span><span>&nbsp;=&nbsp;&nbsp;</span><span>new</span><span>&nbsp;</span><span>myMenu</span><span>.</span><span>Look</span><span>(</span><span>"semanaFather"</span><span>);&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>b1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>dir</span><span>(</span><span>b1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>b1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+                    </div>              
+            </div>
+            <a href="javascript: history.go(-1)">Volver</a> 
+        </div>    
+    </div>    
+      <script>
+        'use strict';
+/*
+        console.log(Object);
+        console.dir(Object);
+        //__proto__ es un objeto en cada instancia de clase que apunta al prototipo a partir del cual fue creado
+       
+        var $ = function(stringId){
+            return document.getElementById(stringId);  // devuelve un elemento del DOM
+        };
+
+       console.dir($);
+
+       // $.edad=19;  
+
+        $.prototype.edad=39;
+
+        console.log($.edad); // 19
+        console.log($.prototype.edad); // 39
+
+        console.dir($);
+        var otro$ = new $();
+
+        
+
+
+        $.prototype.edad=40;
+
+         console.dir(otro$);
+
+        console.log(otro$.edad); // 40
+
+        otro$.edad = 8;
+
+        console.log(otro$.edad); // 8
+
+        console.log(otro$.myedad); // undefined
+
+// Clousure
+
+/*
+f1{
+hola
+adios
+       f2{
+            dsfsdf = hola;
+        }
+
+}
+
+hola
+       f2{
+            dsfsdf = hola;
+        }
+*/
+
+var $ = function(stringId){
+            return document.getElementById(stringId);  // devuelve un elemento del DOM
+        };
+
+
+      function funcDelegate(obj, methodName) {
+            // alert(obj._element.id);
+            console.log(obj);
+            return function (e) {
+               // e = e || window.event;
+                //alert(obj[methodName]); // Muestra el método
+                return obj[methodName](this, e); 
+
+               
+                // (new myMenu.Look(".....")).customOnMouseOver(this._element , e); OK
+                 
+
+                //  myMenu.Look.customOnMouseOver(this._element , e); No del todo
+
+                //  myMenu.Look.nodo[semanaFather].customOnMouseOver(this._element , e); ERROR
+
+               // this = quien llama a la función que devuelve funcDelegate  
+                        //es decir this._element.onmouseover osea  this._element
+                        // this._element.onmouseover(e){
+                            // return  (new myMenu.Look(".....")).customOnMouseOver(this._element , e);
+                       // }
+            };
+        }
+
+    const myMenu = {};
+
+    
+     myMenu.Look = function(id){
+                // this es una referencia del objeto que llama a la función.
+                this._element = $(id); // Devuelve una referencia al elemento por su ID. de una opción del menú
+                console.dir( this._element);
+                console.log( this._element);
+                if (this._element) {  // Si existe
+                    this._element.onmouseover = funcDelegate(this, "customOnMouseOver");  // Le pasamos el ámbito de la función (es una referencia del objeto que llama a la función.) y el nombre de un método
+                    this._element.onmouseout = funcDelegate( this, "customOnMouseOut"); // Le pasamos el ámbito de la función (es una referencia del objeto que llama a la función.) y el nombre de un método
+                }
+        };
+
+    myMenu.Look.prototype.customOnMouseOver = function (obj, event) {
+                obj.style.cursor = "help";
+                obj.style.color = "olive";
+                obj.style.fontSize = "2em";
+                obj.style.background = "#EAEDEE";
+                obj.style.borderRadius = "25px 25px 25px 25px";
+                obj.className = "colapse";//"boton s9";
+    };
+
+    myMenu.Look.prototype.customOnMouseOut = function (obj, event) {
+                obj.style.cursor = "pointer";
+                obj.style.color = "#88B3BB";
+                obj.style.fontSize = "1em";
+                obj.style.borderRadius = "0px 0px 0px 0px";
+                obj.style.background = "";
+                obj.className = "colapse";//"boton s12";
+            };
+
+
+        
+
+
+
+    let b1 =  new myMenu.Look("semanaFather"); 
+
+    new myMenu.Look("trimestre1Father"); 
+    new myMenu.Look("trimestre2Father"); 
+    new myMenu.Look("trimestre3Father"); 
+
+
+        console.log(b1);
+        console.dir(b1);
+        console.info(b1);
+
+
+            // Primero localizar los nodos element del menu document.queySelectorAll("...father");
+
+
+  
+    </script>
+</body>
+</html>

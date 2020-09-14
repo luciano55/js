@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Herencia prototípica</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=1-m7xtwvH1E&t=521s">Video 23</a></li>  
+                 <li><a href="http://www.etnassoft.com/2011/04/15/concepto-de-herencia-prototipica-en-javascript/">Concepto de herencia prototípica en Javascript</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/prototype"> Object.prototype</a></li>               
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/proto"> Object.prototype.__proto__</a></li> 
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Herencia_y_la_cadena_de_protipos">Herencia y la cadena de prototipos</a></li>
+                
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+
+            console.info(Object); // Important!!           
+            console.log(Object); // Important!!
+            console.dir(Object); // Important!!
+
+            /*Propiedades:
+                Object.prototype.constructor: Especifica la función que crea el prototipo de un objeto.
+                Object.prototype.__proto__ : Apunta al objeto que se usó como prototipo cuando fue instanciado.
+            */
+
+
+ /*     // Funciones constructoras simulan a las clases
+        function Animal(nombre, genero){
+            // Propiedades o Atributos
+            this.nombre = nombre;
+            this.genero = genero;   
+            this.sonar = function(){
+                console.log("Hago sonidos porque soy un animal y estoy vivo");
+            }  
+            this.saludar = function(){
+                console.log(`Hola me llamo... ${this.nombre}.`);       
+            }         
+        }      
+
+     var perro = new Animal("Scooby","macho"); // Ahora perro es una animal
+     console.dir(perro);
+     perro.saludar(); // Hola me llamo Scooby
+
+        // Uno de los problemas que tenemos es que los métodos se repiten por cada animal
+        // Lo que supone un despilfarro de memoria
+
+
+*/     // Solución el prototype
+        // Funciones constructoras simulan a las clases
+        function Animal(nombre, genero){
+            // Propiedades o Atributos
+            this.nombre = nombre;
+            this.genero = genero;           
+        }
+         // Métodos agregados al prototype de la función Animal
+        Animal.prototype.sonar = function(){
+                console.log("Hago sonidos porque soy un animal y estoy vivo");
+        }
+        Animal.prototype.saludar = function(){
+                console.log(`Hola me llamo... ${this.nombre}.`); 
+        }         
+       
+        console.info(Animal);        
+        console.log(Animal);
+        console.dir(Animal);
+
+        var perro = new Animal("Lolin","Macho");  // perro es una instancia de animal es decir una referencia a un Animal nuevo creado
+
+        console.info(perro);        
+        console.log(perro);
+        console.dir(perro);
+        perro.saludar();   // Hola me llamo Lolin
+
+        var gato = new Animal("Bobi","Macho");  // gato  es una instancia de animal es decir una referencia a un Animal nuevo creado
+                            
+
+        console.info(gato);        
+        console.log(gato);
+        console.dir(gato);
+        gato.saludar();   // Hola me llamo Bobi
+
+
+  // Ahora quiero definir a las familias: perro, gato, etc.
+
+        function Can(nombre, genero, tamanio){
+            this.nombre = nombre;
+            this.genero = genero;
+            this.tamanio = tamanio;
+        } 
+
+       // Herencia prototipica
+        Can.prototype = new Animal();       
+
+      var lolin = new Can("Lolin","Macho","Mediano");
+      console.info(lolin);        
+      console.log(lolin);
+      console.dir(lolin);
+      
+      // Ahora puedo usar propiedades y métodos de Can y de Animal
+      console.log(lolin.nombre); 
+      lolin.sonar(); // Hago sonidos porque soy un animal y estoy vivo
+
+      lolin.saludar(); //  Hola me llamo... Lolin.
+         
+         // Sobrescribo método
+
+        lolin.saludar = function(){
+            console.log("Guauuuu");
+        }
+
+        lolin.saludar(); // Guauuuu
+
+
+
+        // Ahora intentaremos No repetir variables aprovechando la función constructora
+
+
+        function Felino(nombre,genero,tamanio){
+            this.super = Animal;
+            this.super(nombre,genero);
+            this.tamanio = tamanio
+        }
+
+     var polita = new Felino("Polita","Hembra","pequeña" );
+      console.info(polita);        
+      console.log(polita);
+      console.dir(polita);
+      console.log(polita.nombre);  // Polita
+      var polita2 = new Felino("Polita2","Hembra","pequeña" );
+      var polita3 = new Felino("Polita3","Macho","grande" );
+      console.log(polita2.nombre);  // Polita
+      console.log(polita3.nombre);  // Polita
+
+ console.dir(polita2);
+ console.dir(polita3);
+
+
+
+    </script>
+</body> 
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Callbacks</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=TYG2_iUr8XY">Video 46</a></li>   
+                <li><a href="https://developer.mozilla.org/es/docs/Glossary/Callback_function">Función Callback</a></li>
+                <li><a href="http://callbackhell.com/">Callback Hell</a></li>
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>value</span><span>,&nbsp;</span><span>callback</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>setTimeout</span><span>(()</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>callback</span><span>(</span><span>value</span><span>,</span><span>value</span><span>&nbsp;*&nbsp;</span><span>value</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span><span>0</span><span>|</span><span>Math</span><span>.</span><span>random</span><span>()&nbsp;*&nbsp;</span><span>100</span><span>)</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>0</span><span>,(</span><span>value</span><span>,&nbsp;</span><span>result</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Inicia&nbsp;Callback"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Callback:&nbsp;</span><span>${</span><span>value</span><span>}</span><span>,&nbsp;</span><span>${</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>1</span><span>,(</span><span>value</span><span>,&nbsp;</span><span>result</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Callback:&nbsp;</span><span>${</span><span>value</span><span>}</span><span>,&nbsp;</span><span>${</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>2</span><span>,(</span><span>value</span><span>,&nbsp;</span><span>result</span><span>)</span><span>=&gt;</span><span>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Callback:&nbsp;</span><span>${</span><span>value</span><span>}</span><span>,&nbsp;</span><span>${</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>3</span><span>,(</span><span>value</span><span>,&nbsp;</span><span>result</span><span>)</span><span>=&gt;</span><span>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Callback:&nbsp;</span><span>${</span><span>value</span><span>}</span><span>,&nbsp;</span><span>${</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>4</span><span>,(</span><span>value</span><span>,&nbsp;</span><span>result</span><span>)</span><span>=&gt;</span><span>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Callback:&nbsp;</span><span>${</span><span>value</span><span>}</span><span>,&nbsp;</span><span>${</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoCallback</span><span>(</span><span>5</span><span>,(</span><span>value</span><span>,&nbsp;</span><span>result</span><span>)</span><span>=&gt;</span><span>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Callback:&nbsp;</span><span>${</span><span>value</span><span>}</span><span>,&nbsp;</span><span>${</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Piramide&nbsp;del&nbsp;infierno</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Fin&nbsp;Callback"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Callback&nbsp;Hell&nbsp;!!!!:😈👾🐱"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"http://callbackhell.com/"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+  <script>
+      function cuadradoCallback(value, callback){
+        setTimeout(()=>{
+            callback(value,value * value);
+        },0|Math.random() * 100)
+
+      }
+      cuadradoCallback(0,(value, result)=>{
+          console.log("Inicia Callback");
+          console.log(`Callback: ${value}, ${result}`);
+          cuadradoCallback(1,(value, result)=>{
+             console.log(`Callback: ${value}, ${result}`);
+             cuadradoCallback(2,(value, result)=>{         
+                console.log(`Callback: ${value}, ${result}`);
+                cuadradoCallback(3,(value, result)=>{          
+                    console.log(`Callback: ${value}, ${result}`);
+                    cuadradoCallback(4,(value, result)=>{          
+                        console.log(`Callback: ${value}, ${result}`);
+                        cuadradoCallback(5,(value, result)=>{          
+                             console.log(`Callback: ${value}, ${result}`);
+                             // Piramide del infierno
+                             console.log("Fin Callback");
+                             console.log("Callback Hell !!!!:😈👾🐱");
+                             console.log("http://callbackhell.com/");
+
+                })
+                })
+                })
+            })
+         })
+      })
+  </script>
+</body>
+</html>

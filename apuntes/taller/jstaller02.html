@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 02: Funciones</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+              <li>En términos generales, una función es un "subprograma" </li>
+            </ul>
+            <div>
+                <div><span>&nbsp;</span><span>'use&nbsp;strict'</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>saludo</span><span>()&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;java&nbsp;void</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;sql&nbsp;obligatorio</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;js&nbsp;undefined</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>saludo</span><span>());&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;undefined</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>saludo2</span><span>()&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;java&nbsp;void</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;sql&nbsp;obligatorio</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;js&nbsp;undefined</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>"Hola&nbsp;Mundo"</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>saludo2</span><span>());&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Hola&nbsp;Mundo</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>saludo3</span><span>(</span><span>nombre</span><span>,</span><span>edad</span><span>=</span><span>77</span><span>)&nbsp;&nbsp;{&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;if(edad&nbsp;===&nbsp;undefined)&nbsp;edad&nbsp;=&nbsp;77;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;=&nbsp;asignaci&oacute;n</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;==&nbsp;compara&nbsp;valor</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;===&nbsp;compara&nbsp;valor&nbsp;y&nbsp;tipo</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>`Hola&nbsp;</span><span>${</span><span>nombre</span><span>}</span><span>,&nbsp;tienes&nbsp;</span><span>${</span><span>edad</span><span>}</span><span>&nbsp;a&ntilde;os.`</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>saludo3</span><span>(</span><span>"Jon"</span><span>));&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Hola&nbsp;Jon,&nbsp;tienes&nbsp;35&nbsp;a&ntilde;os.</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Hosting</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>hola</span><span>());</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>hola</span><span>(){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Hola"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//console.log(hola2());&nbsp;&nbsp;Uncaught&nbsp;ReferenceError:&nbsp;Cannot&nbsp;access&nbsp;'hola2'&nbsp;before&nbsp;initialization</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>hola2</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Hola2"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>hola21</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Hola21"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>hola3</span><span>&nbsp;=&nbsp;</span><span>hola2</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>hola3</span><span>());&nbsp;&nbsp;</span><span>//&nbsp;"Hola2</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;&nbsp;hola2&nbsp;=&nbsp;hola21;&nbsp;//&nbsp;No&nbsp;por&nbsp;constante</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>hola3</span><span>&nbsp;&nbsp;=&nbsp;</span><span>hola21</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>hola3</span><span>());&nbsp;&nbsp;</span><span>//"Hola3</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>foo</span><span>&nbsp;=&nbsp;</span><span>function</span><span>&nbsp;()&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>bar</span><span>);&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>bar</span><span>&nbsp;=&nbsp;</span><span>'Hello&nbsp;World'</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>foo</span><span>();&nbsp;</span><span>//&nbsp;undefined&nbsp;por&nbsp;la&nbsp;linea&nbsp;76</span></div>
+                <br /><br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Hoisting</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>foo</span><span>&nbsp;=&nbsp;</span><span>function</span><span>&nbsp;()&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>bar</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(&nbsp;</span><span>bar</span><span>&nbsp;);&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>bar</span><span>&nbsp;=&nbsp;</span><span>'Hello&nbsp;World'</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>foo</span><span>();&nbsp;</span><span>//&nbsp;undefined&nbsp;por&nbsp;la&nbsp;linea&nbsp;76</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//console.log(bar);&nbsp;&nbsp;//&nbsp;Uncaught&nbsp;ReferenceError:&nbsp;bar&nbsp;is&nbsp;not&nbsp;defined</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>bar2</span><span>&nbsp;=&nbsp;</span><span>"Hola&nbsp;Bar2"</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>bar2</span><span>);</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>bar3</span><span>&nbsp;=&nbsp;</span><span>"Hola&nbsp;Bar3"</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//console.log(bar3);&nbsp;&nbsp;Uncaught&nbsp;ReferenceError:&nbsp;bar3&nbsp;is&nbsp;not&nbsp;defined</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;&nbsp;</span><span>bar4</span><span>&nbsp;=&nbsp;</span><span>"Hola&nbsp;Bar4"</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;console.log(bar4);&nbsp;&nbsp;//Uncaught&nbsp;ReferenceError:&nbsp;bar4&nbsp;is&nbsp;not&nbsp;defined</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>final</span><span>(){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>true</span><span>){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>a</span><span>&nbsp;=&nbsp;</span><span>5</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>a</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>a</span><span>);</span></div>
+                </div>
+           </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        'use strict'
+
+         function saludo() {
+                    // java void
+                    // sql obligatorio
+                    // js undefined
+         }   
+
+        console.log(saludo());   // undefined
+
+        function saludo2() {
+                    // java void
+                    // sql obligatorio
+                    // js undefined
+                    return "Hola Mundo";
+         }  
+        
+         console.log(saludo2());   // Hola Mundo
+
+         function saludo3(nombre,edad=77)  { 
+            
+           // if(edad === undefined) edad = 77;
+            // = asignación
+            // == compara valor
+            // === compara valor y tipo
+
+            return `Hola ${nombre}, tienes ${edad} años.`;
+         }
+         console.log(saludo3("Jon"));   // Hola Jon, tienes 35 años.
+
+        // Hosting
+        console.log(hola());
+        function hola(){
+            console.log("Hola");
+        }
+
+        //console.log(hola2());  Uncaught ReferenceError: Cannot access 'hola2' before initialization
+        const hola2 = function(){
+                    console.log("Hola2");
+                }
+         const hola21 = function(){
+                    console.log("Hola21");
+                }
+
+        var hola3 = hola2;
+        console.log(hola3());  // "Hola2
+        //  hola2 = hola21; // No por constante
+        hola3  = hola21
+        console.log(hola3());  //"Hola3
+
+        var foo = function () {
+            console.log(bar); 
+            var bar = 'Hello World';
+        }
+ 
+        foo(); // undefined por la linea 76
+
+
+        // Hoisting
+        var foo = function () {
+             var bar;
+            console.log( bar ); 
+            bar = 'Hello World';
+        }
+        foo(); // undefined por la linea 76
+
+       //console.log(bar);  // Uncaught ReferenceError: bar is not defined
+
+       {
+          var bar2 = "Hola Bar2";
+        }
+        console.log(bar2);
+
+        {
+          let bar3 = "Hola Bar3";
+        }
+        //console.log(bar3);  Uncaught ReferenceError: bar3 is not defined
+
+        {
+          const  bar4 = "Hola Bar4";
+        }
+       // console.log(bar4);  //Uncaught ReferenceError: bar4 is not defined
+
+   function final(){
+       var a;
+       if (true){
+           a = 5;
+       }
+       console.log(a);
+   }
+   console.log(a);
+
+    </script>
+</body>
+</html>

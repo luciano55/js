@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">  
+    <style>
+        :root{
+            --yellow-color:#F7DF1E;
+            --dark-color:#222;
+        }
+        .cards{
+            border:thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card{
+            display:inline-block;
+            background-color: var(--dark-color);
+            color:var( --yellow-color);
+        }
+        .card figcaption{
+            padding:1rem;
+        }
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+        .rotate-135{
+            transform: rotate(135deg);
+        }
+        .opacity-80{
+            opacity:.8;
+        }
+        .sepia{
+            filter: sepia(1);
+        }
+    </style>  
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM XI: Modificando Elementos (Cool Style)   </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=tqqw2b1kasg">Video 71</a></li>           
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.insertAdjacent...</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.insertAdjacentElement(position,el)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.insertAdjacentHTML(position,&nbsp;html)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.insertAdjacentText(position,&nbsp;text)</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posiciones:</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beforebegin(hermano&nbsp;anterior)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;afterbegin(primer&nbsp;hijo)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beforeend(ultimo&nbsp;hijo)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;afterend(hermano&nbsp;siguiente)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$cards</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"cards"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$newCard</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"figure"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$newCard</span><span>.</span><span>innerHTML</span><span>&nbsp;=&nbsp;</span><span>`</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src="https://placeimg.com/200/200/any"&nbsp;alt="Any"&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;figcaption&gt;Any&lt;/figcaption&gt;`</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$newCard</span><span>.</span><span>classList</span><span>.</span><span>add</span><span>(</span><span>"card"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//$cards.insertAdjacentElement("beforebegin",$newCard);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//$cards.insertAdjacentElement("afterbegin",$newCard);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//$cards.insertAdjacentElement("beforeend",$newCard);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//$cards.insertAdjacentElement("afterend",$newCard);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>$contentCard</span><span>&nbsp;=&nbsp;</span><span>`</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src="https://placeimg.com/200/200/any"&nbsp;alt="Any"&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;figcaption&gt;Any&lt;/figcaption&gt;`</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$newCard</span><span>.</span><span>insertAdjacentHTML</span><span>(</span><span>"beforeend"</span><span>,&nbsp;</span><span>$contentCard</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$newCard</span><span>.</span><span>querySelector</span><span>(</span><span>"figcaption"</span><span>).</span><span>insertAdjacentText</span><span>(</span><span>"afterbegin"</span><span>,</span><span>"+Any"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>insertAdjacentElement</span><span>(</span><span>"afterend"</span><span>,</span><span>$newCard</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>prepend</span><span>(</span><span>$newCard</span><span>);&nbsp;</span><span>//&nbsp;primer&nbsp;hijo</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>append</span><span>(</span><span>$newCard</span><span>);&nbsp;</span><span>//&nbsp;&uacute;ltimo&nbsp;hijo&nbsp;del&nbsp;nodo&nbsp;de&nbsp;referencia</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>before</span><span>(</span><span>$newCard</span><span>);&nbsp;</span><span>//&nbsp;hermqno&nbsp;anterior</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>after</span><span>(</span><span>$newCard</span><span>);&nbsp;</span><span>//&nbsp;hermqno&nbsp;posterior</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h2>CSSOM: CSS Object Model</h2>
+   <h2>WEB APIs</h2>
+   <ul>
+       <li>Eventos</li>
+       <li>Forms</li>
+       <li>AJAX - Fetch</li>
+       <li>History</li>
+       <li>Web Storage</li>
+       <li>Geolocalización</li>
+       <li>Drag & Drop</li>
+       <li>Indexed DB</li>
+       <li>Canvas</li>
+       <li>MathMedia</li>
+       <li>etc.</li>
+   </ul>
+   <br><hr><br>
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   //nav#menu>ul>li*5>a{Sección $}
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+        <li><a href="#">Sección 5</a></li>
+    </ul>
+</nav>
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM04.html" style="background-color: #F7DF1E; color:#222;" data-id="1" data-description = "Document Object Model">DOM</a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+<template id="template-card">
+    <figure class ="card">
+        <img>
+        <figcaption></figcaption>
+    </figure>
+</template>
+  <script src="js/dom.js"></script>
+
+  <script>
+        /*
+        .insertAdjacent...
+            .insertAdjacentElement(position,el)
+        .insertAdjacentHTML(position, html)
+            .insertAdjacentText(position, text)
+
+        Posiciones:
+            beforebegin(hermano anterior)
+            afterbegin(primer hijo)
+            beforeend(ultimo hijo)
+            afterend(hermano siguiente)
+        */
+
+        const $cards = document.getElementById("cards"),
+            $newCard = document.createElement("figure");
+            $newCard.innerHTML = `
+            <img src="https://placeimg.com/200/200/any" alt="Any">
+                <figcaption>Any</figcaption>`;
+            $newCard.classList.add("card");
+
+        //$cards.insertAdjacentElement("beforebegin",$newCard);
+        //$cards.insertAdjacentElement("afterbegin",$newCard);
+        //$cards.insertAdjacentElement("beforeend",$newCard);
+        //$cards.insertAdjacentElement("afterend",$newCard);
+
+        let $contentCard = `
+            <img src="https://placeimg.com/200/200/any" alt="Any">
+                <figcaption>Any</figcaption>`;
+
+        $newCard.insertAdjacentHTML("beforeend", $contentCard);
+        $newCard.querySelector("figcaption").insertAdjacentText("afterbegin","+Any");
+        $cards.insertAdjacentElement("afterend",$newCard);
+
+        $cards.prepend($newCard); // primer hijo
+        $cards.append($newCard); // último hijo del nodo de referencia
+        $cards.before($newCard); // hermqno anterior
+        $cards.after($newCard); // hermqno posterior
+
+  </script>
+</body>
+</html>

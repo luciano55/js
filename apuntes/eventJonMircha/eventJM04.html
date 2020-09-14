@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">   
+    <style>
+        .eventos-flujo div{
+            padding: 4rem;
+            font-size:2rem;
+            text-align: center;
+        }
+        .uno{
+            background-color: yellow;
+        }
+        .dos{
+            background-color: gold;
+        }
+        .tres{
+            background-color: lightyellow;
+        }
+    </style> 
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Event Jon Mircha</h2>
+        <h1>EVENT IV: StopPropagation & preventDefault </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=2LgnPW_VZYU&t=19s">Video 75</a></li>               
+                          
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$divsEventos</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelectorAll</span><span>(</span><span>".eventos-flujo&nbsp;div"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$linkEventos</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelector</span><span>(</span><span>".eventos-flujo&nbsp;a"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>flujoEventos</span><span>(</span><span>e</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Hola`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Hola&nbsp;te&nbsp;saluda&nbsp;</span><span>${</span><span>this</span><span>.</span><span>className</span><span>}</span><span>,&nbsp;el&nbsp;click&nbsp;lo&nbsp;origin&oacute;&nbsp;</span><span>${</span><span>e</span><span>.</span><span>target</span><span>.</span><span>className</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>`Hola&nbsp;te&nbsp;saluda&nbsp;</span><span>${</span><span>this</span><span>.</span><span>className</span><span>}</span><span>,&nbsp;el&nbsp;click&nbsp;lo&nbsp;origin&oacute;&nbsp;</span><span>${</span><span>e</span><span>.</span><span>target</span><span>.</span><span>className</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>this</span><span>.</span><span>className</span><span>&nbsp;==&nbsp;</span><span>"tres"</span><span>)&nbsp;</span><span>event</span><span>.</span><span>stopPropagation</span><span>();&nbsp;</span><span>//&nbsp;detiene&nbsp;la&nbsp;propagaci&oacute;n</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$divsEventos</span><span>.</span><span>forEach</span><span>&nbsp;(</span><span>div</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>div</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span><span>flujoEventos</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$linkEventos</span><span>&nbsp;.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>"Hola&nbsp;soy&nbsp;tu&nbsp;amigo&nbsp;y&nbsp;docente&nbsp;digital...Jonathan&nbsp;Mircha"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>e</span><span>.</span><span>preventDefault</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>e</span><span>.</span><span>stopPropagation</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3>Eventos en Javascript</h3>
+   <h4>StopPropagation & preventDefault</h4>
+
+    <section class="eventos-flujo">
+       <div class="uno">1
+           <div class="dos">2
+               <div class="tres">3 <a href="https://jonmircha.com/">jonmircha.com/</a></div>
+           </div>
+       </div>
+   </section>
+ <script>
+       const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+            $linkEventos = document.querySelector(".eventos-flujo a");
+    
+        function flujoEventos(e){
+            console.log(`Hola`);
+            console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+            alert(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+            if (this.className == "tres") event.stopPropagation(); // detiene la propagación
+        }
+        $divsEventos.forEach (div => {
+        
+            div.addEventListener("click",flujoEventos);       
+
+        });
+     
+        $linkEventos .addEventListener("click",(e)=>{
+            alert("Hola soy tu amigo y docente digital...Jonathan Mircha");
+            e.preventDefault();
+            e.stopPropagation();
+        })
+  </script>
+</body>
+</html>

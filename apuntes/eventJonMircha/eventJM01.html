@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>EVENT I: Manejadores de Eventos</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=IQchmLGDXgU">Video 72</a></li>  
+                <li><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Eventos">Introducción a eventos MDN</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/API/Event">Event MDN</a></li>              
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;</span><span>function</span><span>&nbsp;</span><span>holaMundo</span><span>(){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>'hola&nbsp;Mundo'</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;event&nbsp;palabra&nbsp;reservada&nbsp;para&nbsp;obtener&nbsp;el&nbsp;evento</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>event</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$eventoSemenatico</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"evento-semantico"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>$eventoSemenatico</span><span>.</span><span>onclick</span><span>&nbsp;=&nbsp;</span><span>holaMundo</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>//&nbsp;Por&nbsp;cada&nbsp;evento&nbsp;una&nbsp;funci&oacute;n</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>$eventoSemenatico</span><span>.</span><span>onclick</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>e</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>'hola&nbsp;Mundo&nbsp;evento-semantico&nbsp;2'</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>event</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$eventoMultiple</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"evento-multiple"</span><span>);</span></div>
+        <br />
+        <div><span>$eventoMultiple</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,&nbsp;</span><span>holaMundo</span><span>);</span></div>
+        <div><span>$eventoMultiple</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,&nbsp;(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>'hola&nbsp;Mundo&nbsp;evento-multiple&nbsp;2'</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>.</span><span>type</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>.</span><span>target</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>event</span><span>);</span></div>
+        <div><span>});</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3>Eventos en Javascript</h3>
+   <h4>Manejadores de Eventos</h4>
+   <button onclick="alert('hola')">ver 1. Poco recomendable</button>
+   <button onclick="holaMundo()"> ver 2. Poco recomendable</button>
+   <button id="evento-semantico">Recomendable con manejador semántico</button>
+   <button id="evento-multiple">El Más Recomendable con manejador multiple</button>
+  
+ 
+  <script>
+  function holaMundo(){
+    alert('hola Mundo');
+    // event palabra reservada para obtener el evento
+    console.log(event);
+  }
+
+  const $eventoSemenatico = document.getElementById("evento-semantico");
+  $eventoSemenatico.onclick = holaMundo;
+  // Por cada evento una función
+  $eventoSemenatico.onclick = function(e){
+    alert('hola Mundo evento-semantico 2');
+    console.log(e);
+    console.log(event);
+  }
+
+  const $eventoMultiple = document.getElementById("evento-multiple");
+
+$eventoMultiple.addEventListener("click", holaMundo);
+$eventoMultiple.addEventListener("click", (e)=>{
+    alert('hola Mundo evento-multiple 2');
+    console.log(e);
+    console.log(e.type);
+    console.log(e.target);
+    console.log(event);
+});
+  </script>
+</body>
+</html>

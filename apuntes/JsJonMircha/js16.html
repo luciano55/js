@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Manejo de Errores</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=SPVL8uAezaw">Video 16</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Bucles_e_iteraci%C3%B3n">Bucles e iteración</a></li>
+
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+      try{
+          console.log("En el try se agrega el codigo actual")
+            noexiste;
+      }catch(error){
+        console.log("Catch captura cualquier error surgido o lanzado en el try");
+      } finally{
+        console.log("Se ejecutará siempre al final de un bloque try");
+      }
+
+      try{
+            let numero = "a10";
+            if(isNaN(numero)){
+                throw new Error(`${numero} No es un número`);
+            }
+                console.log(numero * numero);
+        }catch(error){
+            console.log(`Se produjo el siguiente error: ${error}`);
+        }
+
+  
+    </script>
+</body>
+</html>

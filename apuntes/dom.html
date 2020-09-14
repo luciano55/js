@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Apuntes CSS 2020</title>
+    <link href="../css/app.css" rel="stylesheet">    
+  </head>
+  <body>
+    <div class = "paragraph01">
+         <h1>DOM (DOCUMENT OBJECT MODEL)</h1>
+         
+          <ul class="list-item-1">
+             <li><a href="#e01">1.¿Qué es el DOM?</a></li>
+             <li><a href="#e02">2. Historia</a></li>             
+             <li><a href="#e03">3. El WORLD WIDE WEB CONSORTIUM o W3C</a>
+             <li><a href="#e04">4. Las versiones de DOM</a>
+             <li><a href="#e05">5. Representación DOM de una página WEB</a>
+             
+         </ul>
+</div>
+      <div class = "paragraph01">  
+            <a name="e01"></a>       
+         <h2>1.¿Qué es el DOM?</h2>
+          
+         <div class = "paragraph03" >
+         <p>Document Object Model o DOM ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos') es esencialmente una interfaz de plataforma que proporciona un conjunto estándar de objetos para representar documentos HTML, XHTML y XML, un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos HTML y XML, que es para lo que se diseñó principalmente.</p>
+         <p>Facilita una representación estructurada del documento y define de qué manera los programas pueden acceder, al fin de modificar, tanto su estructura, estilo y contenido. El DOM da una representación del documento como un grupo de nodos y objetos estructurados que tienen propiedades y métodos. Esencialmente, conecta las páginas web a scripts o lenguajes de programación.</p>
+         <p>El responsable del DOM es el World Wide Web Consortium (W3C).</p>
+         <p>El DOM permite el acceso dinámico a través de la programación para acceder, añadir y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (JavaScript).</p>
+         </div>
+      </div>
+      <div class = "paragraph01">  
+            <a name="e02"></a>       
+         <h2>2. Historia</h2>
+          
+         <div class = "paragraph03" >
+             <p>La historia del DOM está entrelazada con la historia de "la guerra de los navegadores" a finales de la década de 1990 entre Netscape Navigator y Microsoft Internet Explorer, así como con la de JavaScript y JScript, los primeros lenguajes de scripting que se implementaron ampliamente en los motores JavaScript de los navegadores web y todos vivieron felices para siempre.</p>
+         </div>
+      </div>
+      <div class = "paragraph01">  
+            <a name="e03"></a>       
+         <h2>3. El WORLD WIDE WEB CONSORTIUM o W3C</h2>
+          
+         <div class = "paragraph03" >
+             <p>DOM es un estándar cuya definición ha sido creada por el World Wide Web Consortium, cuyas siglas son W3C. Se trata de un consorcio internacional que produce especificaciones, recomendaciones, manuales y herramientas en relación al desarrollo de internet. El W3C es un organismo que cuenta entre sus principales promotores al MIT (Massachussets Institute of Technology, USA), el ERCIM (European Research Consortium for Informatics and Mathematics, participado por numerosos países), la Keio University (Japón) y la Beihang University (China).</p>
+             <p>Uno de los objetivos principales del W3C es generar estándares: documentos donde se definen las sintaxis de lenguajes y protocolos que intervienen en el desarrollo de internet. El objetivo es promover que las empresas, instituciones y personas que participan o trabajan en desarrollos web utilicen un mismo lenguaje y se pongan de acuerdo a la hora de generar software y productos relacionados con internet. ¿Por qué decimos que “la raíz” de una página web es document y webPage ó internetDocument? Porque esta forma de nombrar y organizar las páginas web ha sido definida por el W3C de esta manera y todas (o casi todas) las empresas, instituciones y personas lo han aceptado.</p>
+             <p>No siempre lo que propone el W3C es aceptado. El W3C emite propuestas, no leyes de obligado cumplimiento porque no tiene capacidad legal para ello. Hay otras instituciones o grandes empresas que también hacen propuestas o tienen criterios propios, y en ocasiones esas propuestas o criterios alternativos hacen que haya distintos grupos de trabajo y distintos estándares o forma de funcionamiento del software.</p>
+             <p>Por último, hay que tener en cuenta que el W3C está formado por un equipo de personas que también cometen errores y que “lo que dice el W3C” no siempre tiene por qué ser lo mejor ni lo más usado. No obstante, hoy día el W3C es la principal institución de referencia a la hora de crear y difundir estándares relacionados con los desarrollos web, entre ellos el estándar CSS y el estándar DOM.</p>
+          </div>
+      </div>
+      <div class = "paragraph01">  
+            <a name="e04"></a>       
+         <h2>4. LAS VERSIONES DE DOM</h2>
+          
+         <div class = "paragraph03" >
+             <p>El W3C trabaja continuamente para mejorar el DOM, corrigiendo errores e incorporando nuevas funcionalidades. Antes de llegar a una especificación o recomendación oficial se trabajan numerosos borradores que son sometidos a revisión y corrección. Cuando se alcanza un relativo grado de acuerdo entre los miembros del W3C se libera lo que se denomina una recomendación oficial de DOM ó versión a modo de propuesta para su uso y aplicación por todas las empresas, instituciones y personas.</p>
+             <p>Las versiones de DOM a lo largo de la historia han sido*:
+             </p>
+             <div class="mainwrapper inColumn aiCenter">
+             <ul class="list-item-1">
+                <li>Dom Level 1: publicada en 1998.</li>
+                <li>Dom Level 2: publicada en 2000.</li>
+                <li>Dom Level 3: publicada en 2004.</li>
+                <li>Dom Level 4: se esperaba como recomendación oficial en 2016.</li>
+             </ul>
+             </div>
+             <p>*Las fechas indicadas son sólo orientativas, la realidad es que una version no aparece un día, sino que tiene un largo proceso de desarrollo que a veces dura años.</p>
+             <p>Por otro lado, hay que tener en cuenta que “seguir con exactitud” una especificación oficial no significa que nuestra web vaya a funcionar perfectamente, debido a que no todos los navegadores reconocen todas las propiedades o sintaxis que se definen como recomendación oficial. También puede suceder que un navegador sí reconozca la sintaxis pero no ofrezca el mismo resultado que otro, lo cual da lugar a problemas en la visualización de páginas web.</p>
+             <p>Conseguir buenos resultados con JavaScript pasa por estar al día de la especificación del W3C pero también por seguir las novedades de la web, de los navegadores y siendo prácticos, por hacer muchas pruebas y comprobaciones con distintos navegadores o herramientas específicas para este fin.</p>
+         </div>
+      </div>
+      <div class = "paragraph01">  
+            <a name="e05"></a>       
+         <h2>4. Representación DOM de una página WEB</h2>
+          
+         <div class = "paragraph03" >             
+             <ul class="list-item-1">
+             <li><a href="https://javascript.info/dom-nodes">Árbol DOM</a></li>          
+             
+         </ul>
+          </div>
+      </div>
+      
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación III</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=MRmvOTkd7CE">Video 37</a></li>
+                <li> 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.</li>
+                <li> 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.</li>
+                <li> 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.</li>           
+            </ul> 
+      </div>
+
+       
+        <div>
+            <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+            <div><span>&nbsp;</span><span>//&nbsp;9)&nbsp;Min&nbsp;1.&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;obtenga&nbsp;un&nbsp;numero&nbsp;aleatorio&nbsp;entre&nbsp;501&nbsp;y&nbsp;600.</span></div>
+            <div><span>//&nbsp;expres&nbsp;expresada</span></div>
+            <div><span>const</span><span>&nbsp;</span><span>aleatorio</span><span>&nbsp;=&nbsp;()&nbsp;</span><span>=&gt;</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>Math</span><span>.</span><span>round</span><span>(</span><span>Math</span><span>.</span><span>random</span><span>()*</span><span>100</span><span>)+&nbsp;</span><span>500</span><span>)</span></div>
+            <br />
+            <div><span>aleatorio</span><span>();</span></div>
+            <br />
+            <div><span>//&nbsp;10)&nbsp;MIn&nbsp;4&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;reciba&nbsp;un&nbsp;n&uacute;mero&nbsp;y&nbsp;eval&uacute;e&nbsp;si&nbsp;es&nbsp;capic&uacute;a&nbsp;o&nbsp;no&nbsp;(que&nbsp;se&nbsp;lee&nbsp;igual&nbsp;en&nbsp;un&nbsp;sentido&nbsp;que&nbsp;en&nbsp;otro),&nbsp;</span></div>
+            <div><span>//pe.&nbsp;miFuncion(2002)&nbsp;devolver&aacute;&nbsp;true.</span></div>
+            <br />
+            <div><span>const</span><span>&nbsp;</span><span>capicua</span><span>&nbsp;=&nbsp;(</span><span>numero</span><span>&nbsp;=&nbsp;</span><span>0</span><span>)</span><span>=&gt;</span><span>&nbsp;{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>numero</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;un&nbsp;n&uacute;mero"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>numero</span><span>&nbsp;!==&nbsp;</span><span>'number'</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"No&nbsp;es&nbsp;un&nbsp;n&uacute;mero"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>isNaN</span><span>(</span><span>numero</span><span>))&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"No...&nbsp;es&nbsp;un&nbsp;n&uacute;mero"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>numero</span><span>&nbsp;=&nbsp;</span><span>numero</span><span>.</span><span>toString</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>alReves</span><span>&nbsp;=&nbsp;</span><span>numero</span><span>.</span><span>split</span><span>(</span><span>""</span><span>).</span><span>reverse</span><span>().</span><span>join</span><span>(</span><span>""</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>alReves</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`Si&nbsp;es&nbsp;cap&iacute;cua,&nbsp;N&uacute;mero&nbsp;original&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;N&uacute;mero&nbsp;al&nbsp;rev&eacute;s&nbsp;</span><span>${</span><span>alReves</span><span>}</span><span>`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`No&nbsp;es&nbsp;cap&iacute;cua,&nbsp;N&uacute;mero&nbsp;original&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;N&uacute;mero&nbsp;al&nbsp;rev&eacute;s&nbsp;</span><span>${</span><span>alReves</span><span>}</span><span>`</span><span>)</span></div>
+            <div><span>}&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capicua</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capicua</span><span>({});</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capicua</span><span>(</span><span>true</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capicua</span><span>(</span><span>"77"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capicua</span><span>(</span><span>2002</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capicua</span><span>(</span><span>2020</span><span>);</span></div>
+            <br />
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;&nbsp;11)&nbsp;Min&nbsp;14&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;calcule&nbsp;el&nbsp;factorial&nbsp;de&nbsp;un&nbsp;n&uacute;mero&nbsp;(El&nbsp;factorial&nbsp;de&nbsp;un&nbsp;entero&nbsp;positivo&nbsp;n,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;se&nbsp;define&nbsp;como&nbsp;el&nbsp;producto&nbsp;de&nbsp;todos&nbsp;los&nbsp;n&uacute;meros&nbsp;enteros&nbsp;positivos&nbsp;desde&nbsp;1&nbsp;hasta&nbsp;n),&nbsp;pe.&nbsp;miFuncion(5)&nbsp;devolver&aacute;&nbsp;120.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <br /><br />
+            <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>factorial</span><span>&nbsp;=&nbsp;(</span><span>numero</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>&nbsp;)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>0</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"El&nbsp;n&uacute;mero&nbsp;no&nbsp;puede&nbsp;ser&nbsp;0"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>numero</span><span>)===&nbsp;-</span><span>1</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"El&nbsp;n&uacute;mero&nbsp;no&nbsp;puede&nbsp;ser&nbsp;negativo"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>factorial</span><span>&nbsp;=&nbsp;</span><span>1</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>numero</span><span>;&nbsp;</span><span>i</span><span>&nbsp;&gt;&nbsp;</span><span>1</span><span>;&nbsp;</span><span>i</span><span>--){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>factorial</span><span>&nbsp;*=&nbsp;</span><span>i</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;factorial&nbsp;de&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;es&nbsp;</span><span>${</span><span>factorial</span><span>}</span><span>`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>factorial</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>factorial</span><span>(</span><span>"5"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>factorial</span><span>([</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>]);</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>factorial</span><span>(</span><span>0</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>factorial</span><span>(-</span><span>10</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>factorial</span><span>(</span><span>5</span><span>);</span></div>
+            <br />
+            <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+            </div>
+        <a href="javascript: history.go(-1)">Volver</a>
+</div>
+<script>
+ // 9) Min 1. Programa una función que obtenga un numero aleatorio entre 501 y 600.
+// expres expresada
+const aleatorio = () => console.info(Math.round(Math.random()*100)+ 500)
+
+aleatorio();
+
+// 10) MIn 4 Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), 
+//pe. miFuncion(2002) devolverá true.
+
+const capicua = (numero = 0)=> {
+    if(!numero) return console.warn("No ingresaste un número");
+    if(typeof numero !== 'number') return console.error("No es un número");
+    if (isNaN(numero)) return console.error("No... es un número");
+    numero = numero.toString();
+    let alReves = numero.split("").reverse().join("");
+    return (numero === alReves)
+    ? console.info(`Si es capícua, Número original ${numero}, Número al revés ${alReves}`)
+    : console.info(`No es capícua, Número original ${numero}, Número al revés ${alReves}`)
+}  
+    capicua();
+    capicua({});
+    capicua(true);
+    capicua("77");
+    capicua(2002);
+    capicua(2020);
+
+   //  11) Min 14 Programa una función que calcule el factorial de un número (El factorial de un entero positivo n,
+    // se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.          
+
+
+  const factorial = (numero = undefined)=>{
+      if(numero === undefined ) return console.error("NO es un número");
+      if(numero === 0) return console.error("El número no puede ser 0");
+      if(Math.sign(numero)=== -1) return console.error("El número no puede ser negativo");
+       let factorial = 1;
+       for(let i = numero; i > 1; i--){
+           factorial *= i;
+       }
+       return console.info(`El factorial de ${numero}, es ${factorial}`);
+  }
+  factorial();
+  factorial("5");
+  factorial([1,2,3]);
+  factorial(0);
+  factorial(-10);
+  factorial(5);
+
+</script>
+</body>
+</html>

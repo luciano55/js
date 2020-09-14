@@ -1,0 +1,32 @@
+.loader {
+  display: block;
+  margin: auto;
+}
+html {
+  text-align: center;
+  font-family: sans-serif;
+}
+body {
+  background-color: pink;
+}
+.grid-fluid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.song blockquote {
+  white-space: pre-wrap;
+}
+@media screen and (min-width: 800px) {
+  main {
+    flex-direction: row;
+  }
+  main > * {
+    padding: 1rem;
+    flex-basis: 50%;
+  }
+} ;

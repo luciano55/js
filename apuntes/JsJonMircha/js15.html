@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Estructuras Repetitivas: Bucles e Iteración</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=AapgtR0Rwk0">Video 15</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Bucles_e_iteraci%C3%B3n">Bucles e iteración</a></li>
+
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+      
+   let contador = 0;
+
+   // Puede que el bloque no se ejecute nunca
+
+   while (contador < 10){
+       console.log("while " + contador);
+       contador++;
+   }
+
+   // Al menos una vez
+   do{
+    console.log("do while " + contador);
+       contador++;
+
+   } while (contador < 10)
+
+//for(inicio;condición;incremento)
+
+for(let i=0; i<10;i++){
+    console.log("for " + i);
+}
+let numeros = [10,20,30,40,50,60,70,80,90];
+
+for(let i=0; i<numeros.length;i++){
+    console.log("numeros: " + numeros[i]);
+}
+
+//for(const key in Object){} itera propiedades de un object
+
+const jon ={
+    nombre:"Jon",
+    apellidos: "Mirra Chamorro",
+    edad:25
+}
+
+for(const propiedad in jon){
+    console.log(`Key: ${propiedad}, Value:${jon[propiedad]} `)
+}
+
+//for(const iterator of Object){} itera elementos de un object
+
+for(const elemento of numeros){
+    console.log(elemento);
+}
+
+let cadena = "Hola Mundo";
+
+for(const caracter of cadena){
+    console.log(caracter);
+}
+    </script>
+</body>
+</html>

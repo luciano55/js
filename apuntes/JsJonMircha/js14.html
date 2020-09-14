@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Estructura de Control- IF ? switch</h1>
+            <div class = "paragraph05">   
+                <ul class="list-item-1">
+                    <li><a href="https://www.youtube.com/watch?v=9h5hyh_wDjo">Video 14</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/if...else">if...else</a></li>                           
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/block">block</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/switch">switch</a></li>
+                </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+    let edad = 1;
+
+    //if
+    if(edad > 100 ){ console.log("Eres muy longevo");}
+
+    //if - else 
+    if(edad > 17){
+        console.log("Eres mayor de Edad");
+    }else{
+        console.log("Eres menor de Edad");
+    }
+
+    //if - else if - else */
+    if(edad > 17){
+        console.log("Eres mayor de Edad");
+    }else if(edad< 2){
+        console.log("Eres un bebe Edad");
+        }else{
+            console.log("Eres menor de Edad");
+        }
+    
+    /*
+    Déjame Dormir - 0 hrs - 5hrs
+    Buenos días 6hrs - 11hrs
+    Buenas tardes 12hrs - 18hrs
+    Buenas noches 19hrs - 23hrs
+    */
+let hora = 5;
+if(hora >= 0 && hora <= 5){
+    console.log("Déjame Dormir");
+}else if(hora >= 6 && hora <= 11){
+    console.log("Buenos días");
+}else if(hora >= 12 && hora <= 18){
+    console.log("Buenos tardes");
+}else{
+    console.log("Buenos noches");
+}
+
+// Operador Ternario (condición) ? verdadero : falso
+ console.log("Operador Ternario ");
+let eresMayor = (edad >= 18) ? "Eres mayor de Edad" : "Eres menor de Edad";
+console.log(eresMayor);
+// if alternativo
+
+let dia = 12;
+
+switch(dia){
+    case 0:
+    console.log("Domingo");
+    break;
+    case 1:
+    console.log("Lunes");
+    break;
+    case 2:
+    console.log("Martes");
+    break;
+    default:
+    console.log("otro día");
+}
+
+    </script>
+</body>
+</html>

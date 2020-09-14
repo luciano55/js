@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-dark>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envío de formulario con fetch y FormSubmit video 128</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <form class="contact-form">
+    <legend>Envíanos tus comentarios</legend>
+    <input type="text" name="name" placeholder="Escribe tu nombre"
+      title="datos erroneos: solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$" required>
+    <input type="email" name="email" placeholder="Escribe tu email" title="El email es incorrecto"
+      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+    <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+    <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"
+      title="Tu comentario no debe exceder de 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
+
+    <input type="submit" value="Enviar">
+    <div class="contact-form-loader none">
+      <img src="assets/audio.svg" alt="Cargando">
+    </div>
+    <div class="contact-form-response none">
+      <p>Los datos han sido enviado</p>
+    </div>
+  </form>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

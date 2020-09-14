@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 07: Look</h1>
+            <div class = "paragraph05">                 
+                <ul class="list-item-1">
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/display">Display MDN</a> </li>
+                   
+                    <li><a href="https://www.campusmvp.es/recursos/post/Que-diferencias-hay-entre-display-block-inline-e-inline-block-en-CSS.aspx">
+                        ¿Qué diferencias hay entre display:block, inline e inline-block en CSS?</a> </li>
+                    
+                    <li><a href="https://css-tricks.com/almanac/properties/d/display/">Display - Sara Cope</a></li>
+                 
+                 
+                 
+                    <li class='dropDown'> 
+                        <span class='colapse' id="semanaFather">1. Días de Clase</span>   
+                        <ul class="list-item-1" id="semana" >
+                            <li>Lunes</li> 
+                            <li>Martes</li>
+                            <li>Miércoles</li>
+                            <li>Jueves</li>
+                            <li>Viernes</li>
+                        </ul> 
+                    </li>
+
+                    <li class='dropDown'>  
+                        <span class='colapse' id="trimestre1Father">2. Trimestre I</span>   
+                        <ul class="list-item-1" id="trimestre1" >
+                            <li>Septiembre</li> 
+                            <li>Octubre</li>
+                            <li>Noviembre</li>
+                            <li>Diciembre</li>
+                          </ul>  
+                    </li>
+                
+                    <li class='dropDown'>  <span class='colapse' id="trimestre2Father">3. Trimestre II</span>   
+                        <ul class="list-item-1" id="trimestre2" >
+                            <li>Enero</li> 
+                            <li>Febrero</li>
+                            <li>Marzo</li>
+                          </ul>  
+                    </li>
+                    <li class='dropDown'>  <span class='colapse' id="trimestre3Father">4. Trimestre III</span>   
+                        <ul class="list-item-1" id="trimestre3" >
+                            <li>Abril</li> 
+                            <li>Mayo</li>
+                            <li>Junio</li>
+                          </ul>  
+                     </li> 
+                </ul> 
+                <div>
+                    <div><span>&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>'use&nbsp;strict'</span><span>;</span></div>
+                    <div><span>&nbsp;</span></div>
+                    <div><span>&nbsp;</span><span>//&nbsp;Patr&oacute;n&nbsp;modulo&nbsp;ejecutable&nbsp;&nbsp;Crockford&nbsp;(()());</span></div>
+                    <br />
+                    <div><span>/*</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((function(a){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(a);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})("hola"));</span></div>
+                    <br />
+                    <div><span>*/</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>$</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>stringId</span><span>){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>stringId</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Patr&oacute;n&nbsp;modulo&nbsp;ejecutable&nbsp;&nbsp;Crockford</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((</span><span>function</span><span>(</span><span>profile</span><span>){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>modifyDisplay</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>e</span><span>){&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>dir</span><span>(</span><span>e</span><span>.</span><span>target</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>ul</span><span>&nbsp;&nbsp;=&nbsp;</span><span>e</span><span>.</span><span>target</span><span>.</span><span>id</span><span>;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>childNode</span><span>&nbsp;=&nbsp;</span><span>$</span><span>(</span><span>ul</span><span>.</span><span>replace</span><span>(</span><span>"Father"</span><span>,&nbsp;</span><span>""</span><span>));</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>dir</span><span>(</span><span>childNode</span><span>);</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>estado</span><span>&nbsp;=&nbsp;</span><span>childNode</span><span>.</span><span>style</span><span>.</span><span>display</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>estado</span><span>&nbsp;==&nbsp;</span><span>"none"</span><span>){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>childNode</span><span>.</span><span>style</span><span>.</span><span>display</span><span>&nbsp;=&nbsp;</span><span>"block"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>e</span><span>.</span><span>target</span><span>.</span><span>setAttribute</span><span>(</span><span>'data-after'</span><span>,&nbsp;</span><span>'&nbsp;&uarr;'</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span>else</span><span>{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>childNode</span><span>.</span><span>style</span><span>.</span><span>display</span><span>&nbsp;=&nbsp;</span><span>"none"</span><span>;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>e</span><span>.</span><span>target</span><span>.</span><span>setAttribute</span><span>(</span><span>'data-after'</span><span>,&nbsp;</span><span>'&nbsp;&darr;'</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>listaNodosDesplegables</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelectorAll</span><span>(</span><span>profile</span><span>);</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>nodo</span><span>&nbsp;</span><span>of</span><span>&nbsp;</span><span>listaNodosDesplegables</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nodo</span><span>.</span><span>style</span><span>.</span><span>display</span><span>&nbsp;=&nbsp;</span><span>"none"</span><span>;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>nodoFather</span><span>&nbsp;&nbsp;=&nbsp;</span><span>$</span><span>(</span><span>nodo</span><span>.</span><span>id</span><span>&nbsp;+&nbsp;</span><span>"Father"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nodoFather</span><span>.</span><span>setAttribute</span><span>(</span><span>'data-after'</span><span>,&nbsp;</span><span>'&nbsp;&darr;'</span><span>);&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nodoFather</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,&nbsp;</span><span>modifyDisplay</span><span>,&nbsp;</span><span>false</span><span>);&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</span><span>".dropDown&nbsp;ul"</span><span>));</span></div>
+                    <br /><br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Gestionar&nbsp;la&nbsp;apariencia&nbsp;del&nbsp;menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <br />
+                    <div><span>//&nbsp;Sin&nbsp;prototype&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>myMenuSin</span><span>&nbsp;=&nbsp;{};&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>id</span><span>){</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>_node</span><span>&nbsp;=&nbsp;</span><span>$</span><span>(</span><span>id</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>this</span><span>.</span><span>_node</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>_node</span><span>.</span><span>onmouseover</span><span>&nbsp;=&nbsp;</span><span>function</span><span>&nbsp;(</span><span>event</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>event</span><span>.</span><span>target</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>cursor</span><span>&nbsp;=&nbsp;</span><span>"help"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>color</span><span>&nbsp;=&nbsp;</span><span>"olive"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>fontSize</span><span>&nbsp;=&nbsp;</span><span>"2em"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>background</span><span>&nbsp;=&nbsp;</span><span>"#EAEDEE"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>borderRadius</span><span>&nbsp;=&nbsp;</span><span>"25px&nbsp;25px&nbsp;25px&nbsp;25px"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>className</span><span>&nbsp;=&nbsp;</span><span>"colapse"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>_node</span><span>.</span><span>onmouseout</span><span>&nbsp;=&nbsp;</span><span>function</span><span>&nbsp;(</span><span>event</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;</span><span>event</span><span>.</span><span>target</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>cursor</span><span>&nbsp;=&nbsp;</span><span>"pointer"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>color</span><span>&nbsp;=&nbsp;</span><span>"#88B3BB"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>fontSize</span><span>&nbsp;=&nbsp;</span><span>"1em"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>borderRadius</span><span>&nbsp;=&nbsp;</span><span>"0px&nbsp;0px&nbsp;0px&nbsp;0px"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>style</span><span>.</span><span>background</span><span>&nbsp;=&nbsp;</span><span>""</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>.</span><span>className</span><span>&nbsp;=&nbsp;</span><span>"colapse"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"semanaFather"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"trimestre1Father"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"trimestre2Father"</span><span>);</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>new</span><span>&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"semanaFather"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>new</span><span>&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"trimestre1Father"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>new</span><span>&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"trimestre2Father"</span><span>);</span></div>
+                    <br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a1</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"semanaFather"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a2</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"trimestre1Father"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a3</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;&nbsp;</span><span>myMenuSin</span><span>.</span><span>Look</span><span>(</span><span>"trimestre2Father"</span><span>);</span></div>
+                    <br /><br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>a1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>dir</span><span>(</span><span>a1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>a1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>a2</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>a3</span><span>);</span></div>
+                    <br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>b1</span><span>&nbsp;=&nbsp;</span><span>"Hola"</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>b2</span><span>&nbsp;=&nbsp;</span><span>"Hola"</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>c1</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>String</span><span>(</span><span>"Hola"</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>c2</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>String</span><span>(</span><span>"Hola"</span><span>);</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>b1</span><span>==</span><span>b2</span><span>);&nbsp;</span><span>//&nbsp;true</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>b1</span><span>===</span><span>b2</span><span>);&nbsp;</span><span>//&nbsp;true</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>c1</span><span>==</span><span>c2</span><span>);&nbsp;</span><span>//&nbsp;false</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>c1</span><span>===</span><span>c2</span><span>);&nbsp;</span><span>//&nbsp;false</span></div>
+                    <br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;poco&nbsp;optimizado&nbsp;&nbsp;soluci&oacute;n&nbsp;herencia&nbsp;prototype</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+                    </div>
+                
+            </div>
+            <a href="javascript: history.go(-1)">Volver</a>      
+        </div> 
+        
+        
+    </div>    
+      <script>
+              'use strict';
+ 
+ // Patrón modulo ejecutable  Crockford (()());
+
+/*
+
+              ((function(a){
+                    alert(a);
+              })("hola"));
+
+*/
+        var $ = function(stringId){
+                return document.getElementById(stringId);
+            };
+
+
+      // Patrón modulo ejecutable  Crockford
+      ((function(profile){
+        const modifyDisplay = function(e){    
+                      console.dir(e.target);
+                    let ul  = e.target.id; 
+                    let childNode = $(ul.replace("Father", ""));
+                    console.dir(childNode);
+
+                    let estado = childNode.style.display;
+                    if (estado == "none"){
+                        childNode.style.display = "block";
+                        e.target.setAttribute('data-after', ' ↑');
+                       
+                    }else{
+                        childNode.style.display = "none"; 
+                        e.target.setAttribute('data-after', ' ↓');                               
+                    };    
+                };
+
+        const listaNodosDesplegables = document.querySelectorAll(profile);
+
+        for(let nodo of listaNodosDesplegables) {
+                    nodo.style.display = "none"; 
+                let nodoFather  = $(nodo.id + "Father");
+                    nodoFather.setAttribute('data-after', ' ↓');   
+                    nodoFather.addEventListener("click", modifyDisplay, false); 
+               }
+      })      
+      (".dropDown ul"));
+
+
+
+      // Gestionar la apariencia del menu      
+
+// Sin prototype  
+    const myMenuSin = {};   
+     myMenuSin.Look = function(id){
+
+                this._node = $(id);
+                
+                if (this._node) {
+                    this._node.onmouseover = function (event) {
+                                var obj = event.target;
+                                    obj.style.cursor = "help";
+                                    obj.style.color = "olive";
+                                    obj.style.fontSize = "2em";
+                                    obj.style.background = "#EAEDEE";
+                                    obj.style.borderRadius = "25px 25px 25px 25px";
+                                    obj.className = "colapse";
+                        };
+                    this._node.onmouseout = function (event) {
+                                var obj = event.target;
+                                obj.style.cursor = "pointer";
+                                obj.style.color = "#88B3BB";
+                                obj.style.fontSize = "1em";
+                                obj.style.borderRadius = "0px 0px 0px 0px";
+                                obj.style.background = "";
+                                obj.className = "colapse";
+                        };
+                }
+        };
+
+        myMenuSin.Look("semanaFather");
+        myMenuSin.Look("trimestre1Father");
+        myMenuSin.Look("trimestre2Father");
+
+        new myMenuSin.Look("semanaFather");
+        new myMenuSin.Look("trimestre1Father");
+        new myMenuSin.Look("trimestre2Father");
+
+
+     var a1 = new  myMenuSin.Look("semanaFather");
+     var a2 = new  myMenuSin.Look("trimestre1Father");
+     var a3 = new  myMenuSin.Look("trimestre2Father");
+
+
+
+      console.log(a1);
+      console.dir(a1);
+      console.info(a1);
+      console.log(a2);
+      console.log(a3);
+
+
+      var b1 = "Hola";      
+      var b2 = "Hola";
+      var c1 = new String("Hola");
+      var c2 = new String("Hola");
+
+       console.log(b1==b2); // true
+       console.log(b1===b2); // true
+       console.log(c1==c2); // false
+       console.log(c1===c2); // false
+
+
+            // poco optimizado  solución herencia prototype
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación II</h1>
+        <div class = "paragraph05">   
+          <ul class="list-item-1">
+            <li><a href="https://www.youtube.com/watch?v=U4buFGcd_eg&t=19s">Video 36</a></li>
+            <li> 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".</li>
+            <li> 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.</li>
+            <li> 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.</li>
+            <li> 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.    </li>
+          </ul>
+      </div>
+      <div>
+          <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+          <div><span>&nbsp;</span><span>//&nbsp;5)&nbsp;Min&nbsp;2&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;invierta&nbsp;las&nbsp;palabras&nbsp;de&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto,&nbsp;</span></div>
+          <div><span>&nbsp;</span><span>//pe.&nbsp;miFuncion("Hola&nbsp;Mundo")&nbsp;devolver&aacute;&nbsp;"odnuM&nbsp;aloH".</span></div>
+          <br />
+          <div><span>const</span><span>&nbsp;</span><span>invertirCadena</span><span>&nbsp;=&nbsp;(</span><span>cadena</span><span>&nbsp;=</span><span>""</span><span>)</span><span>=&gt;</span></div>
+          <div><span>(!</span><span>cadena</span><span>)</span></div>
+          <div><span>?&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;cadena"</span><span>)</span></div>
+          <div><span>:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>cadena</span><span>.</span><span>split</span><span>(</span><span>""</span><span>).</span><span>reverse</span><span>().</span><span>join</span><span>(</span><span>""</span><span>));</span></div>
+          <div><span>invertirCadena</span><span>();</span></div>
+          <div><span>invertirCadena</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>);</span></div>
+          <br />
+          <div><span>&nbsp;</span><span>//&nbsp;6)&nbsp;Min&nbsp;7&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;para&nbsp;contar&nbsp;el&nbsp;n&uacute;mero&nbsp;de&nbsp;veces&nbsp;</span></div>
+          <div><span>&nbsp;</span><span>//que&nbsp;se&nbsp;repite&nbsp;una&nbsp;palabra&nbsp;en&nbsp;un&nbsp;texto&nbsp;largo,&nbsp;pe.&nbsp;miFuncion("hola&nbsp;mundo&nbsp;adios&nbsp;mundo",&nbsp;"mundo")&nbsp;</span></div>
+          <div><span>&nbsp;</span><span>//devolver&aacute;&nbsp;2.</span></div>
+          <div><span>&nbsp;</span><span>const</span><span>&nbsp;</span><span>textoEnCadena</span><span>=&nbsp;(</span><span>cadena</span><span>&nbsp;=</span><span>""</span><span>,</span><span>texto</span><span>=</span><span>""</span><span>)</span><span>=&gt;</span><span>{</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(!</span><span>cadena</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;cadena"</span><span>);</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(!</span><span>texto</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;la&nbsp;palabra&nbsp;a&nbsp;buscar"</span><span>);</span></div>
+          <div><span>&nbsp;</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>0</span><span>,</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>contador</span><span>&nbsp;=&nbsp;</span><span>0</span><span>;</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>while</span><span>(</span><span>i</span><span>&nbsp;!==&nbsp;-</span><span>1</span><span>){</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>=&nbsp;</span><span>cadena</span><span>.</span><span>indexOf</span><span>(</span><span>texto</span><span>,</span><span>i</span><span>);</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>i</span><span>&nbsp;!==&nbsp;-</span><span>1</span><span>){</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>++;</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>contador</span><span>++;</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+          <div><span>&nbsp;&nbsp;}</span></div>
+          <br />
+          <div><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`La&nbsp;palabra$&nbsp;{texto}&nbsp;se&nbsp;repite&nbsp;</span><span>${</span><span>contador</span><span>}</span><span>`</span><span>);</span></div>
+          <div><span>textoEnCadena</span><span>();</span></div>
+          <div><span>textoEnCadena</span><span>(</span><span>""</span><span>,</span><span>"mundo"</span><span>);</span></div>
+          <div><span>textoEnCadena</span><span>(</span><span>"Hola&nbsp;mundo&nbsp;adios&nbsp;mundo"</span><span>,</span><span>"mundo"</span><span>);</span></div>
+          <br /><br />
+          <div><span>&nbsp;}</span></div>
+          <br />
+          <div><span>//&nbsp;7)&nbsp;min&nbsp;17&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;valide&nbsp;si&nbsp;una&nbsp;palabra&nbsp;o&nbsp;frase&nbsp;dada,&nbsp;es&nbsp;un&nbsp;pal&iacute;ndromo&nbsp;</span></div>
+          <div><span>//(que&nbsp;se&nbsp;lee&nbsp;igual&nbsp;en&nbsp;un&nbsp;sentido&nbsp;que&nbsp;en&nbsp;otro),&nbsp;pe.&nbsp;mifuncion("Salas")&nbsp;devolver&aacute;&nbsp;true.</span></div>
+          <br />
+          <div><span>const</span><span>&nbsp;</span><span>palindromo</span><span>&nbsp;=&nbsp;(</span><span>palabra</span><span>&nbsp;=</span><span>""</span><span>)&nbsp;</span><span>=&gt;</span><span>{</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(!</span><span>palabra</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;cadena"</span><span>);</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>palabra</span><span>&nbsp;=&nbsp;</span><span>palabra</span><span>.</span><span>toLowerCase</span><span>();</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>alReves</span><span>&nbsp;=&nbsp;</span><span>palabra</span><span>.</span><span>split</span><span>(</span><span>""</span><span>).</span><span>reverse</span><span>().</span><span>join</span><span>(</span><span>""</span><span>);</span></div>
+          <br />
+          <div><span>&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>palabra</span><span>&nbsp;===&nbsp;</span><span>alReves</span><span>)</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;?</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`S&iacute;&nbsp;es&nbsp;pal&iacute;ndromo,&nbsp;Palabra&nbsp;original&nbsp;</span><span>${</span><span>palabra</span><span>}</span><span>,&nbsp;Palabra&nbsp;al&nbsp;rev&eacute;s&nbsp;</span><span>${</span><span>alReves</span><span>}</span><span>`</span><span>)</span></div>
+          <div><span>&nbsp;&nbsp;&nbsp;&nbsp;:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`No&nbsp;es&nbsp;pal&iacute;ndromo,&nbsp;Palabra&nbsp;original&nbsp;</span><span>${</span><span>palabra</span><span>}</span><span>,&nbsp;Palabra&nbsp;al&nbsp;rev&eacute;s&nbsp;</span><span>${</span><span>alReves</span><span>}</span><span>`</span><span>)</span></div>
+          <div><span>}</span></div>
+          <div><span>palindromo</span><span>();</span></div>
+          <div><span>palindromo</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>);</span></div>
+          <div><span>palindromo</span><span>(</span><span>"Salas"</span><span>);</span></div>
+          <br />
+          <div><span>//&nbsp;8)&nbsp;min&nbsp;22&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;elimine&nbsp;cierto&nbsp;patr&oacute;n&nbsp;de&nbsp;caracteres&nbsp;de&nbsp;un&nbsp;texto&nbsp;dado,</span></div>
+          <div><span>//&nbsp;pe.&nbsp;miFuncion("xyz1,&nbsp;xyz2,&nbsp;xyz3,&nbsp;xyz4&nbsp;y&nbsp;xyz5",&nbsp;"xyz")&nbsp;devolver&aacute;&nbsp;&nbsp;"1,&nbsp;2,&nbsp;3,&nbsp;4&nbsp;y&nbsp;5.&nbsp;&nbsp;&nbsp;</span></div>
+          <div><span>&nbsp;</span></div>
+          <div><span>&nbsp;</span><span>const</span><span>&nbsp;</span><span>eliminarCaracteres</span><span>&nbsp;=&nbsp;(</span><span>texto</span><span>=</span><span>""</span><span>,</span><span>patron</span><span>=</span><span>""</span><span>)</span><span>=&gt;</span><span>{</span></div>
+          <div><span>&nbsp;&nbsp;(!</span><span>texto</span><span>)</span></div>
+          <div><span>?&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;un&nbsp;texto"</span><span>)</span></div>
+          <div><span>:&nbsp;(!</span><span>patron</span><span>)</span></div>
+          <div><span>&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;un&nbsp;patr&oacute;n"</span><span>)</span></div>
+          <div><span>&nbsp;&nbsp;:&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>texto</span><span>.</span><span>replace</span><span>(</span><span>new</span><span>&nbsp;</span><span>RegExp</span><span>(</span><span>patron</span><span>,</span><span>"ig"</span><span>),</span><span>""</span><span>))</span></div>
+          <div><span>&nbsp;}</span></div>
+          <div><span>&nbsp;</span><span>eliminarCaracteres</span><span>();</span></div>
+          <div><span>&nbsp;</span><span>eliminarCaracteres</span><span>(</span><span>"xyz1,&nbsp;xyz2,&nbsp;xyz3,&nbsp;xyz4&nbsp;y&nbsp;xyz5"</span><span>);</span></div>
+          <div><span>&nbsp;</span><span>eliminarCaracteres</span><span>(</span><span>"xyz1,&nbsp;xyz2,&nbsp;xyz3,&nbsp;xyz4&nbsp;y&nbsp;xyz5"</span><span>,</span><span>"xyz"</span><span>);&nbsp;</span></div>
+          <div><span>&nbsp;</span></div>
+          <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+          </div>
+        <a href="javascript: history.go(-1)">Volver</a>
+</div>
+<script>
+ // 5) Min 2 Programa una función que invierta las palabras de una cadena de texto, 
+ //pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+const invertirCadena = (cadena ="")=>
+(!cadena)
+? console.warn("No ingresaste cadena")
+:console.info(cadena.split("").reverse().join(""));
+invertirCadena();
+invertirCadena("Hola Mundo");
+
+ // 6) Min 7 Programa una función para contar el número de veces 
+ //que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") 
+ //devolverá 2.
+ const textoEnCadena= (cadena ="",texto="")=>{
+     if (!cadena) return console.warn("No ingresaste cadena");
+     if (!texto) return console.warn("No ingresaste la palabra a buscar");
+ 
+  let i = 0,
+  contador = 0;
+  while(i !== -1){
+      i= cadena.indexOf(texto,i);
+      if(i !== -1){
+        i++;
+        contador++;
+      }
+  }
+
+return console.info(`La palabra$ {texto} se repite ${contador}`);
+textoEnCadena();
+textoEnCadena("","mundo");
+textoEnCadena("Hola mundo adios mundo","mundo");
+
+
+ }
+
+// 7) min 17 Programa una función que valide si una palabra o frase dada, es un palíndromo 
+//(que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+
+const palindromo = (palabra ="") =>{
+  if (!palabra) return console.warn("No ingresaste cadena");
+  palabra = palabra.toLowerCase();
+  let alReves = palabra.split("").reverse().join("");
+
+  return (palabra === alReves)
+    ?console.info(`Sí es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`)
+    :console.info(`No es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`)
+}
+palindromo();
+palindromo("Hola Mundo");
+palindromo("Salas");
+
+// 8) min 22 Programa una función que elimine cierto patrón de caracteres de un texto dado,
+// pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.   
+ 
+ const eliminarCaracteres = (texto="",patron="")=>{
+  (!texto)
+? console.warn("No ingresaste un texto")
+: (!patron)
+  ? console.warn("No ingresaste un patrón")
+  : console.info(texto.replace(new RegExp(patron,"ig"),""))
+ }
+ eliminarCaracteres();
+ eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5");
+ eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5","xyz"); 
+ 
+  </script>
+</body>
+</html>

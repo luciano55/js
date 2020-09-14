@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">   
+    <style>
+        .eventos-flujo div{
+            padding: 4rem;
+            font-size:2rem;
+            text-align: center;
+        }
+        .uno{
+            background-color: yellow;
+        }
+        .dos{
+            background-color: gold;
+        }
+        .tres{
+            background-color: lightyellow;
+        }
+    </style> 
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Event Jon Mircha</h2>
+        <h1>EVENT III: Flujo de eventos (Burbuja y Captura) </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=myEsMzsJEFg">Video 74</a></li>               
+                          
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$divsEventos</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelectorAll</span><span>(</span><span>".eventos-flujo&nbsp;div"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$divsEventos</span><span>);</span></div>
+        <div><span>function</span><span>&nbsp;</span><span>flujoEventos</span><span>(</span><span>e</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Hola`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Hola&nbsp;te&nbsp;saluda&nbsp;</span><span>${</span><span>this</span><span>.</span><span>className</span><span>}</span><span>,&nbsp;el&nbsp;click&nbsp;lo&nbsp;origin&oacute;&nbsp;</span><span>${</span><span>e</span><span>.</span><span>target</span><span>.</span><span>className</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>`Hola&nbsp;te&nbsp;saluda&nbsp;</span><span>${</span><span>this</span><span>.</span><span>className</span><span>}</span><span>,&nbsp;el&nbsp;click&nbsp;lo&nbsp;origin&oacute;&nbsp;</span><span>${</span><span>e</span><span>.</span><span>target</span><span>.</span><span>className</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;if&nbsp;(this.className&nbsp;==&nbsp;"tres")&nbsp;event.stopPropagation();&nbsp;//&nbsp;detiene&nbsp;la&nbsp;propagaci&oacute;n</span></div>
+        <div><span>}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$divsEventos</span><span>.</span><span>forEach</span><span>&nbsp;(</span><span>div</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Fase&nbsp;de&nbsp;Burbuja</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;&nbsp;div.addEventListener("click",flujoEventos,true);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;div.addEventListener("click",flujoEventos,false);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Fase&nbsp;de&nbsp;captura</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;div.addEventListener("click",flujoEventos,true);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>div</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span><span>flujoEventos</span><span>,{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;capture:false,&nbsp;por&nbsp;defecto</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>capture:</span><span>false</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>once:</span><span>true</span><span>,</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3>Eventos en Javascript</h3>
+   <h4>Flujo de Eventos (Burbuja y Captura)</h4>
+   
+   <p>El burbujeo y la captura de eventos son dos formas de propagación de eventos en la API DOM de HTML, cuando ocurre un evento en un elemento dentro de otro elemento, y ambos elementos han registrado un identificador para ese evento. El modo de propagación de eventos determina en qué orden los elementos reciben el evento .
+
+    Con el burbujeo, el elemento primero captura y maneja el evento y luego lo propaga a los elementos externos.
+    
+    Con la captura, el evento es capturado primero por el elemento más externo y propagado a los elementos internos.
+    
+    La captura también se llama "goteo", lo que ayuda a recordar el orden de propagación:
+    
+    gotear, burbujear
+    
+    En los viejos tiempos, Netscape abogó por la captura de eventos, mientras que Microsoft promovió el burbujeo de eventos. Ambos son parte del estándar de eventos del modelo de objetos de documento del W3C (2000).</p>
+  <p>El método event.stopPropagation() detiene el burbujeo de un evento en elementos primarios, evitando que se ejecuten otros controladores de eventos anidados a él.</p>
+    <section class="eventos-flujo">
+       <div class="uno">1
+           <div class="dos">2
+               <div class="tres">3
+                  
+               </div>
+           </div>
+       </div>
+   </section>
+ <script>
+     const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+     console.log($divsEventos);
+function flujoEventos(e){
+    console.log(`Hola`);
+    console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+    alert(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+    // if (this.className == "tres") event.stopPropagation(); // detiene la propagación
+}
+     $divsEventos.forEach (div => {
+         // Fase de Burbuja
+       //  div.addEventListener("click",flujoEventos,true);
+        // div.addEventListener("click",flujoEventos,false);
+
+         // Fase de captura
+        // div.addEventListener("click",flujoEventos,true);
+        div.addEventListener("click",flujoEventos,{
+           // capture:false, por defecto
+           capture:false,
+           once:true,
+
+        });
+     });
+
+  </script>
+</body>
+</html>

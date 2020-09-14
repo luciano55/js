@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Constantes: const</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=PIHZRj99nHU&t=39s">Video 04</a></li>
+                <li>Los tipos primitivos NO pueden cambiar de valor</a></li>
+                <li>Las referencias NO pueden cambiar de valor</a></li>
+                
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>
+    
+   
+    <script>
+       const PI = 3.141516;
+       console.log("El número PI",PI);
+       //PI = 0.9; Uncaught TypeError: Assignment to constant variable.
+       const IES = "Arroyo Harnina";
+       //IES="Carolina Coronado"; Uncaught TypeError: Assignment to constant variable.
+       const COCHE = {
+           motor : "Ineyección k78s",
+           neumatico : "Firelli"           
+       }
+       const COLOR = ["Azul", "blanco"];
+       COCHE.faro = "Alógenos";
+       COLOR.push = "anaranjado";
+       console.log("Mi coche:", COCHE);
+       console.log("Mis colores favoritos:", COLOR);
+
+       const MOTO = {
+           motor: "turbo....",
+           neumatico : "Michelin" 
+       }
+       MOTO.faro = "led";
+      // MOTO = COCHE; al cambiar la referencia  Uncaught TypeError: Assignment to constant variable.
+
+        const ARCOIRIS =  ["Rojo","naranja" ,"amarillo","verde" ,"cian", "azul"];
+        ARCOIRIS.push("violeta");
+        console.log("ARCOIRIS:", ARCOIRIS);
+        //COLOR = ARCOIRIS; al cambiar la referencia  Uncaught TypeError: Assignment to constant variable.       
+       
+    </script>
+</body>
+</html>

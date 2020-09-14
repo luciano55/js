@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Funciones Anónimas Autoejecutables</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                 <li><a href="https://www.youtube.com/watch?v=gbHr5qJjLRg">Video 32</a></li>
+                 <li><a href="https://www.etnassoft.com/2011/03/14/funciones-autoejecutables-en-javascript/">Funciones autoejecutables. EtnasSoft</a></li>
+                 <li><a href="https://www.etnassoft.com/2011/04/11/el-patron-de-modulo-en-javascript-en-profundidad/">El Patrón Módulo Javascript en Profundidad. EtnasSoft</a></li>
+             </ul>
+            </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script> 
+    // Funciones Anónimas Autoejecutables o Patrón del modulo autoejecutable
+        (function(){
+            console.log("Mi primer IIFE");
+        })();   // Importante el ; final
+
+        (function(d,w,c){
+            console.log("Mi segundo IIFE");
+            console.log(d);
+            console.log(w);
+            c.log("Esto es un console.log")
+        })(document,window,console); 
+        
+        // Formas de escribir las funciones autoejecutables
+        // clásica
+        (function(){
+            console.log("Versión clásica");
+        })(); 
+
+        // La Crockford (JavaScript The Good Part)
+        ((function(){
+            console.log("Versión Crockford ");
+        })()); 
+
+        //Unaria
+        +function(){
+            console.log("Versión Unaria");
+        }(); 
+
+        // Facebook
+        !function(){
+            console.log("Versión Facebook");
+        }(); 
+    </script>
+</body> 
+</html>

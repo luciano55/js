@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">   
+    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Event Jon Mircha</h2>
+        <h1>BOM III: Objetos: URL, Historial y Navegador</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=P5VxI53U_WI">Video 79</a></li> 
+                <li><a href="https://developer.mozilla.org/es/docs/Web/API/Window/location">Window.location</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador">Manipulando el historial del navegador</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/API/Window/navigator">Window.navigator</a></li>
+                          
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"*********&nbsp;Object&nbsp;URL&nbsp;(location)&nbsp;*****"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>origin</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>protocol</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>host</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>hostname</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>port</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>href</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>hash</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>search</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>location</span><span>.</span><span>pathname</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//location.reload();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"*********&nbsp;Object&nbsp;Historial&nbsp;(history)&nbsp;*****"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>history</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>history</span><span>.</span><span>length</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//console.log(history.back(3));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;console.log(history.forward(2));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;console.log(history.go(3));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//console.log(history.go(-2));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"*********&nbsp;Object&nbsp;Navegador&nbsp;(navigator)&nbsp;*****"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>connection</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>geolocation</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>mediaDevices</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>mimeTypes</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>onLine</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>serviceWorker</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>storage</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>usb</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>navigator</span><span>.</span><span>userAgent</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3 style ="width: 2000px;">BOM en Javascript</h3>
+  <button id="abrir-ventana">Abrir Ventana</button>
+  <br><br>
+  <button id="cerrar-ventana">cerrar-ventana</button>
+  <br><br>
+  <button id="imprimir-ventana">imprimir-ventana</button>
+  <br><br>
+
+ <script>
+     console.log("********* Object URL (location) *****");
+     console.log(location);
+     console.log(location.origin);
+     console.log(location.protocol);
+     console.log(location.host);
+     console.log(location.hostname);
+     console.log(location.port);
+     console.log(location.href);
+     console.log(location.hash);
+     console.log(location.search);
+     console.log(location.pathname);
+     //location.reload();
+
+    console.log("********* Object Historial (history) *****");
+    console.log(history);
+    console.log(history.length);
+    //console.log(history.back(3));
+   // console.log(history.forward(2));
+   // console.log(history.go(3));
+    //console.log(history.go(-2));
+    
+
+    console.log("********* Object Navegador (navigator) *****");
+    console.log(navigator.connection);
+    console.log(navigator.geolocation);
+    console.log(navigator.mediaDevices);
+    console.log(navigator.mimeTypes);
+    console.log(navigator.onLine);
+    console.log(navigator.serviceWorker);
+    console.log(navigator.storage);
+    console.log(navigator.usb);
+    console.log(navigator.userAgent);
+ </script>
+</body>
+</html>

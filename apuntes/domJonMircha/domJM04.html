@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">  
+    <style>
+        :root{
+            --yellow-color:#F7DF1E;
+            --dark-color:#222;
+
+        }
+    </style>  
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM IV: Estilos y Variables CSS</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=asR6_XGzI3s">Video 64</a></li>        
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>const</span><span>&nbsp;</span><span>$linkDOM</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelector</span><span>(</span><span>".link-dom"</span><span>);</span></div>
+        <br />
+        <div><span>//&nbsp;Ver&nbsp;propiedades</span></div>
+        <div><span>console</span><span>.</span><span>dir</span><span>(</span><span>$linkDOM</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>style</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>getAttribute</span><span>(</span><span>"style"</span><span>));</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>color</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>backgroundColor</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>getComputedStyle</span><span>(</span><span>$linkDOM</span><span>));</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>getComputedStyle</span><span>(</span><span>$linkDOM</span><span>).</span><span>getPropertyValue</span><span>(</span><span>"Color"</span><span>));</span></div>
+        <div><span>&nbsp;</span><span>//&nbsp;asignar&nbsp;valores&nbsp;din&aacute;micamente</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>setProperty</span><span>(</span><span>"text-decoretion"</span><span>,</span><span>"none"</span><span>);&nbsp;</span><span>//&nbsp;elimina&nbsp;el&nbsp;subrayado&nbsp;del&nbsp;enlace</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>setProperty</span><span>(</span><span>"display"</span><span>,</span><span>"block"</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>width</span><span>&nbsp;=&nbsp;</span><span>"50%"</span><span>;</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>textAlign</span><span>&nbsp;=&nbsp;</span><span>"center"</span><span>;</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>marginLeft</span><span>&nbsp;=&nbsp;</span><span>"auto"</span><span>;</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>marginRight</span><span>&nbsp;=&nbsp;</span><span>"auto"</span><span>;</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>padding</span><span>&nbsp;=&nbsp;</span><span>"1rem"</span><span>;</span></div>
+        <div><span>&nbsp;</span><span>$linkDOM</span><span>.</span><span>style</span><span>.</span><span>borderRadius</span><span>&nbsp;=&nbsp;</span><span>".5rem"</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>style</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>getAttribute</span><span>(</span><span>"style"</span><span>));</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>getComputedStyle</span><span>(</span><span>$linkDOM</span><span>));</span></div>
+        <br />
+        <div><span>&nbsp;</span><span>//&nbsp;Variables&nbsp;CSS&nbsp;-&nbsp;Custom&nbsp;Properties&nbsp;CSS</span></div>
+        <div><span>const</span><span>&nbsp;</span><span>$html</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>documentElement</span><span>,</span></div>
+        <div><span>&nbsp;</span><span>$body</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>body</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;</span><span>let</span><span>&nbsp;</span><span>varDarkColor</span><span>&nbsp;=&nbsp;</span><span>getComputedStyle</span><span>(</span><span>$html</span><span>).</span><span>getPropertyValue</span><span>(</span><span>"--dark-color"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>varYellowColor</span><span>&nbsp;=&nbsp;</span><span>getComputedStyle</span><span>(</span><span>$html</span><span>).</span><span>getPropertyValue</span><span>(</span><span>"--yellow-color"</span><span>);</span></div>
+        <br />
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>varDarkColor</span><span>,</span><span>varYellowColor</span><span>);</span></div>
+        <div><span>$body</span><span>.</span><span>style</span><span>.</span><span>backgroundColor</span><span>&nbsp;=&nbsp;</span><span>varDarkColor</span><span>;</span></div>
+        <div><span>$body</span><span>.</span><span>style</span><span>.</span><span>color</span><span>&nbsp;=&nbsp;</span><span>varYellowColor</span><span>;</span></div>
+        <div><span>//&nbsp;declara&nbsp;variable&nbsp;en&nbsp;html</span></div>
+        <div><span>$html</span><span>.</span><span>style</span><span>.</span><span>setProperty</span><span>(</span><span>"--dark-color"</span><span>,</span><span>"pink"</span><span>);</span></div>
+        <div><span>varDarkColor</span><span>&nbsp;=&nbsp;</span><span>getComputedStyle</span><span>(</span><span>$html</span><span>).</span><span>getPropertyValue</span><span>(</span><span>"--dark-color"</span><span>);</span></div>
+        <div><span>$body</span><span>.</span><span>style</span><span>.</span><span>setProperty</span><span>(</span><span>"background-color"</span><span>,</span><span>varDarkColor</span><span>&nbsp;);</span></div>
+        <br />
+        <div><span>$html</span><span>.</span><span>style</span><span>.</span><span>setProperty</span><span>(</span><span>"--dark-color"</span><span>,</span><span>"#000"</span><span>);</span></div>
+        <div><span>varDarkColor</span><span>&nbsp;=&nbsp;</span><span>getComputedStyle</span><span>(</span><span>$html</span><span>).</span><span>getPropertyValue</span><span>(</span><span>"--dark-color"</span><span>);</span></div>
+        <div><span>$body</span><span>.</span><span>style</span><span>.</span><span>setProperty</span><span>(</span><span>"background-color"</span><span>,</span><span>varDarkColor</span><span>&nbsp;);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h2>CSSOM: CSS Object Model</h2>
+   <h2>WEB APIs</h2>
+   <ul>
+       <li>Eventos</li>
+       <li>Forms</li>
+       <li>AJAX - Fetch</li>
+       <li>History</li>
+       <li>Web Storage</li>
+       <li>Geolocalización</li>
+       <li>Drag & Drop</li>
+       <li>Indexed DB</li>
+       <li>Canvas</li>
+       <li>MathMedia</li>
+       <li>etc.</li>
+   </ul>
+   <br><hr><br>
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   //nav#menu>ul>li*5>a{Sección $}
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+        <li><a href="#">Sección 5</a></li>
+    </ul>
+</nav>
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM04.html" style="background-color: #F7DF1E; color:#222;" data-id="1" data-description = "Document Object Model">DOM</a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+
+  <script src="js/dom.js"></script>
+  <script>
+const $linkDOM = document.querySelector(".link-dom");
+
+// Ver propiedades
+console.dir($linkDOM);
+console.log($linkDOM.style);
+console.log($linkDOM.getAttribute("style"));
+console.log($linkDOM.style.color);
+console.log($linkDOM.style.backgroundColor);
+console.log(window.getComputedStyle($linkDOM));
+console.log(window.getComputedStyle($linkDOM).getPropertyValue("Color"));
+ // asignar valores dinámicamente
+ $linkDOM.style.setProperty("text-decoretion","none"); // elimina el subrayado del enlace
+ $linkDOM.style.setProperty("display","block");
+ $linkDOM.style.width = "50%";
+ $linkDOM.style.textAlign = "center";
+ $linkDOM.style.marginLeft = "auto";
+ $linkDOM.style.marginRight = "auto";
+ $linkDOM.style.padding = "1rem";
+ $linkDOM.style.borderRadius = ".5rem";
+
+ console.log($linkDOM.style);
+ console.log($linkDOM.getAttribute("style"));
+ console.log(window.getComputedStyle($linkDOM));
+
+ // Variables CSS - Custom Properties CSS
+const $html = document.documentElement,
+ $body = document.body;
+
+ let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"),
+     varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+
+console.log(varDarkColor,varYellowColor);
+$body.style.backgroundColor = varDarkColor;
+$body.style.color = varYellowColor;
+// declara variable en html
+$html.style.setProperty("--dark-color","pink");
+varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+$body.style.setProperty("background-color",varDarkColor );
+
+$html.style.setProperty("--dark-color","#000");
+varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+$body.style.setProperty("background-color",varDarkColor );
+  </script>
+</body>
+</html>

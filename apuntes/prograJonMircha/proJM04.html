@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación IV</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=qMjGhYhmrFc&t=12s">Video 38</a></li>
+                <li> 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.</li>
+                <li> 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.</li>
+                <li> 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.</li>           
+            </ul> 
+      </div>
+      <div>
+            <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+            <div><span>//&nbsp;Min&nbsp;1&nbsp;12)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;determine&nbsp;si&nbsp;un&nbsp;n&uacute;mero&nbsp;es&nbsp;primo&nbsp;</span></div>
+            <div><span>//(aquel&nbsp;que&nbsp;solo&nbsp;es&nbsp;divisible&nbsp;por&nbsp;s&iacute;&nbsp;mismo&nbsp;y&nbsp;1)&nbsp;o&nbsp;no,&nbsp;pe.&nbsp;miFuncion(7)&nbsp;devolver&aacute;&nbsp;true.</span></div>
+            <br />
+            <div><span>const</span><span>&nbsp;</span><span>numeroPrimo</span><span>&nbsp;=&nbsp;(</span><span>numero</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>&nbsp;)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>0</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"El&nbsp;n&uacute;mero&nbsp;no&nbsp;puede&nbsp;ser&nbsp;0"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>1</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"El&nbsp;n&uacute;mero&nbsp;no&nbsp;puede&nbsp;ser&nbsp;1"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>numero</span><span>)===&nbsp;-</span><span>1</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"El&nbsp;n&uacute;mero&nbsp;no&nbsp;puede&nbsp;ser&nbsp;negativo"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>divisible</span><span>&nbsp;=&nbsp;</span><span>false</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>2</span><span>;&nbsp;</span><span>i</span><span>&nbsp;&lt;&nbsp;</span><span>numero</span><span>;&nbsp;</span><span>i</span><span>++){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;%&nbsp;</span><span>i</span><span>)&nbsp;{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>divisible</span><span>&nbsp;=&nbsp;</span><span>true</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>break</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(!</span><span>divisible</span><span>)&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;numero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;NO&nbsp;es&nbsp;primo`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;numero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;es&nbsp;primo`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>numeroPrimo</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>numeroPrimo</span><span>(</span><span>1</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;</span><span>numeroPrimo</span><span>(</span><span>7</span><span>);</span></div>
+            <br />
+            <div><span>&nbsp;</span><span>//&nbsp;Min:12&nbsp;13)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;determine&nbsp;si&nbsp;un&nbsp;n&uacute;mero&nbsp;es&nbsp;par&nbsp;</span></div>
+            <br />
+            <div><span>const</span><span>&nbsp;</span><span>numeroParImpar</span><span>&nbsp;=&nbsp;(</span><span>numero</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>&nbsp;)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>numero</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;n&uacute;mero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>&nbsp;ingresado&nbsp;No&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>numero</span><span>&nbsp;%&nbsp;</span><span>2</span><span>&nbsp;===&nbsp;</span><span>0</span><span>)&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;numero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;es&nbsp;Par`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;numero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>,&nbsp;es&nbsp;Impar`</span><span>)</span></div>
+            <div><span>}</span></div>
+            <br />
+            <div><span>numeroParImpar</span><span>(</span><span>"Hola"</span><span>);</span></div>
+            <div><span>numeroParImpar</span><span>();</span></div>
+            <div><span>numeroParImpar</span><span>(</span><span>3</span><span>);</span></div>
+            <div><span>numeroParImpar</span><span>(</span><span>22</span><span>);</span></div>
+            <div><span>numeroParImpar</span><span>(-</span><span>322</span><span>);</span></div>
+            <br />
+            <div><span>//&nbsp;Min:16&nbsp;14)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;para&nbsp;convertir&nbsp;grados&nbsp;Celsius&nbsp;a&nbsp;Fahrenhei</span></div>
+            <div><span>const</span><span>&nbsp;</span><span>convertirGrado</span><span>&nbsp;=&nbsp;(</span><span>grados</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>,&nbsp;</span><span>unidad</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>grados</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;grados&nbsp;a&nbsp;convertir"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>grados</span><span>&nbsp;!==&nbsp;</span><span>'number'</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>grados</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;N&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>unidad</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;tipo&nbsp;de&nbsp;grados&nbsp;a&nbsp;convertir"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>unidad</span><span>&nbsp;!==&nbsp;</span><span>'string'</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>unidad</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;if(unidad.length&nbsp;!==&nbsp;1&nbsp;||&nbsp;unidad&nbsp;!==&nbsp;'c'&nbsp;||&nbsp;unidad&nbsp;!==&nbsp;'f')&nbsp;return&nbsp;console.error(`El&nbsp;valor&nbsp;"${unidad}"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;una&nbsp;unidad&nbsp;requerida`);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>unidad</span><span>.</span><span>length</span><span>&nbsp;!==&nbsp;</span><span>1</span><span>&nbsp;||&nbsp;!</span><span>/</span><span>(</span><span>C</span><span>|</span><span>F</span><span>)</span><span>/</span><span>.</span><span>test</span><span>(</span><span>unidad</span><span>))&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>unidad</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;una&nbsp;unidad&nbsp;requerida`</span><span>);</span></div>
+            <br />
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>unidad</span><span>&nbsp;===&nbsp;</span><span>'C'</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`</span><span>${</span><span>grados</span><span>}</span><span>&ordm;C&nbsp;=&nbsp;</span><span>${</span><span>Math</span><span>.</span><span>round</span><span>(</span><span>grados</span><span>&nbsp;*&nbsp;(</span><span>9</span><span>/</span><span>5</span><span>)+&nbsp;</span><span>32</span><span>)</span><span>}</span><span>&ordm;F`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><span>else</span><span>&nbsp;&nbsp;</span><span>if</span><span>(</span><span>unidad</span><span>&nbsp;===&nbsp;</span><span>'F'</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`</span><span>${</span><span>grados</span><span>}</span><span>&ordm;F&nbsp;=&nbsp;</span><span>${</span><span>Math</span><span>.</span><span>round</span><span>((</span><span>grados</span><span>&nbsp;-&nbsp;</span><span>32</span><span>)&nbsp;&nbsp;*&nbsp;(</span><span>5</span><span>/</span><span>9</span><span>))</span><span>}</span><span>&ordm;C`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>}</span></div>
+            <div><span>convertirGrado</span><span>(</span><span>1</span><span>,</span><span>"W"</span><span>);</span></div>
+            <div><span>convertirGrado</span><span>(</span><span>100</span><span>,</span><span>"C"</span><span>);</span></div>
+            <div><span>convertirGrado</span><span>(</span><span>32</span><span>,</span><span>"F"</span><span>);</span></div>
+            <div><span>convertirGrado</span><span>(</span><span>100</span><span>,</span><span>"F"</span><span>);</span></div>
+            <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+            </div>
+        <a href="javascript: history.go(-1)">Volver</a>
+</div>
+<script>
+// Min 1 12) Programa una función que determine si un número es primo 
+//(aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+
+const numeroPrimo = (numero = undefined)=>{
+      if(numero === undefined ) return console.error("NO es un número");
+      if(numero === 0) return console.error("El número no puede ser 0");
+      if(numero === 1) return console.error("El número no puede ser 1");
+      if(Math.sign(numero)=== -1) return console.error("El número no puede ser negativo");
+       let divisible = false;
+       for(let i = 2; i < numero; i++){
+           if(numero % i) {
+               divisible = true;
+               break;
+           }
+       }
+       return (!divisible) 
+        ? console.info(`El numero ${numero}, NO es primo`)
+       :console.info(`El numero ${numero}, es primo`)
+  }
+  numeroPrimo();
+  numeroPrimo(1);
+  numeroPrimo(7);
+
+ // Min:12 13) Programa una función que determine si un número es par 
+
+const numeroParImpar = (numero = undefined)=>{
+    if(numero === undefined ) return console.error("NO es un número");
+    if(typeof numero !== "number") return console.error(`El número ${numero} ingresado No es un número`);
+    return (numero % 2 === 0) 
+    ? console.info(`El numero ${numero}, es Par`)
+    :console.info(`El numero ${numero}, es Impar`)
+}
+
+numeroParImpar("Hola");
+numeroParImpar();
+numeroParImpar(3);
+numeroParImpar(22);
+numeroParImpar(-322);
+
+// Min:16 14) Programa una función para convertir grados Celsius a Fahrenhei
+const convertirGrado = (grados = undefined, unidad = undefined)=>{
+    if(grados === undefined) return console.warn("No ingresaste grados a convertir");
+    if(typeof grados !== 'number') return console.error(`El valor "${grados}" ingresado, NO es un Número`);
+    if(unidad === undefined) return console.warn("No ingresaste tipo de grados a convertir");
+    if(typeof unidad !== 'string') return console.error(`El valor "${unidad}" ingresado, NO es una cadena de texto`);
+   // if(unidad.length !== 1 || unidad !== 'c' || unidad !== 'f') return console.error(`El valor "${unidad}" ingresado, NO es una unidad requerida`);
+    if(unidad.length !== 1 || !/(C|F)/.test(unidad))  return console.error(`El valor "${unidad}" ingresado, NO es una unidad requerida`);
+
+    if(unidad === 'C'){
+        return console.info(`${grados}ºC = ${Math.round(grados * (9/5)+ 32)}ºF`);
+    }else  if(unidad === 'F'){
+        return console.info(`${grados}ºF = ${Math.round((grados - 32)  * (5/9))}ºC`);
+    }
+}
+convertirGrado(1,"W");
+convertirGrado(100,"C");
+convertirGrado(32,"F");
+convertirGrado(100,"F");
+</script>
+</body>
+</html>

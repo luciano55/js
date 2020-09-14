@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Prototype</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1"> 
+                <li><a href="https://www.youtube.com/watch?v=nS5FmAx4u_0">Video 22</a></li>               
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/prototype"> Object.prototype</a></li>               
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Herencia_y_la_cadena_de_protipos">Herencia y la cadena de prototipos</a></li>
+                <li><a href="https://www.monografias.com/trabajos85/platon-mundo-ideas/platon-mundo-ideas.shtml">Platón: El mundo de las ideas</a></li>
+                <li><a href="http://www.etnassoft.com/2011/04/15/concepto-de-herencia-prototipica-en-javascript/">Concepto de herencia prototípica en Javascript</a></li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        // POO
+        /*
+        Clases - Modelo a seguir
+        Objetos - Es una Instancia de una clase
+        Atributos
+        Métodos */
+    // Platon 
+
+    const animal = {
+        nombre:"Snoopy",
+        sonar(){
+            console.log("Hago sonidos porque soy un animal vivo");
+        }
+    }
+    console.log(animal);
+
+    const animal2 = {
+        nombre:"Lola Bunny",
+        sonar(){
+            console.log("Hago sonidos porque soy un animal vivo");
+        }
+    }
+    console.log(animal2);
+
+    // Funciones constructoras simulan a las clases
+function Animal(nombre, genero){
+     // Propiedades o Atributos
+     this.nombre = nombre;
+     this.genero = genero;
+
+     // Métodos
+
+     this.sonar = function(){
+            console.log("Hago sonidos porque soy un animal vivo");
+        }
+ }
+const snoopy = new Animal("Snoopy","Macho"),
+     lolaBunny = new Animal("Lola Bunny","Hembra");
+
+     console.log(snoopy);
+     console.log(lolaBunny); 
+
+     /*
+     Todo esto no tiene nada que ver es otro objeto distinto, nuevo
+     Animal.saludar = function(){
+        console.log(`Hola me llamo...${this.nombre}.`); 
+     }
+    console.log(Animal.saludar()); Hola me llamo...undefined */
+
+function Animal2(nombre, genero){
+     // Propiedades o Atributos
+     this.nombre = nombre;
+     this.genero = genero;
+
+     // Métodos
+
+     this.sonar = function(){
+            console.log("Hago sonidos porque soy un animal vivo");
+        }
+ }
+Animal2.prototype.saludar = function(){
+    console.log(`Hola me llamo... ${this.nombre}.`); 
+}
+console.info(Animal2);
+console.dir(Animal2);
+const lolin = new Animal2("Lolin","Macho"),
+     laika = new Animal2("Laika Astronáuta","Hembra");
+
+     lolin.saludar();
+     lolin.sonar();
+
+     laika.saludar();
+     laika.sonar();
+    </script>
+</body>
+</html>

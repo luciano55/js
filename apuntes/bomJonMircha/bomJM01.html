@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">   
+    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Event Jon Mircha</h2>
+        <h1>BOM I: Propiedades y Eventos </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=BoDLn_r0o84">Video 77</a></li> 
+                <li><a href="https://developer.mozilla.org/es/docs/Web/Events/DOMContentLoaded">DOMContentLoaded</a></li>              
+                          
+            </ul>         
+      </div>
+  <p>El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado, sin esperar hojas de estilo, images y subframes para  finalizar la carga. Un evento muy diferente - load - debería ser usado solo para detectar una carga completa de la página. Es un error increíblemente popular usar load cuando DOMContentLoaded sería mucho más apropiado, así que úsalo con cuidado.</p>
+  <div>
+    <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>window</span><span>.</span><span>addEventListener</span><span>(</span><span>"resize"</span><span>,(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>clear</span><span>();</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"******Evento&nbsp;Resize*****"</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>innerWidth</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>innerHeight</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>outerWidth</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>outerHeight</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>window</span><span>.</span><span>addEventListener</span><span>(</span><span>"scroll"</span><span>,(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;console.clear();</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"******+Evento&nbsp;scroll*****"</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>scrollX</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>scrollY</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>window</span><span>.</span><span>addEventListener</span><span>(</span><span>"load"</span><span>,(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"******+Evento&nbsp;Load*****"</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>screenX</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>screenY</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+    <br />
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Mas&nbsp;R&aacute;pido</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>document</span><span>.</span><span>addEventListener</span><span>(</span><span>"DOMContentLoaded"</span><span>,(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"******Evento&nbsp;DOMContentLoaded****"</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>screenX</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>window</span><span>.</span><span>screenY</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+    </div>
+  <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3 style ="width: 2000px;">BOM en Javascript</h3> 
+
+ <script>
+     window.addEventListener("resize",(e)=>{
+         console.clear();
+         console.log("******Evento Resize*****");
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        console.log(window.outerWidth);
+        console.log(window.outerHeight);
+        console.log(e);
+       
+     });
+     
+     window.addEventListener("scroll",(e)=>{
+        // console.clear();
+         console.log("******+Evento scroll*****");
+        console.log(window.scrollX);
+        console.log(window.scrollY);        
+        console.log(e);
+     });
+     
+     window.addEventListener("load",(e)=>{
+        
+         console.log("******+Evento Load*****");
+        console.log(window.screenX);
+        console.log(window.screenY);        
+        console.log(e);
+     });
+
+     // Mas Rápido
+        document.addEventListener("DOMContentLoaded",(e)=>{
+        
+         console.log("******Evento DOMContentLoaded****");
+        console.log(window.screenX);
+        console.log(window.screenY);        
+        console.log(e);
+     });
+    
+  </script>
+</body>
+</html>

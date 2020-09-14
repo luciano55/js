@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Objetos literales</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=XhJaPRfJaz0">Video 19</a></li>
+               <li><a href="https://makeitrealcamp.gitbook.io/javascript-book/objetos-literales">Objetos literales</a></li>
+                <li>Su nomenglatura suele cambiar todos los años</li> 
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        let nombre = "kEnAi",
+            edad = 7;
+        const perro = {
+            nombre :nombre,
+            edad:edad,
+            ladrar: function(){
+                console.log("guauu guauu!!!");
+            }
+        }
+        console.log(perro);
+        perro.ladrar();
+
+        const dog = {
+            nombre,
+            edad,
+            ladrar(){
+                console.log("guauu guauu  guauu!!!");
+            }
+        }
+        console.log(dog);
+        dog.ladrar();
+
+    </script>
+</body>
+</html>

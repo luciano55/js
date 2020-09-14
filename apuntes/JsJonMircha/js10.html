@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Function</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=H6U1Pm7x60E&t=134s">Video 10</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Funciones"> Funciones MDN</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones">Funciones MDN</a></li>                 
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function">Function Object</a></li>        
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/function*">function*</a></li>           
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/function">Sintaxis</a></li>           
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/function">El operador function</a></li>           
+                <li>Toda funcción puede recibir todos los parámetros que quiera</li>
+                <li>Toda función devuelve un valor con Return. Si no lleva Return devuelve undefined</li>
+                <li>Toda funcción tiene su propio ámbito</li>
+                <li><a href="https://www.quora.com/Is-JavaScript-compiled-or-interpreted-Whats-the-official-stance-from-the-engine-compiler-maintainers">¿Se compila o interpreta JavaScript?</a></li>
+                <li><a href="https://ivanrobles.pro/como-funciona-el-scope-de-javascript/">Como funciona el Scope </a></li>
+                <li><a href="https://ubunlog.com/firefox-70-llegara-con-un-interprete-de-javascript-mejorado/">Firefox 70 con un interprete de Javascript mejorado</a></li>
+                <li><a href="https://www.etnassoft.com/2011/04/11/el-patron-de-modulo-en-javascript-en-profundidad/">etnassoft: El Patrón Módulo Javascript en Profundidad</a></li>
+                <li><a href="http://www.etnassoft.com/2014/06/10/let-la-nueva-forma-de-declarar-variables-en-javascript/">etnassoft: Let, la nueva forma de declarar variables. Hoisting</a></li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        // Distintas formas para declarar. Veamos algunas
+        // La definición de una función (también llamada declaración de función o sentencia de función
+
+        console.log(square(3));
+
+        function square(number) {
+            return number * number;
+        }        
+        console.log(typeof square);    // function
+       //Expresiones de función.  
+       // console.log(producto(4)); Uncaught TypeError: producto is not a function
+
+        var producto = function (number) { // En esta ocasión la parte derecha a = es una función anónima
+            return number * number;
+        }
+        console.log(typeof producto);    // function
+        console.log(producto(4));
+       
+        // Js realiza una precompilación previa de los objetos que intervienen el el programa
+        // Los motores de los navegadores suelen mezclar las dos técnicas de interpretación y de compilacion
+ 
+        // Recursividad
+
+       // console.log(factorial(3)); Uncaught TypeError: factorial is not a function
+        var factorial = function fac(n) {return n<2 ? 1 : n*fac(n-1)};
+       // console.log2(factorial(3)); Uncaught TypeError: console.log2 is not a function at
+       console.log(typeof factorial);    // function
+        console.log(factorial(3));
+
+        var coche = {};
+        console.log(coche);
+
+        var num = 0;
+        var myFunc;
+        if (num == 0){
+            myFunc = function(theObject) {
+                        theObject.make = "Toyota"
+                        }
+                    }
+        console.log(typeof myFunc);    // function
+        myFunc(coche);
+        console.log(coche);
+
+
+        // El Patrón Módulo ()() es autoejecutable
+
+       (function(n){
+            console.log(n);
+         return  function(n){     // Probar sin return
+                console.log(n);           
+            }(2);
+        })(2);
+
+        // Con Constructor
+        var multiplicar = new Function("x", "y", "return x * y");
+
+        console.log(typeof multiplicar);  // function
+        console.log(multiplicar(4,5));   
+
+
+       // Todas las funciones son de tipo function 
+
+        //  Ámbito:    Toda función  tiene su propio ámbito    
+        // Las variables definidas dentro de una función no pueden ser accedidas desde ningún lugar fuera de la función
+        // Sin embargo, una función puede acceder a todas las variables y funciones definidas dentro del ámbito en el cual está definida.         
+
+        // Las siguientes variables están  definidas en el ámbito global
+            var num1 = 20,
+                num2 = 3,
+                nombre = "Messi";
+            let num3 = 5;
+            // Esta función se define en el ámbito global
+            function multi() {
+                return console.log(num1 * num2 + num3);
+            }
+            multi(); // Retorna 65
+
+        // Un ejemplo de función anidada
+            function obtenerPuntaje () {
+                var num1 = 2,
+                    num2 = 3;
+                let num3 = 7;
+                    function agregar() {
+                        return nombre + " puntaje " + (num1 + num2);
+                    }
+                    
+                    return agregar();
+            }
+
+            console.log(obtenerPuntaje()); // Retorna "Messi puntaje 5"
+            console.log(num1);    // 2
+            console.log(num3);    // 2
+
+            for( var x = 0; x < 1000; x++ ) {
+                              // Awesome code goes here...
+                } 
+            console.info( x ); // 1000
+            
+            for( let y = 0; y < 1000; y++ ) {
+                                // Awesome code goes here...
+                    } 
+            //console.info(y); // Uncaught ReferenceError: y is not defined
+
+            // Hoisting
+            {
+                let foo = 'block-1';
+                console.info( foo ); // block-1
+                {
+                    let foo = 'block-2';
+                    console.info( foo ); // block-2
+                    {
+                        let foo = 'block-3';
+                        console.info( foo ); // block-3
+                        {
+                            let foo = 'block-4';
+                            console.info( foo ); // block-4
+                        }
+                    }
+                }
+            }
+
+            // Parámetros
+            {
+                var foo = 'Hello World',
+                bar = 'Goodbye Lenin',
+                concat,
+                result;
+            
+                concat = function ( ...params ) {
+                                return params;
+                             }
+            
+                result = concat( foo, bar );
+            
+                console.info( result );
+            }
+            
+            console.info( result );
+            // ["Hello World", "Goodbye Lenin"]
+
+
+    </script>
+</body>
+</html>

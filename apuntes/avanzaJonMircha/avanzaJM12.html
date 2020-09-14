@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+            <h1>Proxies</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=7njrLMJgDtQ">Video 55</a></li>              
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Proxy">Proxy</a></li>
+             
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>persona</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre:</span><span>""</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>apellido:</span><span>""</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>edad:</span><span>null</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>manejador</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set</span><span>(</span><span>obj</span><span>,</span><span>prop</span><span>,</span><span>valor</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>Object</span><span>.</span><span>keys</span><span>(</span><span>obj</span><span>).</span><span>indexOf</span><span>(</span><span>prop</span><span>)===&nbsp;-</span><span>1</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`La&nbsp;propiedad&nbsp;"</span><span>${</span><span>prop</span><span>}</span><span>"&nbsp;no&nbsp;existe&nbsp;en&nbsp;el&nbsp;objeto&nbsp;Persona`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</span><span>prop</span><span>&nbsp;===&nbsp;</span><span>"nombre"</span><span>&nbsp;||&nbsp;</span><span>prop</span><span>&nbsp;===&nbsp;</span><span>"apellido"</span><span>)&amp;&amp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!(</span><span>/</span><span>^</span><span>[</span><span>A-Za-z&Ntilde;&ntilde;&Aacute;&aacute;&Eacute;&eacute;&Iacute;&iacute;&Oacute;&oacute;&Uacute;u&Uuml;&uuml;\s</span><span>]</span><span>$</span><span>/</span><span>g</span><span>.</span><span>test</span><span>(</span><span>valor</span><span>))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`La&nbsp;propiedad&nbsp;"</span><span>${</span><span>prop</span><span>}</span><span>"&nbsp;solo&nbsp;acepta&nbsp;letras&nbsp;y&nbsp;espacios&nbsp;en&nbsp;blanco`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>obj</span><span>[</span><span>prop</span><span>]=&nbsp;</span><span>valor</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>jon</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Proxy</span><span>(</span><span>persona</span><span>,&nbsp;</span><span>manejador</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>jon</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>jon</span><span>.</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>"Jon18"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>jon</span><span>.</span><span>apellido</span><span>&nbsp;=&nbsp;</span><span>"Mircha"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>jon</span><span>.</span><span>edad</span><span>&nbsp;=&nbsp;</span><span>36</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>jon</span><span>.</span><span>twitter</span><span>&nbsp;=&nbsp;</span><span>"@jonmircha"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>jon</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+  <script>
+  const persona = {
+      nombre:"",
+      apellido:"",
+      edad:null
+  }
+  const manejador = {
+      set(obj,prop,valor){
+          if(Object.keys(obj).indexOf(prop)=== -1){
+            return  console.error(`La propiedad "${prop}" no existe en el objeto Persona`);
+          }
+          if(
+              (prop === "nombre" || prop === "apellido")&&
+              !(/^[A-Za-zÑñÁáÉéÍíÓóÚuÜü\s]$/g.test(valor))              
+           ) {
+            return  console.error(`La propiedad "${prop}" solo acepta letras y espacios en blanco`);
+          }
+        obj[prop]= valor;
+      }
+  }
+  const jon = new Proxy(persona, manejador);
+  console.log(jon);
+  jon.nombre = "Jon18";
+  jon.apellido = "Mircha";
+  jon.edad = 36;
+  jon.twitter = "@jonmircha";
+  console.log(jon);
+  console.log(persona);
+ </script>
+
+</body>
+</html>

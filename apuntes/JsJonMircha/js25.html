@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Métodos Estáticos. Getters y Setters</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=TEzu31q9MVA&t=410s">Video 25</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes/static">static</a></li>  
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/get">Get</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/set">Setter</a></li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>     
+
+        class Animal {
+            constructor(nombre,genero){
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+            sonar(){
+                        console.log("Hago sonidos porque soy un animal y estoy vivo");
+                    }  
+            saludar(){
+                        console.log(`Hola me llamo... ${this.nombre}.`);       
+                    }       
+
+        }
+
+        const mimi = new Animal("Mimi","Hembra"),
+            scooby = new Animal("Scooby","Macho");
+
+        console.log(mimi);
+        console.log(scooby);
+        mimi.saludar();
+        scooby.saludar();
+
+        class Perro extends Animal{
+            constructor(nombre,genero,tamanio){
+                // Con el método super() se manda a llamar al constructor de la clase padre
+                super(nombre,genero);
+                this.tamanio = tamanio;
+                this.raza = null;
+            }
+            sonar(){
+                        console.log("Hago sonidos porque soy un perro y estoy vivo");
+                    }  
+            ladrar(){
+                        console.log(`Guauuuu`);       
+                    }    
+            // Un método estático se puede ejecutar sin necesidad de instanciar la clase
+            static queEres(){
+                console.log("Los perros eramos lobos y por culpa de los humanos y sus modas nos vemos sometidos a sus aburrimientos,  ...... ");
+
+            }
+            get getRaza(){
+            return this.raza;
+        }
+        set setRaza(raza){
+            this.raza = raza;
+        }
+        }
+        Perro.queEres();
+
+        const nitri = new Perro("Nitri","Hembra","Mediano"),
+            rin = new Perro("Rin","Macho","pequeño");
+
+    
+
+        console.log(nitri);
+        console.log(rin);
+        nitri.saludar();
+        console.log(rin.tamanio);
+        rin.sonar();
+        rin.saludar();
+        rin.ladrar();
+
+        console.log(rin.getRaza);
+        rin.setRaza = "Mastín";
+        console.log(rin.getRaza);
+    </script>
+</body> 
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Concatenación</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=arOXcy7K4XQ&t=87s">Video 06</a></li>
+                <li>Concatenación +</a></li>
+                <li>Interpolación. Template string  ``</li>
+                <li>+=</a></li>
+                
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>        
+    </div>
+   
+    <script>
+       const nombre = "Luciano";
+       let apellido = "Romero Moreno";
+    // Concatenación
+       const saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+       console.log(saludo);
+    // Interpolación de variables Template String   
+    let otroSaludo =  `Hola mi nombre es ${nombre} ${apellido}.`;
+    console.log(otroSaludo);
+
+    let ul = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul";
+     console.log(ul);
+    let ul2 = `
+    <ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ul>`;
+    console.log(ul2);
+    let ul3 = "<ul>";
+        ul3+= "<li>Primavera</li>";
+        ul3+= "<li>Verano</li>";
+        ul3+= "<li>Otoño</li>";
+        ul3+= "<li>Invierno</li>";
+        ul3+= "</ul>";
+    console.log(ul3);
+    </script>
+</body>
+</html>

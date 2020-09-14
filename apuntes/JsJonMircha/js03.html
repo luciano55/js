@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JavaScript Fundamentos</h2>
+        <h1>Ámbito: var y let</h1>
+        <div class = "paragraph05">   
+         <ul class="list-item-1">
+             <li><a href="https://www.youtube.com/watch?v=tmRa0_EvMoc&t=725s">Video 03</a></li>
+            <li>Intenta usar let</li>
+            <li>El ámbito se establece a nivel de función</li>
+            <li>Se mira desde dentro hacia fuera</li>   
+            <li>var define una variable global o local en una función sin importar el ámbito del bloque.</li>
+            <li>let te permite declarar variables limitando su alcance (scope) al bloque, declaración, o expresión donde se está usando.</li>
+            <li><a href="http://www.etnassoft.com/2014/06/10/let-la-nueva-forma-de-declarar-variables-en-javascript/">etnassoft: Let, la nueva forma de declarar variables en Javascript</a></li>         
+        <li>Revisé la Guía de estilo de JavaScript de Google y dice "Declaraciones con var: siempre" ( https://google.github.io/styleguide/javascriptguide.xml )
+
+            Pero en el tutorial en javascript.info (no estoy seguro si este es un sitio web oficial de JavaScript o no) dice usar let( https://javascript.info/variables )</li>
+        </ul>
+      </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+    <script>
+        var musica ="Rock";
+        console.log("var musica antes del bloque",musica); // Rock
+        {
+            var musica ="Pop";
+        console.log("var musica dentro del bloque",musica);   // Pop
+        }
+        console.log("var musica despues del bloque",musica);   // Pop
+
+        //// Ahora con let
+        console.log("Ahora con let");
+
+        let musica2 ="Rock";
+        console.log("let musica antes del bloque",musica2);  // Rock
+        {
+            let musica2 ="Pop";
+        console.log("let musica dentro del bloque",musica2);     // Pop
+        }
+        console.log("let musica despues del bloque",musica2);   // Rock
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Break - Continue</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=iv-f163m78A">Video 17</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/break">Break</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/continue">Continue</a></li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        const numeros =[1,2,3,4,5,6,7,8,9,0];
+        for(let i=0; i< numeros.length;i++){
+            if(i===5){break;}
+            console.log(numeros[i])
+        }
+        for(let i=0; i< numeros.length;i++){
+            if(i===5){continue;}
+            console.log(numeros[i])
+        }
+  
+    </script>
+</body>
+</html>

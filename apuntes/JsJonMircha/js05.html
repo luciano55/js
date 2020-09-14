@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Cadenas: String</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=s-C8OpALC6E&t=36s">Video 05</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String"> String es un Object</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/prototype">Properties</a></li>
+                <li>Si a una variable le asigno una cadena entonces será de tipo primitivo String</li>
+    <li>Si es con su constructor new String() será un Object String</li>
+    <li>Las diferencias se irán conociendo a lo largo del curso</li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>
+  
+    
+    <script>
+       const nombre = "Luciano";
+       let apellido = "Romero Moreno";
+       const saludo = new String("Hola Mundo");
+       console.log(nombre);      
+       console.log(apellido);   
+       console.log(saludo);
+       nombre.dies ="j";
+       saludo.diez ="j";
+       console.log(nombre);  
+       console.log(saludo);       
+       let lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quia voluptatum      atque temporibus, quas reiciendis in, fugit eligendi laboriosam deleniti veniam, aliquam porro debitis. Enim vero rerum labore error ducimus.";
+    console.log (
+        nombre.length,
+        apellido.length,
+        saludo.length,
+        lorem.length,
+        nombre.toUpperCase(),
+        apellido.toLowerCase(),
+        lorem.includes("amet"),
+        lorem.split(".")
+    );
+    </script>
+</body>
+</html>

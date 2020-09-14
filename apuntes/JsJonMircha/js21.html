@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Las Arrows Functions</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=WuCw9agV3Rc">Video 21</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions">Funciones Flecha</a></li>               
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        const saludo = function(){
+            console.log("Hola");
+        }
+        saludo();
+
+        const saludar = ()=>{
+            console.log("Hola");
+        }
+        saludar();
+
+        const saludar2 = ()=>console.log("Hola");       
+        saludar2();
+
+        const saludar3 = (nombre)=>console.log(`Hola ${nombre}`);       
+        saludar3("Irma");
+
+        const saludar4 = nombre=>console.log(`Hola ${nombre}`);       
+        saludar4("Irma");
+
+        const sumar = function(a,b){
+            return a + b;
+        }
+        console.log(sumar(8,9));
+
+        const sumar2 = (a,b)=>a + b;
+        
+        console.log(sumar2(8,9));
+
+        const funcionDeVariasLineas = () => {
+            console.log("Uno");
+            console.log("dos");
+            console.log("tres");
+        }
+        funcionDeVariasLineas ();
+
+        const numeros = [1,2,3,4,5];
+        numeros.forEach(function(el,index){
+            console.log(`El elemento ${el} esta en la posición ${el}`);
+        });
+
+        const numeros2 = [1,2,3,4,5];
+        numeros2.forEach((el,index)=>{
+            console.log(`${el} esta en la posición ${el}`);
+        });
+
+        const numeros3 = [1,2,3,4,5];
+        numeros3.forEach((el,index)=>console.log(`${el} esta en la posición ${el}`));
+
+        // This
+
+        function Perro(){
+            console.log(this);
+        }
+        Perro(); // Window
+
+        const myPerro = {
+            nombre:"boby",
+            ladrar:function(){
+                console.log(this);
+            }
+        }
+        myPerro.ladrar(); // myPerro
+
+        const myPerro2 = {
+            nombre:"boby",
+            ladrar:()=>{
+                console.log(this);
+            }
+        }
+        myPerro2.ladrar(); // Window
+
+        const myPerro3 = {
+            nombre:"boby",
+            ladrar(){
+                console.log(this);
+            }
+        }
+        myPerro3.ladrar(); // myPerro3
+
+
+    </script>
+</body>
+</html>

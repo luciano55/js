@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">  
+    <style>
+        :root{
+            --yellow-color:#F7DF1E;
+            --dark-color:#222;
+        }
+        .cards{
+            border:thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card{
+            display:inline-block;
+            background-color: var(--dark-color);
+            color:var( --yellow-color);
+        }
+        .card figcaption{
+            padding:1rem;
+        }
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+        .rotate-135{
+            transform: rotate(135deg);
+        }
+        .opacity-80{
+            opacity:.8;
+        }
+        .sepia{
+            filter: sepia(1);
+        }
+    </style>  
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM IX: Templates HTML </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=Q9y9BugN8-s">Video 69</a></li>        
+           
+        </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$cards</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"cards"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$template</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"template-card"</span><span>).</span><span>content</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$fragment</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createDocumentFragment</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cardContent</span><span>&nbsp;=&nbsp;[</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>title:</span><span>"Tecnologia"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img:</span><span>"https://placeimg.com/200/200/tech"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>title:</span><span>"Animales"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img:</span><span>"https://placeimg.com/200/200/animals"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>title:</span><span>"Arquitectura"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img:</span><span>"https://placeimg.com/200/200/archtech"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>title:</span><span>"Gente"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img:</span><span>"https://placeimg.com/200/200/people"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>title:</span><span>"Naturaleza"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img:</span><span>"https://placeimg.com/200/200/nature"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;];</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cardContent</span><span>.</span><span>forEach</span><span>(</span><span>el</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$template</span><span>.</span><span>querySelector</span><span>(</span><span>"img"</span><span>).</span><span>setAttribute</span><span>(</span><span>"src"</span><span>,</span><span>el</span><span>.</span><span>img</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$template</span><span>.</span><span>querySelector</span><span>(</span><span>"img"</span><span>).</span><span>setAttribute</span><span>(</span><span>"alt"</span><span>,</span><span>el</span><span>.</span><span>title</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$template</span><span>.</span><span>querySelector</span><span>(</span><span>"figcaption"</span><span>).</span><span>innerHTML</span><span>&nbsp;=&nbsp;</span><span>el</span><span>.</span><span>title</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//$template.querySelector("figcaption").textContent&nbsp;&nbsp;=&nbsp;el.title;&nbsp;//&nbsp;Asigna&nbsp;pero&nbsp;NO&nbsp;renderiza&nbsp;Bien</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//$template.querySelector("figcaption").innerText&nbsp;&nbsp;=&nbsp;el.title;&nbsp;//&nbsp;Asigna&nbsp;pero&nbsp;NO&nbsp;renderiza&nbsp;Bien</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>$clone</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>importNode</span><span>(</span><span>$template</span><span>,</span><span>true</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$fragment</span><span>&nbsp;.</span><span>appendChild</span><span>(</span><span>$clone</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>appendChild</span><span>(</span><span>$fragment</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h2>CSSOM: CSS Object Model</h2>
+   <h2>WEB APIs</h2>
+   <ul>
+       <li>Eventos</li>
+       <li>Forms</li>
+       <li>AJAX - Fetch</li>
+       <li>History</li>
+       <li>Web Storage</li>
+       <li>Geolocalización</li>
+       <li>Drag & Drop</li>
+       <li>Indexed DB</li>
+       <li>Canvas</li>
+       <li>MathMedia</li>
+       <li>etc.</li>
+   </ul>
+   <br><hr><br>
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   //nav#menu>ul>li*5>a{Sección $}
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+        <li><a href="#">Sección 5</a></li>
+    </ul>
+</nav>
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM04.html" style="background-color: #F7DF1E; color:#222;" data-id="1" data-description = "Document Object Model">DOM</a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+<template id="template-card">
+    <figure class ="card">
+        <img>
+        <figcaption></figcaption>
+    </figure>
+</template>
+  <script src="js/dom.js"></script>
+
+  <script>
+    const $cards = document.getElementById("cards"),
+    $template = document.getElementById("template-card").content,
+    $fragment = document.createDocumentFragment();
+    cardContent = [
+        {
+            title:"Tecnologia",
+             img:"https://placeimg.com/200/200/tech"
+        },
+        {
+            title:"Animales",
+             img:"https://placeimg.com/200/200/animals"
+        },
+        {
+            title:"Arquitectura",
+             img:"https://placeimg.com/200/200/archtech"
+        },
+        {
+            title:"Gente",
+             img:"https://placeimg.com/200/200/people"
+        },
+        {
+            title:"Naturaleza",
+             img:"https://placeimg.com/200/200/nature"
+        }
+        
+    ];
+    cardContent.forEach(el => {
+        $template.querySelector("img").setAttribute("src",el.img);
+        $template.querySelector("img").setAttribute("alt",el.title);
+        
+        $template.querySelector("figcaption").innerHTML = el.title;
+        //$template.querySelector("figcaption").textContent  = el.title; // Asigna pero NO renderiza Bien
+        //$template.querySelector("figcaption").innerText  = el.title; // Asigna pero NO renderiza Bien
+       
+        let $clone = document.importNode($template,true);
+        $fragment .appendChild($clone);
+    });
+    $cards.appendChild($fragment);
+  </script>
+</body>
+</html>

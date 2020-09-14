@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">   
+    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Event Jon Mircha</h2>
+        <h1>BOM II: Métodos</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=EqLVoofiXVs">Video 78</a></li>                           
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;window.alert("Alerta");</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;window.confirm("Confirmaci&oacute;n");</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;window.prompt("Aviso");</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$btnAbrir</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"abrir-ventana"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$btnCerrar</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"cerrar-ventana"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$btnImprimir</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"imprimir-ventana"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>ventana</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$btnAbrir</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span><span>e</span><span>&nbsp;</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//window.open("https://jonmircha.com/");</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ventana</span><span>&nbsp;=&nbsp;</span><span>open</span><span>(</span><span>"https://jonmircha.com/"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$btnCerrar</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span><span>e</span><span>&nbsp;</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;window.close();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ventana</span><span>.</span><span>close</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$btnImprimir</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span><span>e</span><span>&nbsp;</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>window</span><span>.</span><span>print</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3 style ="width: 2000px;">BOM en Javascript</h3>
+  <button id="abrir-ventana">Abrir Ventana</button>
+  <br><br>
+  <button id="cerrar-ventana">cerrar-ventana</button>
+  <br><br>
+  <button id="imprimir-ventana">imprimir-ventana</button>
+  <br><br>
+
+ <script>
+    // window.alert("Alerta");
+    // window.confirm("Confirmación");
+    // window.prompt("Aviso");
+    const $btnAbrir = document.getElementById("abrir-ventana"),
+    $btnCerrar = document.getElementById("cerrar-ventana"),
+    $btnImprimir = document.getElementById("imprimir-ventana");
+    let ventana;
+    $btnAbrir.addEventListener("click",e =>{
+        //window.open("https://jonmircha.com/");
+       ventana = open("https://jonmircha.com/");
+    });
+    $btnCerrar.addEventListener("click",e =>{
+         // window.close();
+        ventana.close();
+    });
+    $btnImprimir.addEventListener("click",e =>{
+        window.print();
+    });
+ </script>
+</body>
+</html>

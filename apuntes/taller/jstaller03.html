@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 03: Funciones II</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+              <li>En términos generales, una función es un "subprograma" </li>
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this">this</a></li>
+            <li>En el contexto de ejecución global (fuera de cualquier función), this se refiere al objeto global, ya sea en modo estricto o no.</li>
+            </ul>
+            <div>
+                <div><span>'use&nbsp;strict'</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Paso&nbsp;por&nbsp;valor</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a</span><span>&nbsp;=&nbsp;</span><span>5</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>b</span><span>&nbsp;=&nbsp;</span><span>a</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>a</span><span>++;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>b</span><span>);&nbsp;</span><span>//&nbsp;&nbsp;5</span></div>
+                <br /><br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Paso&nbsp;por&nbsp;referencia</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>c</span><span>&nbsp;=&nbsp;[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>];</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>d</span><span>&nbsp;=&nbsp;</span><span>c</span><span>;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>c</span><span>.</span><span>push</span><span>(</span><span>4</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>d</span><span>);&nbsp;</span><span>//&nbsp;&nbsp;[1,2,3,4]</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>c</span><span>);&nbsp;</span><span>//&nbsp;&nbsp;[1,2,3,4]</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>d</span><span>.</span><span>pop</span><span>();</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>d</span><span>&nbsp;=&nbsp;[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>];</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>d</span><span>);&nbsp;</span><span>//&nbsp;&nbsp;[1,2,3]</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>c</span><span>);&nbsp;</span><span>//&nbsp;&nbsp;[1,2,3]</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>c</span><span>==</span><span>d</span><span>)&nbsp;</span><span>//&nbsp;false</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>c</span><span>===</span><span>d</span><span>)&nbsp;</span><span>//&nbsp;false</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>c</span><span>&nbsp;==&nbsp;</span><span>typeof</span><span>&nbsp;</span><span>d</span><span>)&nbsp;</span><span>//&nbsp;true</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>c</span><span>&nbsp;===&nbsp;</span><span>typeof</span><span>&nbsp;</span><span>d</span><span>)&nbsp;</span><span>//&nbsp;true</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a1</span><span>&nbsp;=&nbsp;[</span><span>1</span><span>,</span><span>null</span><span>,[</span><span>a</span><span>,</span><span>b</span><span>,</span><span>c</span><span>]];&nbsp;</span><span>//&nbsp;array</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>a1</span><span>[</span><span>2</span><span>][</span><span>2</span><span>])&nbsp;</span><span>//&nbsp;&nbsp;[1,2,3]</span></div>
+                <br />
+                <div><span>//&nbsp;object&nbsp;JSON&nbsp;estructura&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a2</span><span>&nbsp;=&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>propiedad:</span><span>&nbsp;</span><span>7</span><span>,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>metodo</span><span>&nbsp;:</span><span>&nbsp;</span><span>function</span><span>(){},</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>domicilio:</span><span>{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calle:</span><span>&nbsp;</span><span>'ramon&nbsp;y&nbsp;cajal'</span><span>,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nuemro:</span><span>5</span><span>,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cp:</span><span>&nbsp;</span><span>'06200'</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;}&nbsp;</span></div>
+                <br /><br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>myPerro</span><span>&nbsp;=&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre:</span><span>"boby"</span><span>,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ladrar</span><span>:</span><span>function</span><span>(){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myPerro</span><span>.</span><span>ladrar</span><span>();&nbsp;</span><span>//&nbsp;myPerro</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>myPerro2</span><span>&nbsp;=&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre:</span><span>"boby"</span><span>,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ladrar</span><span>:</span><span>()</span><span>=&gt;</span><span>{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myPerro2</span><span>.</span><span>ladrar</span><span>();&nbsp;</span><span>//&nbsp;Window</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>myPerro3</span><span>&nbsp;=&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre:</span><span>"boby"</span><span>,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ladrar</span><span>(){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>myPerro3</span><span>.</span><span>ladrar</span><span>();&nbsp;</span><span>//&nbsp;myPerro3</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                </div>
+                </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        'use strict'
+
+   // Paso por valor
+        var a = 5;
+        var b = a;
+        a++;
+        console.log(b); //  5
+
+
+    // Paso por referencia
+    var c = [1,2,3];
+    var d = c;
+    c.push(4);
+    console.log(d); //  [1,2,3,4]
+    console.log(c); //  [1,2,3,4]
+    d.pop();
+
+   d = [1,2,3];
+   console.log(d); //  [1,2,3]
+   console.log(c); //  [1,2,3]
+
+   console.log(c==d) // false
+   console.log(c===d) // false
+
+   console.log(typeof c == typeof d) // true
+   console.log(typeof c === typeof d) // true
+   
+   var a1 = [1,null,[a,b,c]]; // array
+
+   console.log(a1[2][2]) //  [1,2,3]
+
+// object JSON estructura 
+   var a2 = {
+            propiedad: 7,
+            metodo : function(){},
+            domicilio:{
+                calle: 'ramon y cajal',
+                nuemro:5,
+                cp: '06200'
+            }
+   } 
+
+
+        const myPerro = {
+            nombre:"boby",
+            ladrar:function(){
+                console.log(this);
+            }
+        }
+        myPerro.ladrar(); // myPerro
+
+        const myPerro2 = {
+            nombre:"boby",
+            ladrar:()=>{
+                console.log(this);
+            }
+        }
+       myPerro2.ladrar(); // Window
+
+       const myPerro3 = {
+            nombre:"boby",
+            ladrar(){
+                console.log(this);
+            }
+        }
+        myPerro3.ladrar(); // myPerro3
+    
+
+
+    </script>
+</body>
+</html>

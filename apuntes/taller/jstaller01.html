@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 01: variables</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+               <li>
+                 Cuando se acceda ante undefined se para todo. Error. Uncaught ReferenceError: i is not defined </li>
+                 <li>¿Intérpretar o Compilar?</li>
+
+            </ul>
+
+            <div>
+              <div><span>&nbsp;&nbsp;</span><span>i</span><span>=</span><span>null</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>=</span><span>undefined</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>=</span><span>1</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>=</span><span>"1"</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>i</span><span>);</span></div>
+              <br />
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;h;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>=&nbsp;</span><span>true</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>NaN</span><span>;</span></div>
+              <br />
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>dir</span><span>(</span><span>i</span><span>);</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>i</span><span>);</span></div>
+              <br />
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>j</span><span>=</span><span>0</span><span>;&nbsp;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>j</span><span>);</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>dir</span><span>(</span><span>j</span><span>);</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>j</span><span>);</span></div>
+              <br />
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a</span><span>&nbsp;=&nbsp;</span><span>4</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>b</span><span>&nbsp;=&nbsp;</span><span>4</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>c</span><span>&nbsp;=&nbsp;</span><span>4</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//c++;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>a1</span><span>&nbsp;=&nbsp;</span><span>9</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Hoisting</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>a2</span><span>&nbsp;=&nbsp;</span><span>9</span><span>;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+              <br />
+              <div><span>const</span><span>&nbsp;</span><span>diaSemana</span><span>&nbsp;=&nbsp;[</span><span>"lunes"</span><span>,</span><span>"martes"</span><span>];</span></div>
+              <div><span>const</span><span>&nbsp;</span><span>mes</span><span>&nbsp;=&nbsp;[</span><span>"enero"</span><span>,</span><span>"&nbsp;febrero"</span><span>];</span></div>
+              <div><span>&nbsp;&nbsp;</span></div>
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>diaSemana</span><span>.</span><span>push</span><span>(</span><span>"miercoles"</span><span>);</span></div>
+              <br />
+              <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>diaSemana</span><span>);</span></div>
+              <div><span>var</span><span>&nbsp;</span><span>lista</span><span>&nbsp;=&nbsp;</span><span>diaSemana</span><span>;</span></div>
+              <br />
+              <div><span>console</span><span>.</span><span>log</span><span>(</span><span>lista</span><span>);</span></div>
+              <div><span>lista</span><span>&nbsp;=&nbsp;</span><span>mes</span><span>;</span></div>
+              <div><span>console</span><span>.</span><span>log</span><span>(</span><span>lista</span><span>);</span></div>
+              <br /><br />
+              <div><span>var</span><span>&nbsp;</span><span>m</span><span>&nbsp;=&nbsp;</span><span>`&nbsp;diaSemana:</span><span>${</span><span>diaSemana</span><span>}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mes:&nbsp;</span><span>${</span><span>mes</span><span>}</span><span>&nbsp;`</span><span>;</span></div>
+              <div><span>console</span><span>.</span><span>log</span><span>(</span><span>m</span><span>);</span></div>
+              <br />
+              <div><span>var</span><span>&nbsp;</span><span>p</span><span>&nbsp;=&nbsp;</span><span>true</span><span>;</span></div>
+              <div><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>p</span><span>);&nbsp;</span><span>//&nbsp;boolean</span></div>
+              <div><span>&nbsp;</span><span>var</span><span>&nbsp;</span><span>g</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Boolean</span><span>(</span><span>true</span><span>);</span></div>
+              <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>g</span><span>);&nbsp;</span><span>//&nbsp;Object</span></div>
+              <div><span>var</span><span>&nbsp;</span><span>bb</span><span>=&nbsp;</span><span>8</span><span>;</span></div>
+              <div><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>bb</span><span>);&nbsp;</span><span>//&nbsp;number</span></div>
+              <br />
+              <div><span>var</span><span>&nbsp;</span><span>bb2</span><span>=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Number</span><span>(</span><span>8</span><span>);</span></div>
+              <div><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>bb2</span><span>);&nbsp;</span><span>//&nbsp;Object</span></div>
+              </div>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+      
+       i=null;
+       i=undefined;
+       i=1;
+       i="1";
+       console.log(i);
+
+      // h;
+       i= true;
+       i = NaN;
+
+       console.dir(i);
+       console.info(i);
+
+      var j=0; 
+      console.log(j);
+       console.dir(j);
+       console.info(j);
+
+       var a = 4;
+       let b = 4;
+       const c = 4;
+       //c++;
+       var a1 = 9;
+       {
+          // Hoisting
+        
+         let a2 = 9;
+       }
+
+const diaSemana = ["lunes","martes"];
+const mes = ["enero"," febrero"];
+  
+    diaSemana.push("miercoles");
+
+       console.log(diaSemana);
+var lista = diaSemana;
+
+console.log(lista);
+lista = mes;
+console.log(lista);
+
+
+var m = ` diaSemana:${diaSemana}      mes: ${mes} `;
+console.log(m);
+
+var p = true;
+console.log(typeof p); // boolean
+ var g = new Boolean(true);
+ console.log(typeof g); // Object
+var bb= 8;
+console.log(typeof bb); // number
+
+var bb2= new Number(8);
+console.log(typeof bb2); // Object
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">  
+    <style>
+        :root{
+            --yellow-color:#F7DF1E;
+            --dark-color:#222;
+        }
+        .cards{
+            border:thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card{
+            display:inline-block;
+            background-color: var(--dark-color);
+            color:var( --yellow-color);
+        }
+        .card figcaption{
+            padding:1rem;
+        }
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+        .rotate-135{
+            transform: rotate(135deg);
+        }
+        .opacity-80{
+            opacity:.8;
+        }
+        .sepia{
+            filter: sepia(1);
+        }
+    </style>  
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM VII: DOM Traversing: Recorriendo el DOM</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=m50UZkgV9-Q">Video 67</a></li>  
+                <li><a href="https://javascript.info/dom-navigation">Walking the DOM</a></li>           
+        </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"cards"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>children</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>childNodes</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>parentElement</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>parentNode</span><span>);&nbsp;</span><span>//&nbsp;lo&nbsp;mismo&nbsp;que&nbsp;anterior</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>firstChild</span><span>);&nbsp;</span><span>//&nbsp;detecta&nbsp;un&nbsp;espacio</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>firstElementChild</span><span>);&nbsp;</span><span>//&nbsp;Ahora&nbsp;omite&nbsp;los&nbsp;espacios</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>lastChild</span><span>);&nbsp;</span><span>//&nbsp;detecta&nbsp;el&nbsp;&uacute;ltimo&nbsp;&nbsp;espacio</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>lastElementChild</span><span>);&nbsp;</span><span>//&nbsp;Ahora&nbsp;omite&nbsp;los&nbsp;espacios</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>previousSibling</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>previousElementSibling</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>nextElementSibling</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>closest</span><span>(</span><span>"body"</span><span>));&nbsp;&nbsp;</span><span>//&nbsp;busca&nbsp;el&nbsp;ancestro</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>$cards</span><span>.</span><span>children</span><span>[</span><span>3</span><span>].</span><span>closest</span><span>(</span><span>"section"</span><span>));</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h2>CSSOM: CSS Object Model</h2>
+   <h2>WEB APIs</h2>
+   <ul>
+       <li>Eventos</li>
+       <li>Forms</li>
+       <li>AJAX - Fetch</li>
+       <li>History</li>
+       <li>Web Storage</li>
+       <li>Geolocalización</li>
+       <li>Drag & Drop</li>
+       <li>Indexed DB</li>
+       <li>Canvas</li>
+       <li>MathMedia</li>
+       <li>etc.</li>
+   </ul>
+   <br><hr><br>
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   //nav#menu>ul>li*5>a{Sección $}
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+        <li><a href="#">Sección 5</a></li>
+    </ul>
+</nav>
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM04.html" style="background-color: #F7DF1E; color:#222;" data-id="1" data-description = "Document Object Model">DOM</a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+  <script src="js/dom.js"></script>
+
+  <script>
+        $cards = document.getElementById("cards");
+        console.log($cards);
+        console.log($cards.children);
+        console.log($cards.childNodes);
+        console.log($cards.parentElement);
+        console.log($cards.parentNode); // lo mismo que anterior
+        console.log($cards.firstChild); // detecta un espacio
+        console.log($cards.firstElementChild); // Ahora omite los espacios
+        console.log($cards.lastChild); // detecta el último  espacio
+        console.log($cards.lastElementChild); // Ahora omite los espacios
+        console.log($cards.previousSibling); 
+        console.log($cards.previousElementSibling); 
+        console.log($cards.nextElementSibling); 
+        console.log($cards.closest("body"));  // busca el ancestro
+        console.log($cards.children[3].closest("section"));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Promesas</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=ppzrpTjwEC8">Video 47</a></li>   
+                <li><a href="http://www.paulomogollon.com/promises-vs-async-await-vs-callbacks-en-javascript-espanol/">Callbacks vs Promise vs Async/Await en JavaScript</a></li>
+                
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>value</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>&nbsp;(</span><span>typeof</span><span>&nbsp;</span><span>value</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;{</span><span>return</span><span>&nbsp;</span><span>Promise</span><span>.</span><span>reject</span><span>(</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>`Error,&nbsp;el&nbsp;valor"&nbsp;</span><span>${</span><span>value</span><span>}</span><span>&nbsp;"&nbsp;Ingresado&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>new</span><span>&nbsp;</span><span>Promise</span><span>((</span><span>resolve</span><span>,</span><span>reject</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>setTimeout</span><span>(()</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resolve</span><span>({</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value:</span><span>value</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>result:</span><span>value</span><span>&nbsp;*&nbsp;</span><span>value</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span><span>0</span><span>|</span><span>Math</span><span>.</span><span>random</span><span>()&nbsp;*&nbsp;</span><span>100</span><span>)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>0</span><span>)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>then</span><span>((</span><span>obj</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>obj</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Inicio&nbsp;Promise"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Promise:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>1</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>then</span><span>(</span><span>obj</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Promise:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>2</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>then</span><span>(</span><span>obj</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Promise:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>"3"</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>then</span><span>(</span><span>obj</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Promise:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>4</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>then</span><span>(</span><span>obj</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Promise:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;&nbsp;</span><span>cuadradoPromise</span><span>(</span><span>5</span><span>);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>then</span><span>(</span><span>obj</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Promise:&nbsp;</span><span>${</span><span>obj</span><span>.</span><span>value</span><span>}</span><span>,</span><span>${</span><span>obj</span><span>.</span><span>result</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Fin&nbsp;de&nbsp;la&nbsp;Promise"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</span><span>catch</span><span>(</span><span>err</span><span>=&gt;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>err</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+  <script>
+      function cuadradoPromise(value){
+          if (typeof value !== "number") {return Promise.reject(
+              `Error, el valor" ${value} " Ingresado NO es un número`
+          );}
+          return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve({
+                    value:value,
+                    result:value * value
+                })
+            
+            },0|Math.random() * 100)
+          });  
+      }
+      cuadradoPromise(0)
+        .then((obj)=>{
+            console.log(obj);
+            console.log("Inicio Promise");
+            console.log(`Promise: ${obj.value},${obj.result}`);
+            return  cuadradoPromise(1);
+        })
+        .then(obj => {
+            console.log(`Promise: ${obj.value},${obj.result}`);
+            return  cuadradoPromise(2); 
+        })
+        .then(obj => {
+            console.log(`Promise: ${obj.value},${obj.result}`);
+            return  cuadradoPromise("3"); 
+        })
+        .then(obj => {
+            console.log(`Promise: ${obj.value},${obj.result}`);
+            return  cuadradoPromise(4); 
+        })
+        .then(obj => {
+            console.log(`Promise: ${obj.value},${obj.result}`);
+            return  cuadradoPromise(5); 
+        })
+        .then(obj => {
+           console.log(`Promise: ${obj.value},${obj.result}`);
+           console.log("Fin de la Promise");
+        })
+        .catch(err=>console.error(err));
+  </script>
+</body>
+</html>

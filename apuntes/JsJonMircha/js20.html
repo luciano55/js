@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Parámetros REST & Operador Spread</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=yGJdRAXHCPM">Video 20</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator">Operador de propagación</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/parametros_rest">Parámetros Rest</a></li> 
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        function sumar(a, b, ...c){
+            let resultado = a + b;
+            c.forEach(function(n){
+                resultado += n;
+            });
+            return resultado;
+        }
+        console.log(sumar(1,2));
+        console.log(sumar(1,2,3));
+        console.log(sumar(1,2,3,4));
+        console.log(sumar(1,2,3,4,5));
+        console.log(sumar(1,2,3,4,5,6));
+        console.log(sumar(1,2,3,4,5,6,7));
+
+        const arr1 = [1,2,3,4,5],
+            arr2 = [6,7,8,9,0];
+
+            console.log(arr1,arr2);
+
+            const arr3 = [arr1,arr2];
+            console.log(arr3);
+
+            const arr4 = [...arr1, ...arr2];
+            console.log(arr4);
+    </script>
+</body>
+</html>

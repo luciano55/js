@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación IX</h1>
+        <div class = "paragraph05">  
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=LqXh7jOfLlM&t=1518s">Video 43</a></li>
+                <li><a href="https://www.imdb.com/">IMDB</a></li>
+            </ul> 
+           27) Programa una clase llamada Pelicula.<br>
+
+                La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.<br>
+                
+                  - Todos los datos del objeto son obligatorios.<br>
+                  - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+                     7 restantes números.<br>
+                  - Valida que el título no rebase los 100 caracteres.<br>
+                  - Valida que el director no rebase los 50 caracteres.<br>
+                  - Valida que el año de estreno sea un número entero de 4 dígitos.<br>
+                  - Valida que el país o paises sea introducidos en forma de arreglo.<br>
+                  - Valida que los géneros sean introducidos en forma de arreglo.<br>
+                  - Valida que los géneros introducidos esten dentro de los géneros 
+                     aceptados*.<br>
+                  - Crea un método estático que devuelva los géneros aceptados*.<br>
+                  - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+                    decimal de una posición.<br>
+                  - Crea un método que devuelva toda la ficha técnica de la película.<br>
+                  - Apartir de un arreglo con la información de 3 películas genera 3 
+                    instancias de la clase de forma automatizada e imprime la ficha técnica 
+                    de cada película.</div>        
+         </div>
+    <div>
+       
+        <div>
+            <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+            <div><span>class</span><span>&nbsp;</span><span>Pelicula</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>constructor</span><span>({</span><span>id</span><span>,&nbsp;</span><span>titulo</span><span>,&nbsp;</span><span>director</span><span>,&nbsp;</span><span>estreno</span><span>,&nbsp;</span><span>pais</span><span>,&nbsp;</span><span>generos</span><span>,&nbsp;</span><span>calificacion</span><span>}){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>id</span><span>&nbsp;=&nbsp;</span><span>id</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>titulo</span><span>&nbsp;=&nbsp;</span><span>titulo</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>director</span><span>&nbsp;=&nbsp;</span><span>director</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>estreno</span><span>&nbsp;=&nbsp;</span><span>estreno</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>pais</span><span>&nbsp;=&nbsp;</span><span>pais</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>generos</span><span>&nbsp;=&nbsp;</span><span>generos</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>calificacion</span><span>&nbsp;=&nbsp;</span><span>calificacion</span><span>;</span></div>
+            <br />
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarIMDB</span><span>(</span><span>id</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarTitulo</span><span>(</span><span>titulo</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarDirector</span><span>(</span><span>director</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarEstreno</span><span>(</span><span>estreno</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarPais</span><span>(</span><span>pais</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarGeneros</span><span>(</span><span>generos</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarCalificacion</span><span>(</span><span>calificacion</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>static</span><span>&nbsp;</span><span>get</span><span>&nbsp;</span><span>listaGeneros</span><span>(){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>[</span><span>"Action2"</span><span>,&nbsp;</span><span>"Adult"</span><span>,&nbsp;</span><span>"Adventure"</span><span>,&nbsp;</span><span>"Animation"</span><span>,&nbsp;</span><span>"Biography"</span><span>,&nbsp;</span><span>"Comedy"</span><span>,&nbsp;</span><span>"Crime"</span><span>,&nbsp;</span><span>"Documentary"</span><span>,&nbsp;</span><span>"Drama"</span><span>,&nbsp;</span><span>"Family"</span><span>,&nbsp;</span><span>"Fantasy"</span><span>,&nbsp;</span><span>"Film&nbsp;Noir"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Pelicula"</span><span>,&nbsp;</span><span>"Game-Show"</span><span>,&nbsp;</span><span>"History"</span><span>,&nbsp;</span><span>"Horror"</span><span>,&nbsp;</span><span>"Musical"</span><span>,&nbsp;</span><span>"Music"</span><span>,&nbsp;</span><span>"Mystery"</span><span>,&nbsp;</span><span>"News"</span><span>,&nbsp;</span><span>"Reality-TV"</span><span>,&nbsp;</span><span>"Romance"</span><span>,&nbsp;</span><span>"Sci-Fi"</span><span>,&nbsp;</span><span>"Short"</span><span>,&nbsp;</span><span>"Sport"</span><span>,&nbsp;</span><span>"Talk-Show"</span><span>,&nbsp;</span><span>"Thriller"</span><span>,&nbsp;</span><span>"War"</span><span>,&nbsp;</span><span>"Western"</span><span>];</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>static</span><span>&nbsp;</span><span>generosAceptados</span><span>(){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`Los&nbsp;g&eacute;neros&nbsp;aceptados&nbsp;son:&nbsp;</span><span>${</span><span>Pelicula</span><span>.</span><span>listaGeneros</span><span>.</span><span>join</span><span>(</span><span>"&nbsp;,"</span><span>)</span><span>}</span><span>`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarCadena</span><span>(</span><span>propiedad</span><span>,</span><span>valor</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>valor</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>&nbsp;"</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;est&aacute;&nbsp;vac&iacute;o`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>valor</span><span>&nbsp;!==&nbsp;</span><span>"string"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>"&nbsp;</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;&nbsp;ingresado,&nbsp;No&nbsp;es&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>true</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarLongitudCadena</span><span>(</span><span>propiedad</span><span>,&nbsp;</span><span>valor</span><span>,&nbsp;</span><span>longitud</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>valor</span><span>.</span><span>length</span><span>&nbsp;&gt;&nbsp;</span><span>longitud</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>"&nbsp;</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;excede&nbsp;el&nbsp;n&ordm;&nbsp;de&nbsp;caracteres&nbsp;permitido&nbsp;</span><span>${</span><span>longitud</span><span>}</span><span>`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>true</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarNumero</span><span>(</span><span>propiedad</span><span>,&nbsp;</span><span>valor</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>valor</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>&nbsp;"</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;est&aacute;&nbsp;vac&iacute;o`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>valor</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>"&nbsp;</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;&nbsp;ingresado,&nbsp;No&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>true</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarArreglo</span><span>(</span><span>propiedad</span><span>,&nbsp;</span><span>valor</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>valor</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>&nbsp;"</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;est&aacute;&nbsp;vac&iacute;o`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!(</span><span>valor</span><span>&nbsp;</span><span>instanceof</span><span>&nbsp;</span><span>Array</span><span>))&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>"&nbsp;</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;&nbsp;ingresado,&nbsp;No&nbsp;es&nbsp;un&nbsp;array`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>valor</span><span>.</span><span>length</span><span>&nbsp;===&nbsp;</span><span>0</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`</span><span>${</span><span>propiedad</span><span>}</span><span>"&nbsp;</span><span>${</span><span>valor</span><span>}</span><span>"&nbsp;&nbsp;No&nbsp;hay&nbsp;elementos`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>cadena</span><span>&nbsp;</span><span>of</span><span>&nbsp;</span><span>valor</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>cadena</span><span>&nbsp;!==&nbsp;</span><span>"string"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>cadena</span><span>}</span><span>"&nbsp;No&nbsp;es&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>true</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarIMDB</span><span>(</span><span>id</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>this</span><span>.</span><span>validarCadena</span><span>(</span><span>"IMDB&nbsp;id"</span><span>,</span><span>id</span><span>)){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!(</span><span>/</span><span>^</span><span>([</span><span>a-z</span><span>])</span><span>{2}</span><span>([</span><span>0-9</span><span>])</span><span>{7}</span><span>$</span><span>/</span><span>.</span><span>test</span><span>(</span><span>id</span><span>))){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`IMDB&nbsp;id&nbsp;"</span><span>${</span><span>id</span><span>}</span><span>"&nbsp;NO&nbsp;es&nbsp;v&aacute;lido,`</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;</span><span>`&nbsp;debe&nbsp;tener&nbsp;9&nbsp;caracteres,&nbsp;los&nbsp;2&nbsp;primeros&nbsp;letras&nbsp;min&uacute;sculas,&nbsp;los&nbsp;7&nbsp;restantes&nbsp;n&uacute;meros.`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarTitulo</span><span>(</span><span>titulo</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>this</span><span>.</span><span>validarCadena</span><span>(</span><span>"T&iacute;tulo"</span><span>,&nbsp;</span><span>titulo</span><span>)){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarLongitudCadena</span><span>(</span><span>"T&iacute;tulo"</span><span>,</span><span>titulo</span><span>,</span><span>100</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarDirector</span><span>(</span><span>director</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>this</span><span>.</span><span>validarCadena</span><span>(</span><span>"Director"</span><span>,&nbsp;</span><span>director</span><span>)){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarLongitudCadena</span><span>(</span><span>"Director"</span><span>,</span><span>director</span><span>,</span><span>50</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarEstreno</span><span>(</span><span>estreno</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>this</span><span>.</span><span>validarNumero</span><span>(</span><span>"A&ntilde;o&nbsp;de&nbsp;Estreno"</span><span>,</span><span>estreno</span><span>)){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!(</span><span>/</span><span>^</span><span>([</span><span>0-9</span><span>])</span><span>{4}</span><span>$</span><span>/</span><span>.</span><span>test</span><span>(</span><span>estreno</span><span>))){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`A&ntilde;o&nbsp;de&nbsp;Estreno&nbsp;"</span><span>${</span><span>estreno</span><span>}</span><span>"&nbsp;NO&nbsp;es&nbsp;v&aacute;lido,`</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;</span><span>`&nbsp;debe&nbsp;tener&nbsp;4&nbsp;digitos.`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarPais</span><span>(</span><span>pais</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>validarArreglo</span><span>(</span><span>"Pais"</span><span>,</span><span>pais</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarGeneros</span><span>(</span><span>generos</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>this</span><span>.</span><span>validarArreglo</span><span>(</span><span>"G&eacute;neros"</span><span>,</span><span>generos</span><span>)){}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>genero</span><span>&nbsp;</span><span>of</span><span>&nbsp;</span><span>generos</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;console.log(genero,&nbsp;Pelicula.listaGeneros.includes(genero));</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>Pelicula</span><span>.</span><span>listaGeneros</span><span>.</span><span>includes</span><span>(</span><span>genero</span><span>)){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`G&eacute;nero(s)&nbsp;incorrecto(s)&nbsp;"</span><span>${</span><span>generos</span><span>.</span><span>join</span><span>(</span><span>","</span><span>)</span><span>}</span><span>"`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`G&eacute;nero&nbsp;incorrecto&nbsp;"</span><span>${</span><span>genero</span><span>}</span><span>"`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Pelicula</span><span>.</span><span>generosAceptados</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>validarCalificacion</span><span>(</span><span>calificacion</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>this</span><span>.</span><span>validarNumero</span><span>(</span><span>"Calificacion"</span><span>,</span><span>calificacion</span><span>)){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>calificacion</span><span>&nbsp;&lt;&nbsp;</span><span>0</span><span>&nbsp;||&nbsp;</span><span>calificacion</span><span>&nbsp;&gt;&nbsp;</span><span>10</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`La&nbsp;calificaci&oacute;n&nbsp;tiene&nbsp;que&nbsp;estar&nbsp;en&nbsp;un&nbsp;rango&nbsp;entre&nbsp;0&nbsp;y&nbsp;10`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span><span>this</span><span>.</span><span>calificacion</span><span>&nbsp;=&nbsp;</span><span>calificacion</span><span>.</span><span>toFixed</span><span>(</span><span>1</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>fichaTecnica</span><span>(){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`Ficha&nbsp;T&eacute;cnica:</span><span>\n</span><span>T&iacute;tulo:&nbsp;"</span><span>${</span><span>this</span><span>.</span><span>titulo</span><span>}</span><span>"</span><span>\n</span><span>Director:"</span><span>${</span><span>this</span><span>.</span><span>director</span><span>}</span><span>"</span><span>\n</span><span>A&ntilde;o:"`</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;</span><span>`</span><span>${</span><span>this</span><span>.</span><span>estreno</span><span>}</span><span>"</span><span>\n</span><span>Pa&iacute;s:"</span><span>${</span><span>this</span><span>.</span><span>pais</span><span>.</span><span>join</span><span>(</span><span>"-"</span><span>)</span><span>}</span><span>"</span><span>\n</span><span>G&eacute;nero:"</span><span>${</span><span>this</span><span>.</span><span>generos</span><span>.</span><span>join</span><span>(</span><span>","</span><span>)</span><span>}</span><span>"</span><span>\n</span><span>`</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;</span><span>`Calificaci&oacute;n:"</span><span>${</span><span>this</span><span>.</span><span>calificacion</span><span>}</span><span>"</span><span>\n</span><span>IMDB&nbsp;id:"</span><span>${</span><span>this</span><span>.</span><span>id</span><span>}</span><span>"`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>}</span></div>
+            <div><span>//&nbsp;Pelicula.generosAceptados();</span></div>
+            <div><span>const</span><span>&nbsp;</span><span>peli</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Pelicula</span><span>({</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>id:</span><span>"tt3412123"</span><span>,&nbsp;</span><span>//&nbsp;MIn&nbsp;22</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>titulo:</span><span>&nbsp;</span><span>"La&nbsp;Diligencia"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>director:</span><span>&nbsp;</span><span>"John&nbsp;Ford"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>estreno:</span><span>2020</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pais:</span><span>[</span><span>"M&eacute;xico"</span><span>,</span><span>"Espa&ntilde;a"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>generos:</span><span>&nbsp;[</span><span>"Comedy"</span><span>,</span><span>"Horror"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calificacion&nbsp;:</span><span>&nbsp;</span><span>6.498</span></div>
+            <div><span>});</span></div>
+            <div><span>//peli.fichaTecnica();&nbsp;</span></div>
+            <br />
+            <div><span>const</span><span>&nbsp;</span><span>misPelis</span><span>&nbsp;=&nbsp;[{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>id:</span><span>"tt3412123"</span><span>,&nbsp;</span><span>//&nbsp;MIn&nbsp;22</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>titulo:</span><span>&nbsp;</span><span>"La&nbsp;Diligencia"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>director:</span><span>&nbsp;</span><span>"John&nbsp;Ford"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>estreno:</span><span>2020</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pais:</span><span>[</span><span>"M&eacute;xico"</span><span>,</span><span>"Espa&ntilde;a"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>generos:</span><span>&nbsp;[</span><span>"Comedy"</span><span>,</span><span>"Horror"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calificacion&nbsp;:</span><span>&nbsp;</span><span>6.498</span></div>
+            <div><span>},</span></div>
+            <div><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>id:</span><span>"tt3882123"</span><span>,&nbsp;</span><span>//&nbsp;MIn&nbsp;22</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>titulo:</span><span>&nbsp;</span><span>"La&nbsp;Ruleta"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>director:</span><span>&nbsp;</span><span>"John&nbsp;Mircha"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>estreno:</span><span>2010</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pais:</span><span>[</span><span>"M&eacute;xico"</span><span>,</span><span>"Espa&ntilde;a"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>generos:</span><span>&nbsp;[</span><span>"Comedy"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calificacion&nbsp;:</span><span>&nbsp;</span><span>2.1498</span></div>
+            <div><span>},</span></div>
+            <div><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>id:</span><span>"tt3444423"</span><span>,&nbsp;</span><span>//&nbsp;MIn&nbsp;22</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>titulo:</span><span>&nbsp;</span><span>"La&nbsp;T&iacute;a&nbsp;Tula"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>director:</span><span>&nbsp;</span><span>"John&nbsp;Hurtado"</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>estreno:</span><span>2011</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pais:</span><span>[</span><span>"M&eacute;xico"</span><span>,</span><span>"Espa&ntilde;a"</span><span>,</span><span>"Francia"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>generos:</span><span>&nbsp;[</span><span>"Comedy"</span><span>,</span><span>"Musical"</span><span>],</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calificacion&nbsp;:</span><span>&nbsp;</span><span>0.2</span></div>
+            <div><span>}];</span></div>
+            <br />
+            <div><span>misPelis</span><span>.</span><span>forEach</span><span>(</span><span>el</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;</span><span>new</span><span>&nbsp;</span><span>Pelicula</span><span>(</span><span>el</span><span>).</span><span>fichaTecnica</span><span>());</span></div>
+            </div>
+        <a href="javascript: history.go(-1)">Volver</a>
+</div>
+<script>
+class Pelicula{
+    constructor({id, titulo, director, estreno, pais, generos, calificacion}){
+        this.id = id;
+        this.titulo = titulo;
+        this.director = director;
+        this.estreno = estreno;
+        this.pais = pais;
+        this.generos = generos;
+        this.calificacion = calificacion;
+
+        this.validarIMDB(id);
+        this.validarTitulo(titulo);
+        this.validarDirector(director);
+        this.validarEstreno(estreno);
+        this.validarPais(pais);
+        this.validarGeneros(generos);
+        this.validarCalificacion(calificacion);
+    }
+    static get listaGeneros(){
+        return["Action2", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film Noir",
+        "Pelicula", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+    }
+    static generosAceptados(){
+        return console.info(`Los géneros aceptados son: ${Pelicula.listaGeneros.join(" ,")}`);
+    }
+    validarCadena(propiedad,valor){
+        if(!valor) return console.warn(`${propiedad} "${valor}" está vacío`);
+        if(typeof valor !== "string") return console.error(`${propiedad}" ${valor}"  ingresado, No es una cadena de texto`);
+        return true;
+    }
+    validarLongitudCadena(propiedad, valor, longitud){
+       if(valor.length > longitud) return console.error(`${propiedad}" ${valor}" excede el nº de caracteres permitido ${longitud}`);
+        return true;
+    }
+    validarNumero(propiedad, valor){
+        if(!valor) return console.warn(`${propiedad} "${valor}" está vacío`);
+        if(typeof valor !== "number") return console.error(`${propiedad}" ${valor}"  ingresado, No es un número`);
+        return true;
+    }
+    validarArreglo(propiedad, valor){
+        if(!valor) return console.warn(`${propiedad} "${valor}" está vacío`);
+        if(!(valor instanceof Array)) return console.error(`${propiedad}" ${valor}"  ingresado, No es un array`);
+        if(valor.length === 0) return console.error(`${propiedad}" ${valor}"  No hay elementos`);
+        for(let cadena of valor){
+            if(typeof cadena !== "string") return console.error(`El valor "${cadena}" No es una cadena de texto`);
+        } 
+        return true;
+    }
+    validarIMDB(id){
+         if(this.validarCadena("IMDB id",id)){
+            if(!(/^([a-z]){2}([0-9]){7}$/.test(id))){
+                return console.error(`IMDB id "${id}" NO es válido,`
+                + ` debe tener 9 caracteres, los 2 primeros letras minúsculas, los 7 restantes números.`);
+                            }
+        }
+    }
+    validarTitulo(titulo){
+         if(this.validarCadena("Título", titulo)){
+            this.validarLongitudCadena("Título",titulo,100);
+        }
+    }
+    validarDirector(director){
+         if(this.validarCadena("Director", director)){
+            this.validarLongitudCadena("Director",director,50);
+        }
+    }
+    validarEstreno(estreno){
+         if(this.validarNumero("Año de Estreno",estreno)){
+            if(!(/^([0-9]){4}$/.test(estreno))){
+                return console.error(`Año de Estreno "${estreno}" NO es válido,`
+                + ` debe tener 4 digitos.`);
+                            }
+        }
+    }
+    validarPais(pais){
+        this.validarArreglo("Pais",pais);
+    }
+    validarGeneros(generos){
+        if(this.validarArreglo("Géneros",generos)){}
+        for(let genero of generos){
+           // console.log(genero, Pelicula.listaGeneros.includes(genero));
+            if(!Pelicula.listaGeneros.includes(genero)){
+                console.error(`Género(s) incorrecto(s) "${generos.join(",")}"`);
+                console.error(`Género incorrecto "${genero}"`);
+                Pelicula.generosAceptados();
+            }
+        }
+    }
+    validarCalificacion(calificacion){
+         if(this.validarNumero("Calificacion",calificacion)){
+           return (calificacion < 0 || calificacion > 10)
+            ? console.error(`La calificación tiene que estar en un rango entre 0 y 10`)
+            : this.calificacion = calificacion.toFixed(1);
+               
+        }
+    }
+    fichaTecnica(){
+        console.info(`Ficha Técnica:\nTítulo: "${this.titulo}"\nDirector:"${this.director}"\nAño:"`
+        + `${this.estreno}"\nPaís:"${this.pais.join("-")}"\nGénero:"${this.generos.join(",")}"\n`
+        + `Calificación:"${this.calificacion}"\nIMDB id:"${this.id}"`);
+    }
+}
+// Pelicula.generosAceptados();
+const peli = new Pelicula({
+    id:"tt3412123", // MIn 22
+    titulo: "La Diligencia",
+    director: "John Ford",
+    estreno:2020,
+    pais:["México","España"],
+    generos: ["Comedy","Horror"],
+    calificacion : 6.498
+});
+//peli.fichaTecnica(); 
+
+const misPelis = [{
+    id:"tt3412123", // MIn 22
+    titulo: "La Diligencia",
+    director: "John Ford",
+    estreno:2020,
+    pais:["México","España"],
+    generos: ["Comedy","Horror"],
+    calificacion : 6.498
+},
+{
+    id:"tt3882123", // MIn 22
+    titulo: "La Ruleta",
+    director: "John Mircha",
+    estreno:2010,
+    pais:["México","España"],
+    generos: ["Comedy"],
+    calificacion : 2.1498
+},
+{
+    id:"tt3444423", // MIn 22
+    titulo: "La Tía Tula",
+    director: "John Hurtado",
+    estreno:2011,
+    pais:["México","España","Francia"],
+    generos: ["Comedy","Musical"],
+    calificacion : 0.2
+}];
+
+misPelis.forEach(el => new Pelicula(el).fichaTecnica());
+
+</script>
+</body>
+</html>

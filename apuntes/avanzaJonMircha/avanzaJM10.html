@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+            <h1>Iterables & Iterators</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=N00DzBNPJEw">Video 53</a></li>  
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Iteration_protocols">Protocolos de Iteración</a></li> 
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators">Iteradores y generadores</a></li>
+             
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;const&nbsp;iterable&nbsp;=&nbsp;"Hola&nbsp;Mundo";</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;const&nbsp;iterable&nbsp;=&nbsp;[1,2,3,4,5];</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;const&nbsp;iterable&nbsp;=&nbsp;new&nbsp;Set([1,2,3,3,3,4,5,6,6,6,6,7]);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>iterable</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Map</span><span>([</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>"nombre"</span><span>,&nbsp;</span><span>"gggh"</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>"edad"</span><span>,</span><span>7</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>"animal"</span><span>,</span><span>"perro"</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>null</span><span>,</span><span>"nulo"</span><span>]</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;]);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>iterador</span><span>&nbsp;=&nbsp;</span><span>iterable</span><span>[</span><span>Symbol</span><span>.</span><span>iterator</span><span>]();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>iterable</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>iterador</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*&nbsp;&nbsp;*/</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*&nbsp;&nbsp;console.log(iterador.next());</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(iterador.next());</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(iterador.next());</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(iterador.next());</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(iterador.next());</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(iterador.next());</span></div>
+        <div><span>&nbsp;*/</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>next</span><span>&nbsp;=&nbsp;</span><span>iterador</span><span>.</span><span>next</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>while</span><span>&nbsp;(!</span><span>next</span><span>.</span><span>done</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>next</span><span>.</span><span>value</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>next</span><span>&nbsp;=&nbsp;</span><span>iterador</span><span>.</span><span>next</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+  <script>
+     
+     // const iterable = "Hola Mundo";
+    // const iterable = [1,2,3,4,5];
+    // const iterable = new Set([1,2,3,3,3,4,5,6,6,6,6,7]);
+    
+    const iterable = new Map([
+        ["nombre", "gggh"],
+        ["edad",7],
+        ["animal","perro"],
+        [null,"nulo"]
+    ]);
+      const iterador = iterable[Symbol.iterator]();
+      console.log(iterable);
+      console.log(iterador);
+      /*  */
+     /*  console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+ */
+      let next = iterador.next();
+      while (!next.done){
+          console.log(next.value);
+          next = iterador.next();
+      }    
+ </script>
+
+</body>
+</html>

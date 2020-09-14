@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Nuevas estructuras de datos</h1>
+        <h1>SET</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=lnzhtrZ8H34&t=14s">Video 50</a></li>   
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Set">Set</a></li>
+                
+            </ul>         
+      </div>
+      <p>El objeto Set permite almacenar valores únicos de cualquier tipo, incluso valores primitivos u referencias a objetos.</p>
+
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>set</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Set</span><span>([</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>,</span><span>3</span><span>,</span><span>4</span><span>,</span><span>true</span><span>,</span><span>false</span><span>,</span><span>true</span><span>,{},{},</span><span>"Hola"</span><span>,</span><span>"HOLA"</span><span>]);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set</span><span>.</span><span>size</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>set2</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Set</span><span>();&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>1</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>3</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>3</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>4</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>true</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>false</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>true</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>({});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>({});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>"hola"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>add</span><span>(</span><span>"HOLA"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set2</span><span>.</span><span>size</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Recorriendo&nbsp;set"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>item</span><span>&nbsp;</span><span>of</span><span>&nbsp;</span><span>set</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>item</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Recorriendo&nbsp;set2"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>set2</span><span>.</span><span>forEach</span><span>(</span><span>item</span><span>&nbsp;</span><span>=&gt;</span><span>&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>item</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;set&nbsp;es&nbsp;una&nbsp;colecci&oacute;n&nbsp;NO&nbsp;un&nbsp;array</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set</span><span>[</span><span>0</span><span>]);&nbsp;</span><span>//&nbsp;undefined</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>Array</span><span>.</span><span>from</span><span>(</span><span>set</span><span>)[</span><span>0</span><span>]);&nbsp;&nbsp;</span><span>//&nbsp;1&nbsp;&nbsp;Ahora&nbsp;si</span></div>
+        <div><span>&nbsp;</span><span>let</span><span>&nbsp;</span><span>arr</span><span>&nbsp;=&nbsp;</span><span>Array</span><span>.</span><span>from</span><span>(</span><span>set</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>arr</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>arr</span><span>[</span><span>0</span><span>]);</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>arr</span><span>[</span><span>4</span><span>]);</span></div>
+        <br />
+        <div><span>&nbsp;</span><span>set</span><span>.</span><span>delete</span><span>(</span><span>"HOLA"</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set</span><span>);</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set</span><span>.</span><span>has</span><span>(</span><span>"Hola"</span><span>));&nbsp;</span><span>//&nbsp;true</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set</span><span>.</span><span>has</span><span>({}));&nbsp;</span><span>//&nbsp;false</span></div>
+        <br />
+        <div><span>&nbsp;</span><span>set2</span><span>.</span><span>clear</span><span>();</span></div>
+        <div><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>set2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+   <script>
+    const set = new Set([1,2,3,3,4,true,false,true,{},{},"Hola","HOLA"]); 
+    console.log(set);
+    console.log(set.size);
+    const set2 = new Set(); 
+    set2.add(1);
+    set2.add(2);
+    set2.add(3);
+    set2.add(3);
+    set2.add(4);
+    set2.add(true);
+    set2.add(false);
+    set2.add(true);
+    set2.add({});
+    set2.add({});
+    set2.add("hola");
+    set2.add("HOLA");
+    console.log(set2);
+    console.log(set2.size);
+    console.log("Recorriendo set");
+    for(item of set){
+        console.log(item);
+    }
+    console.log("Recorriendo set2");
+    set2.forEach(item => {
+        console.log(item);
+    });
+    // set es una colección NO un array
+    console.log(set[0]); // undefined
+    console.log(Array.from(set)[0]);  // 1  Ahora si
+ let arr = Array.from(set);
+ console.log(arr);
+ console.log(arr[0]);
+ console.log(arr[4]);
+
+ set.delete("HOLA");
+ console.log(set);
+ console.log(set.has("Hola")); // true
+ console.log(set.has({})); // false
+
+ set2.clear();
+ console.log(set2);
+  </script>
+</body>
+</html>

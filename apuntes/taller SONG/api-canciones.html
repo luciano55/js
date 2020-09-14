@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song</title>
+  <link rel="stylesheet" href="./assets/app.css">
+</head>
+
+<body>
+  <h1>Curso JavaScript: 137. Ejercicios AJAX - APIs: Buscador de Canciones con Fetch + Async</h1>
+  <a href="https://lyricsovh.docs.apiary.io/#">Lyrics.ovh</a><br><br>
+  <a href="https://theaudiodb.com/">TheAudioDB</a><br><br>
+  <form action="" id="song-search">
+    <input type="text" name="artist" id="artista" placeholder="Nombre del Intérprete" required>
+    <br>
+    <input type="text" name="song" id="song" placeholder="Nombre del la canción" required>
+    <br>
+    <input type="submit">
+  </form>
+  <img class="loader" src="./assets/SVG_loader/circles.svg" alt="Cargando...">
+  <aside class="error"></aside>
+  <main>
+    <article class="artist">
+
+    </article>
+    <article class="song">
+
+    </article>
+  </main>
+
+
+
+  <script src="./assets/app.js"></script>
+</body>
+
+</html>

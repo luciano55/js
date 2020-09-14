@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Nuevas estructuras de datos</h1>
+        <h1>MAP</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=e2gBknyVJo8">Video 51</a></li>   
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Map">Map</a></li>                
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>mapa</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Map</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>(</span><span>"nombre"</span><span>,</span><span>"Jon"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>(</span><span>"apellido"</span><span>,</span><span>"Mircha"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>(</span><span>"edad"</span><span>,</span><span>36</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa</span><span>.</span><span>size</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa</span><span>.</span><span>has</span><span>(</span><span>"correo"</span><span>));&nbsp;</span><span>//&nbsp;false</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa</span><span>.</span><span>has</span><span>(</span><span>"nombre"</span><span>));&nbsp;</span><span>//&nbsp;true</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa</span><span>.</span><span>get</span><span>(</span><span>"nombre"</span><span>));&nbsp;</span><span>//&nbsp;Jon</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>delete</span><span>(</span><span>"apellido"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>(</span><span>"nombre"</span><span>,</span><span>"Jon&nbsp;Mircha"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>(</span><span>19</span><span>,</span><span>"diecinueve"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>(</span><span>false</span><span>,&nbsp;</span><span>"falso"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mapa</span><span>.</span><span>set</span><span>({},{});</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;[</span><span>key</span><span>,</span><span>value</span><span>]&nbsp;</span><span>of</span><span>&nbsp;</span><span>mapa</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Llave:&nbsp;</span><span>${</span><span>key</span><span>}</span><span>,&nbsp;valor:</span><span>${</span><span>value</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>mapa2</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Map</span><span>([</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>"nombre"</span><span>,&nbsp;</span><span>"gggh"</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>"edad"</span><span>,</span><span>7</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>"animal"</span><span>,</span><span>"perro"</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span>null</span><span>,</span><span>"nulo"</span><span>]</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;]);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>mapa2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>llavesMapa2</span><span>&nbsp;=&nbsp;[...</span><span>mapa2</span><span>.</span><span>keys</span><span>()];</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>valoresMapa2</span><span>&nbsp;=&nbsp;[...</span><span>mapa2</span><span>.</span><span>values</span><span>()];</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>llavesMapa2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>valoresMapa2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+  <script>
+    const mapa = new Map();
+    mapa.set("nombre","Jon");
+    mapa.set("apellido","Mircha");
+    mapa.set("edad",36);
+
+    console.log(mapa);
+    console.log(mapa.size);
+    console.log(mapa.has("correo")); // false
+    console.log(mapa.has("nombre")); // true
+    console.log(mapa.get("nombre")); // Jon
+    mapa.delete("apellido");
+    mapa.set("nombre","Jon Mircha");
+
+    mapa.set(19,"diecinueve");
+    mapa.set(false, "falso");
+    mapa.set({},{});
+
+    console.log(mapa);
+
+    for(let [key,value] of mapa){
+      console.log(`Llave: ${key}, valor:${value}`);
+    }
+
+    const mapa2 = new Map([
+        ["nombre", "gggh"],
+        ["edad",7],
+        ["animal","perro"],
+        [null,"nulo"]
+    ]);
+    console.log(mapa2);
+    const llavesMapa2 = [...mapa2.keys()];
+    const valoresMapa2 = [...mapa2.values()];
+    console.log(llavesMapa2);
+    console.log(valoresMapa2);
+  </script>
+</body>
+</html>

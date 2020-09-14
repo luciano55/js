@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Nuevas estructuras de datos</h1>
+        <h1>WeakSets & WeakMaps</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=nfMEnCrBL-0">Video 52</a></li>   
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/WeakSet">WeakSet</a></li>
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/WeakMap">WeakMap</a></li>
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;const&nbsp;ws&nbsp;=&nbsp;new&nbsp;WeakSet([1,2,3,3,4,true,false,true,{},{},"Hola","HOLA"]);&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>/*&nbsp;&nbsp;const&nbsp;ws&nbsp;=&nbsp;new&nbsp;WeakSet();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;valor1&nbsp;=&nbsp;{"valor1:":1};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;valor2&nbsp;=&nbsp;{"valor2:":2};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;valor3&nbsp;=&nbsp;{"valor3:":3};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;ws.add(valor1);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;ws.add(valor2);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;console.log(ws);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;console.log(ws.has(valor1));&nbsp;//&nbsp;true</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;console.log(ws.has(valor3));&nbsp;&nbsp;//&nbsp;false</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;ws.delete(valor2)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;console.log(ws);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;ws.add(valor3);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;ws.add(valor2);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;console.log(ws);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;setInterval(()=&gt;&nbsp;console.log(ws),1000);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(()=&gt;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor1&nbsp;=&nbsp;null;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor2&nbsp;=&nbsp;null;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valor3&nbsp;=&nbsp;null;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;},5000);*/</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*const&nbsp;wm&nbsp;=&nbsp;new&nbsp;WeakMap([</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["nombre",&nbsp;"gggh"],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["edad",7],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;["animal","perro"],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[null,"nulo"]</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;]);*/</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>wm</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>WeakMap</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>llave1</span><span>&nbsp;={};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>llave2</span><span>&nbsp;={};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>llave3</span><span>&nbsp;={};</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>wm</span><span>.</span><span>set</span><span>(</span><span>llave1</span><span>,</span><span>1</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>wm</span><span>.</span><span>set</span><span>(</span><span>llave2</span><span>,</span><span>2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>.</span><span>has</span><span>(</span><span>llave1</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>.</span><span>has</span><span>(</span><span>llave3</span><span>));</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>.</span><span>get</span><span>(</span><span>llave1</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>.</span><span>get</span><span>(</span><span>llave2</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>.</span><span>get</span><span>(</span><span>llave3</span><span>));&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>wm</span><span>.</span><span>delete</span><span>(</span><span>llave2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>wm</span><span>.</span><span>set</span><span>(</span><span>llave3</span><span>,</span><span>3</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>wm</span><span>.</span><span>set</span><span>(</span><span>llave2</span><span>,</span><span>2</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>setInterval</span><span>(()</span><span>=&gt;</span><span>&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>wm</span><span>),</span><span>1000</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>setTimeout</span><span>(()</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>llave1</span><span>&nbsp;=&nbsp;</span><span>null</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>llave2</span><span>&nbsp;=&nbsp;</span><span>null</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>llave3</span><span>&nbsp;=&nbsp;</span><span>null</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;},</span><span>5000</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+  <script>
+     // const ws = new WeakSet([1,2,3,3,4,true,false,true,{},{},"Hola","HOLA"]); 
+   /*  const ws = new WeakSet();
+     let valor1 = {"valor1:":1};
+     let valor2 = {"valor2:":2};
+     let valor3 = {"valor3:":3};
+    ws.add(valor1);
+    ws.add(valor2);
+    console.log(ws);
+    console.log(ws.has(valor1)); // true
+    console.log(ws.has(valor3));  // false
+    ws.delete(valor2)
+    console.log(ws);
+    ws.add(valor3);
+    ws.add(valor2);
+    console.log(ws);
+
+    setInterval(()=> console.log(ws),1000);
+    setTimeout(()=>{
+        valor1 = null;
+        valor2 = null;
+        valor3 = null;
+    },5000);*/
+    /*const wm = new WeakMap([
+        ["nombre", "gggh"],
+        ["edad",7],
+        ["animal","perro"],
+        [null,"nulo"]
+    ]);*/
+    const wm = new WeakMap();
+    let llave1 ={};
+    let llave2 ={};
+    let llave3 ={};
+
+    wm.set(llave1,1);
+    wm.set(llave2,2);
+    console.log(wm.has(llave1));
+    console.log(wm.has(llave3));
+
+    console.log(wm.get(llave1));
+    console.log(wm.get(llave2));
+    console.log(wm.get(llave3));    
+    console.log(wm);
+
+    wm.delete(llave2);
+    console.log(wm);
+    wm.set(llave3,3);
+    wm.set(llave2,2);
+    console.log(wm);
+
+    setInterval(()=> console.log(wm),1000);
+    setTimeout(()=>{
+        llave1 = null;
+        llave2 = null;
+        llave3 = null;
+    },5000);
+    
+ </script>
+ </script>
+</body>
+</html>

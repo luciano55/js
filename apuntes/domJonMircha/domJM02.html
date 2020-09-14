@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM II: Nodos, Elementos y Selectores</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=zBmtmlB5b5g&t=21s">Video 62</a></li>                
+                 <li><a href="https://developer.mozilla.org/es/docs/Web/API/Node/nodeType">Node.nodeType</a></li>
+            </ul>         
+      </div>
+      
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h2>CSSOM: CSS Object Model</h2>
+   <h2>WEB APIs</h2>
+   <ul>
+       <li>Eventos</li>
+       <li>Forms</li>
+       <li>AJAX - Fetch</li>
+       <li>History</li>
+       <li>Web Storage</li>
+       <li>Geolocalización</li>
+       <li>Drag & Drop</li>
+       <li>Indexed DB</li>
+       <li>Canvas</li>
+       <li>MathMedia</li>
+       <li>etc.</li>
+   </ul>
+   <br><hr><br>
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   //nav#menu>ul>li*5>a{Sección $}
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+        <li><a href="#">Sección 5</a></li>
+    </ul>
+</nav>
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM02.html"></a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+
+
+
+
+
+
+  <script src="js/dom.js"></script>
+  <script>
+    console.log(document.getElementsByTagName("")); // return collection NO array
+    console.log(document.getElementsByClassName("")); // return collection NO array
+    console.log(document.getElementsByName("")); // return collection NO array    
+    
+    console.log(document.getElementById("")); // return 1 element
+
+    // Nuevas Versiones
+    console.log(document.querySelector("patrón")); // return 1 element más lento que ById
+
+    console.log(document.querySelectorAll("patrón")); // // return collection NO array 
+      
+    document.querySelectorAll("a").forEach((el)=>console.log(el));
+
+    console.log(document.querySelectorAll(".card")[2]);
+
+    console.log(document.querySelectorAll("#menu li"));
+
+
+  </script>
+</body>
+</html>

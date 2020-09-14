@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Object</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=4xig5UPRC00">Video 12</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object">Oject MDN</a></li>
+                <li>Los objects se recomiendan declaralos con const</li>
+                <li>Un object tiene propiedades y métodos</li>                
+                <li><a href="http://www.etnassoft.com/2016/11/29/destructuracion-de-un-objeto-en-otro-objeto-existente/">Desestructuración de un objeto en otro objeto existente</a></li>                
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        const a = {};
+        console.log(a);  console.dir(a); console.info(a);
+        const b = new Object();
+        console.log(b); console.dir(b);  console.info(b);
+        const jon = { //Jon
+            nombre: "Juan",
+            apellido: "Mina",
+            edad: 35,
+            pasatiempos: ["Ajedrez","pasear","música"],
+            soltero:true,
+            contacto:{
+                email:"ksjuankilo@gmail.com",
+                twitter: "@juankilo",
+                movil: 34551234556
+            },
+            saludar: function(){
+                console.log("Hola :)");
+            },
+            decirMiNombre:function(){
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y puedes seguirme como ${this.contacto.twitter} en twitter`);
+            }
+
+        }
+        console.log(jon);
+        console.log(jon["nombre"]);
+        console.log(jon["apellido"]);
+        console.log(jon.nombre);
+        console.log(jon.apellido);
+        console.log(jon.pasatiempos);
+        console.log(jon.pasatiempos[1]);
+        console.log(jon.contacto.twitter);
+        console.log(jon.decirMiNombre());
+        console.log(Object.keys(jon));   
+        console.log(Object.values(jon));          
+        console.log(jon.hasOwnProperty("nombre"));
+        console.log(jon.hasOwnProperty("xxxx"));
+    </script>
+</body>
+</html>

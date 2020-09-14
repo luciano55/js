@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 05: Libreria animationMenu</h1>
+            <div class = "paragraph05">   
+                <ul class="list-item-1">
+                <li><a href=""></a> </li>
+                </ul>
+                <div>
+                    <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>'use&nbsp;strict'</span></div>
+                    <div><span>&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Objetivo&nbsp;localizar&nbsp;extraer&nbsp;las&nbsp;referencias&nbsp;a&nbsp;los&nbsp;nodos&nbsp;etiquetas&nbsp;a</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//var&nbsp;listLabel_A&nbsp;=&nbsp;document.getElementsByTagName("a");</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//var&nbsp;listLabel_A&nbsp;=&nbsp;document.querySelectorAll("div.myIndex&nbsp;div.myIndexTable&nbsp;a");</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.dir(listLabel_A[0]);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(listLabel_A.length);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(Array.isArray(listLabel_A));</span></div>
+                    <br /><br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(let&nbsp;nodo&nbsp;of&nbsp;listLabel_A)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(nodo.href);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(let&nbsp;prop&nbsp;in&nbsp;nodo)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Key:"&nbsp;+&nbsp;prop);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Value:"&nbsp;+&nbsp;nodo[prop]);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;listLabel_A.length&nbsp;;&nbsp;i++){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.count("C&oacute;digo&nbsp;for",&nbsp;i);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;listLabel_Array&nbsp;=&nbsp;[listLabel_A];</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(Array.isArray(listLabel_Array));</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listLabel_Array.forEach(element=&gt;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(element);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt&nbsp;+&nbsp;shift&nbsp;+&nbsp;a</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>generateNumber</span><span>(</span><span>max</span><span>,&nbsp;</span><span>min</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>parseInt</span><span>((</span><span>Math</span><span>.</span><span>random</span><span>()&nbsp;*&nbsp;(</span><span>max</span><span>&nbsp;-&nbsp;</span><span>min</span><span>&nbsp;+&nbsp;</span><span>1</span><span>)&nbsp;+&nbsp;</span><span>min</span><span>));</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>generateColor</span><span>(</span><span>opacidad</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*&nbsp;Valores&nbsp;maximos&nbsp;y&nbsp;minimos&nbsp;de&nbsp;Red,&nbsp;Green&nbsp;y&nbsp;Blue&nbsp;al&nbsp;generar&nbsp;el&nbsp;numero&nbsp;*/</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>MAXR</span><span>&nbsp;=&nbsp;</span><span>170</span><span>;</span><span>//25;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>MAXG</span><span>&nbsp;=&nbsp;</span><span>25</span><span>;&nbsp;</span><span>//200;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>MAXB</span><span>&nbsp;=&nbsp;</span><span>200</span><span>;</span><span>//170;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>MINR</span><span>&nbsp;=&nbsp;</span><span>120</span><span>;</span><span>//20;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>MING</span><span>&nbsp;=&nbsp;</span><span>20</span><span>;</span><span>//150;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>MINB</span><span>&nbsp;=&nbsp;</span><span>150</span><span>;</span><span>//&nbsp;120;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>'rgba('</span><span>&nbsp;+&nbsp;</span><span>generateNumber</span><span>(</span><span>MAXR</span><span>,&nbsp;</span><span>MINR</span><span>)&nbsp;+&nbsp;</span><span>',&nbsp;'</span><span>&nbsp;+&nbsp;</span><span>generateNumber</span><span>(</span><span>MAXG</span><span>,&nbsp;</span><span>MING</span><span>)&nbsp;+&nbsp;</span><span>',&nbsp;'</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;</span><span>generateNumber</span><span>(</span><span>MAXB</span><span>,&nbsp;</span><span>MINB</span><span>)&nbsp;+&nbsp;</span><span>',&nbsp;'</span><span>&nbsp;+&nbsp;</span><span>opacidad</span><span>&nbsp;+&nbsp;</span><span>')'</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>setColor</span><span>(</span><span>input</span><span>,&nbsp;</span><span>opacidad</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>input</span><span>.</span><span>style</span><span>.</span><span>background</span><span>&nbsp;=&nbsp;&nbsp;</span><span>generateColor</span><span>(</span><span>opacidad</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Inicio&nbsp;del&nbsp;proceso</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>listLabel_A</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelectorAll</span><span>(</span><span>"div.myIndex&nbsp;div.myIndexTable&nbsp;a"</span><span>);</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Color&nbsp;inical&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>var</span><span>&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>0</span><span>;&nbsp;</span><span>i</span><span>&nbsp;&lt;&nbsp;</span><span>listLabel_A</span><span>.</span><span>length</span><span>&nbsp;;&nbsp;</span><span>i</span><span>++){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>setColor</span><span>(</span><span>listLabel_A</span><span>[</span><span>i</span><span>],&nbsp;</span><span>1</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Color&nbsp;al&nbsp;mover&nbsp;mouse</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>0</span><span>;&nbsp;</span><span>i</span><span>&nbsp;&lt;&nbsp;</span><span>listLabel_A</span><span>.</span><span>length</span><span>&nbsp;;&nbsp;</span><span>i</span><span>++){&nbsp;&nbsp;&nbsp;</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>listLabel_A</span><span>[</span><span>i</span><span>].</span><span>onmouseover</span><span>&nbsp;=&nbsp;</span><span>function</span><span>(</span><span>t</span><span>){</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>function</span><span>(){&nbsp;</span><span>setColor</span><span>(</span><span>t</span><span>,&nbsp;</span><span>1</span><span>);};</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}(</span><span>listLabel_A</span><span>[</span><span>i</span><span>]);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Cuando&nbsp;un&nbsp;&aacute;mbito&nbsp;interno&nbsp;&nbsp;utiliza&nbsp;variables&nbsp;del&nbsp;&aacute;mbito&nbsp;externo&nbsp;entonces&nbsp;JS&nbsp;puede&nbsp;hacer&nbsp;clausure</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+                    </div>
+
+         </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+<script>
+        'use strict'
+  
+            // Objetivo localizar extraer las referencias a los nodos etiquetas a
+
+            //var listLabel_A = document.getElementsByTagName("a");
+
+            //var listLabel_A = document.querySelectorAll("div.myIndex div.myIndexTable a");
+
+            /*
+            console.dir(listLabel_A[0]);
+            console.log(listLabel_A.length);
+            console.log(Array.isArray(listLabel_A));
+
+
+            for(let nodo of listLabel_A) {
+                console.log(nodo.href);
+                for(let prop in nodo) {
+                    console.log("Key:" + prop);       
+                    console.log("Value:" + nodo[prop]);
+                }
+            }
+
+            for(var i = 0; i < listLabel_A.length ; i++){
+                console.count("Código for", i);
+            } 
+
+            var listLabel_Array = [listLabel_A];
+
+            console.log(Array.isArray(listLabel_Array));
+
+            listLabel_Array.forEach(element=>{
+                console.log(element);
+            })
+
+            alt + shift + a
+
+            */
+            function generateNumber(max, min) {
+                return parseInt((Math.random() * (max - min + 1) + min));
+            }
+
+            function generateColor(opacidad) {
+                /* Valores maximos y minimos de Red, Green y Blue al generar el numero */
+                const MAXR = 170;//25;
+                const MAXG = 25; //200;
+                const MAXB = 200;//170;
+            
+                const MINR = 120;//20;
+                const MING = 20;//150;
+                const MINB = 150;// 120;
+            
+                return 'rgba(' + generateNumber(MAXR, MINR) + ', ' + generateNumber(MAXG, MING) + ', '
+                + generateNumber(MAXB, MINB) + ', ' + opacidad + ')';
+            }
+
+            function setColor(input, opacidad) {
+                input.style.background =  generateColor(opacidad);
+            }
+
+            // Inicio del proceso
+
+            var listLabel_A = document.querySelectorAll("div.myIndex div.myIndexTable a");
+
+            // Color inical 
+            for(var i = 0; i < listLabel_A.length ; i++){
+                setColor(listLabel_A[i], 1);
+            }
+
+            // Color al mover mouse
+            for(let i = 0; i < listLabel_A.length ; i++){   
+
+            
+                listLabel_A[i].onmouseover = function(t){
+                                                            return function(){ setColor(t, 1);};
+                                                }(listLabel_A[i]);
+            }  
+
+            // Cuando un ámbito interno  utiliza variables del ámbito externo entonces JS puede hacer clausure
+    </script>
+</body>
+</html>

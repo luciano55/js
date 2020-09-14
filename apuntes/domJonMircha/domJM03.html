@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM III: Atributos y Data-Attributes</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=l6npGZa_vgc">Video 63</a></li>                
+            <li><a href="https://web.dev/external-anchors-use-rel-noopener/">Los enlaces a destinos de origen cruzado no son seguros</a></li>
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <br />
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>document</span><span>.</span><span>documentElement</span><span>.</span><span>lang</span><span>);&nbsp;</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>document</span><span>.</span><span>documentElement</span><span>.</span><span>getAttribute</span><span>(</span><span>"lang"</span><span>));&nbsp;</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>document</span><span>.</span><span>querySelector</span><span>(</span><span>".link-dom"</span><span>).</span><span>href</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>document</span><span>.</span><span>querySelector</span><span>(</span><span>".link-dom"</span><span>).</span><span>getAttribute</span><span>(</span><span>"href"</span><span>));</span></div>
+        <div><span>document</span><span>.</span><span>documentElement</span><span>.</span><span>lang</span><span>&nbsp;=&nbsp;</span><span>"es"</span><span>;</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>document</span><span>.</span><span>documentElement</span><span>.</span><span>lang</span><span>);&nbsp;</span></div>
+        <div><span>document</span><span>.</span><span>documentElement</span><span>.</span><span>setAttribute</span><span>(</span><span>"lang"</span><span>,</span><span>"es-MX"</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>document</span><span>.</span><span>documentElement</span><span>.</span><span>lang</span><span>);&nbsp;</span></div>
+        <br />
+        <div><span>const</span><span>&nbsp;</span><span>$linkDOM</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelector</span><span>(</span><span>".link-dom"</span><span>);</span></div>
+        <br />
+        <div><span>$linkDOM</span><span>.</span><span>setAttribute</span><span>(</span><span>"target"</span><span>,</span><span>"_blank"</span><span>);</span></div>
+        <div><span>$linkDOM</span><span>.</span><span>setAttribute</span><span>(</span><span>"rel"</span><span>,</span><span>"noopener"</span><span>);</span></div>
+        <div><span>$linkDOM</span><span>.</span><span>setAttribute</span><span>(</span><span>"href"</span><span>,</span><span>"https://www.google.es/"</span><span>);</span></div>
+        <br />
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>hasAttribute</span><span>(</span><span>"rel"</span><span>));</span></div>
+        <br />
+        <div><span>$linkDOM</span><span>.</span><span>removeAttribute</span><span>(</span><span>"rel"</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>hasAttribute</span><span>(</span><span>"rel"</span><span>));</span></div>
+        <br />
+        <div><span>//&nbsp;Data-Attributes</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>getAttribute</span><span>(</span><span>"data-description"</span><span>));</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>dataset</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>dataset</span><span>.</span><span>description</span><span>);</span></div>
+        <div><span>$linkDOM</span><span>.</span><span>setAttribute</span><span>(</span><span>"data-description"</span><span>,</span><span>"Modelo&nbsp;de&nbsp;Objeto&nbsp;del&nbsp;Documento"</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>dataset</span><span>.</span><span>description</span><span>);</span></div>
+        <div><span>$linkDOM</span><span>.</span><span>dataset</span><span>.</span><span>description</span><span>&nbsp;=&nbsp;</span><span>"Suscribete&nbsp;a&nbsp;mi&nbsp;canal&nbsp;y&nbsp;comparte"</span><span>;</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>dataset</span><span>.</span><span>description</span><span>);</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>hasAttribute</span><span>(</span><span>"data-id"</span><span>));</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>removeAttribute</span><span>(</span><span>"data-id"</span><span>));</span></div>
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>$linkDOM</span><span>.</span><span>hasAttribute</span><span>(</span><span>"data-id"</span><span>));</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h2>CSSOM: CSS Object Model</h2>
+   <h2>WEB APIs</h2>
+   <ul>
+       <li>Eventos</li>
+       <li>Forms</li>
+       <li>AJAX - Fetch</li>
+       <li>History</li>
+       <li>Web Storage</li>
+       <li>Geolocalización</li>
+       <li>Drag & Drop</li>
+       <li>Indexed DB</li>
+       <li>Canvas</li>
+       <li>MathMedia</li>
+       <li>etc.</li>
+   </ul>
+   <br><hr><br>
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit quibusdam deserunt, eaque vel impedit excepturi quidem culpa laboriosam inventore accusantium. 
+       Obcaecati nemo quidem labore vero voluptatem praesentium voluptate dolores. Minus?
+   </p>
+   //nav#menu>ul>li*5>a{Sección $}
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+        <li><a href="#">Sección 5</a></li>
+    </ul>
+</nav>
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM03.html" data-id="1" data-description = "Document Object Model">DOM</a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+
+  <script src="js/dom.js"></script>
+  <script>
+
+console.log(document.documentElement.lang); 
+console.log(document.documentElement.getAttribute("lang")); 
+console.log(document.querySelector(".link-dom").href);
+console.log(document.querySelector(".link-dom").getAttribute("href"));
+document.documentElement.lang = "es";
+console.log(document.documentElement.lang); 
+document.documentElement.setAttribute("lang","es-MX");
+console.log(document.documentElement.lang); 
+
+const $linkDOM = document.querySelector(".link-dom");
+
+$linkDOM.setAttribute("target","_blank");
+$linkDOM.setAttribute("rel","noopener");
+$linkDOM.setAttribute("href","https://www.google.es/");
+
+console.log($linkDOM.hasAttribute("rel"));
+
+$linkDOM.removeAttribute("rel");
+console.log($linkDOM.hasAttribute("rel"));
+
+// Data-Attributes
+console.log($linkDOM.getAttribute("data-description"));
+console.log($linkDOM.dataset);
+console.log($linkDOM.dataset.description);
+$linkDOM.setAttribute("data-description","Modelo de Objeto del Documento");
+console.log($linkDOM.dataset.description);
+$linkDOM.dataset.description = "Suscribete a mi canal y comparte";
+console.log($linkDOM.dataset.description);
+console.log($linkDOM.hasAttribute("data-id"));
+console.log($linkDOM.removeAttribute("data-id"));
+console.log($linkDOM.hasAttribute("data-id"));
+
+  </script>
+</body>
+</html>

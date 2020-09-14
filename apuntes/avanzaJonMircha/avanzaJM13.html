@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+            <h1>Propiedades Dinámicas </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=UPuTJxodsW8">Video 56</a></li>              
+              <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Object_initializer">Object initializer</a></li>
+             
+            </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>var</span><span>&nbsp;</span><span>aleatorio</span><span>&nbsp;=&nbsp;</span><span>Math</span><span>.</span><span>round</span><span>(</span><span>Math</span><span>.</span><span>random</span><span>()&nbsp;*&nbsp;</span><span>100</span><span>&nbsp;+&nbsp;</span><span>5</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>objUsuarios</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>[</span><span>`id_</span><span>${</span><span>aleatorio</span><span>}</span><span>`</span><span>]:</span><span>&nbsp;</span><span>"Valor&nbsp;a&nbsp;leatorio"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>objUsuarios</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>usuarios</span><span>&nbsp;=&nbsp;[</span><span>"Jon"</span><span>,</span><span>"Irma"</span><span>,</span><span>"Mike"</span><span>,</span><span>"Kala"</span><span>,</span><span>"Kenay"</span><span>];</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>usuarios</span><span>.</span><span>forEach</span><span>((</span><span>usuario</span><span>,</span><span>index</span><span>)</span><span>=&gt;</span><span>objUsuarios</span><span>[</span><span>`id_</span><span>${</span><span>index</span><span>}</span><span>`</span><span>]=&nbsp;</span><span>usuario</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>objUsuarios</span><span>);</span></div>
+        <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+<script>
+      var aleatorio = Math.round(Math.random() * 100 + 5);
+    const objUsuarios = {
+        [`id_${aleatorio}`]: "Valor a leatorio"
+    };
+    console.log(objUsuarios);
+    const usuarios = ["Jon","Irma","Mike","Kala","Kenay"];
+    usuarios.forEach((usuario,index)=>objUsuarios[`id_${index}`]= usuario);
+    console.log(objUsuarios);
+</script>
+</body>
+</html>

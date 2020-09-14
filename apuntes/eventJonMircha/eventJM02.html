@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS EVENT Jon Mircha</h2>
+        <h1>EVENT II: Eventos con Parámetros y Remover Eventos </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=2oHVjLrnRmY">Video 73</a></li>               
+                <li><a href="https://developer.mozilla.org/es/docs/Web/API/Event">Event MDN</a></li> 
+                <li><a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener">element.addEventListener</a></li>             
+                <li><a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener">EventTarget.removeEventListener()</a></li>
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>saludar</span><span>(</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>"Desconocido"</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>`Hola&nbsp;</span><span>${</span><span>nombre</span><span>}</span><span>&nbsp;-</span><span>${</span><span>event</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$eventoMultiple</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"evento-multiple"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$eventoMultiple</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span><span>saludar</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Pasando&nbsp;par&aacute;metros</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$eventoMultiple</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>(</span><span>"Jon"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$eventoRemover</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"evento-removermultiple"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*&nbsp;No&nbsp;puede&nbsp;ser&nbsp;una&nbsp;funci&oacute;n&nbsp;an&oacute;nima</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$eventoRemover.addEventListener("dblclick",(e)=&gt;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(`Removiendo&nbsp;el&nbsp;evento&nbsp;de&nbsp;tipo&nbsp;${e.type}`);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(e);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$eventoRemover.removeEventListener("dblclick");</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})*/</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>removerDobleClick</span><span>&nbsp;=&nbsp;(</span><span>e</span><span>)</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>alert</span><span>(</span><span>`Removiendo&nbsp;el&nbsp;evento&nbsp;de&nbsp;tipo&nbsp;</span><span>${</span><span>e</span><span>.</span><span>type</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>e</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$eventoRemover</span><span>.</span><span>removeEventListener</span><span>(</span><span>"dblclick"</span><span>,</span><span>removerDobleClick</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$eventoRemover</span><span>.</span><span>disabled</span><span>&nbsp;=&nbsp;</span><span>true</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$eventoRemover</span><span>.</span><span>addEventListener</span><span>(</span><span>"dblclick"</span><span>,&nbsp;</span><span>removerDobleClick</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   <h3>Eventos en Javascript</h3>
+   <h4>Manejadores de Eventos</h4>
+   <button id="evento-multiple">El Más Recomendable con manejador multiple</button>
+   <button id="evento-removermultiple">Removiendo con manejador multiple</button>
+  <script>
+        function saludar(nombre = "Desconocido"){
+            alert(`Hola ${nombre} -${event}`);
+        }
+        const $eventoMultiple = document.getElementById("evento-multiple");
+        $eventoMultiple.addEventListener("click",saludar);
+
+        // Pasando parámetros
+        $eventoMultiple.addEventListener("click",(e)=>{
+            saludar();
+            saludar("Jon");
+        });
+
+        const $eventoRemover = document.getElementById("evento-removermultiple");
+
+        /* No puede ser una función anónima
+        $eventoRemover.addEventListener("dblclick",(e)=>{
+            alert(`Removiendo el evento de tipo ${e.type}`);
+            console.log(e);
+            $eventoRemover.removeEventListener("dblclick");
+
+        })*/
+
+        const removerDobleClick = (e)=>{
+            alert(`Removiendo el evento de tipo ${e.type}`);
+            console.log(e);
+            $eventoRemover.removeEventListener("dblclick",removerDobleClick);
+            $eventoRemover.disabled = true;
+        }
+        $eventoRemover.addEventListener("dblclick", removerDobleClick);
+
+  </script>
+</body>
+</html>

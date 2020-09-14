@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación V</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=WbJzfthCFrM">Video 39</a></li>
+                <li> 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.</li>
+                <li> 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.</li>
+                <li> 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).</li>           
+            </ul> 
+      </div>
+    <div>
+        
+        <div>
+            <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;15)&nbsp;Min:2&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;para&nbsp;convertir&nbsp;n&uacute;meros&nbsp;de&nbsp;base&nbsp;binaria&nbsp;a&nbsp;decimal&nbsp;y&nbsp;viceversa,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;&nbsp;pe.&nbsp;miFuncion(100,2)&nbsp;devolver&aacute;&nbsp;4&nbsp;base&nbsp;10.</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>convertirBinarioDecimal</span><span>&nbsp;=&nbsp;(</span><span>numero</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>,&nbsp;</span><span>base</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>numero</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;el&nbsp;n&uacute;mero&nbsp;a&nbsp;convertir"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>numero</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>numero</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>base</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;la&nbsp;base&nbsp;a&nbsp;convertir"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>base</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>base</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>base</span><span>&nbsp;===&nbsp;</span><span>2</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;n&uacute;mero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>&nbsp;en&nbsp;base&nbsp;</span><span>${</span><span>base</span><span>}</span><span>&nbsp;=&nbsp;</span><span>${</span><span>parseInt</span><span>(</span><span>numero</span><span>,</span><span>base</span><span>)</span><span>}</span><span>&nbsp;base&nbsp;10`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span>else</span><span>&nbsp;</span><span>if</span><span>(</span><span>base</span><span>&nbsp;===&nbsp;</span><span>10</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`El&nbsp;n&uacute;mero&nbsp;</span><span>${</span><span>numero</span><span>}</span><span>&nbsp;en&nbsp;base&nbsp;</span><span>${</span><span>base</span><span>}</span><span>&nbsp;=&nbsp;</span><span>${</span><span>numero</span><span>.</span><span>toString</span><span>(</span><span>2</span><span>)</span><span>}</span><span>&nbsp;base&nbsp;2`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span>else</span><span>&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"La&nbsp;base&nbsp;NO&nbsp;es&nbsp;v&aacute;lidad"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>(</span><span>"2"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>(</span><span>100</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>(</span><span>100</span><span>,</span><span>"2"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>(</span><span>100</span><span>,</span><span>2</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>(</span><span>101101010</span><span>,</span><span>2</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>convertirBinarioDecimal</span><span>(</span><span>10</span><span>,</span><span>10</span><span>);</span></div>
+            <br />
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;16)&nbsp;Min:&nbsp;12&nbsp;&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;devuelva&nbsp;el&nbsp;monto&nbsp;final&nbsp;despu&eacute;s&nbsp;de&nbsp;aplicar&nbsp;un&nbsp;descuento&nbsp;a&nbsp;una&nbsp;cantidad&nbsp;dada,&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//pe.&nbsp;miFuncion(1000,&nbsp;20)&nbsp;devolver&aacute;&nbsp;800.&lt;/li&gt;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>aplicarDescuento</span><span>&nbsp;=&nbsp;(</span><span>monto</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>,&nbsp;</span><span>descuento</span><span>&nbsp;=&nbsp;</span><span>0</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>monto</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;el&nbsp;monto&nbsp;a&nbsp;convertir"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>monto</span><span>&nbsp;===&nbsp;</span><span>0</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"El&nbsp;monto&nbsp;No&nbsp;puede&nbsp;ser&nbsp;0"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>monto</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;monto&nbsp;"</span><span>${</span><span>monto</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>monto</span><span>)&nbsp;===&nbsp;-</span><span>1</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;monto&nbsp;"</span><span>${</span><span>monto</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>descuento</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;la&nbsp;base&nbsp;a&nbsp;convertir"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>descuento</span><span>&nbsp;!==&nbsp;</span><span>"number"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;descuento&nbsp;"</span><span>${</span><span>descuento</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>descuento</span><span>)&nbsp;===&nbsp;-</span><span>1</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;descuento&nbsp;"</span><span>${</span><span>descuento</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;un&nbsp;n&uacute;mero&nbsp;positivo`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`</span><span>${</span><span>monto</span><span>}</span><span>&nbsp;-&nbsp;</span><span>${</span><span>descuento</span><span>}</span><span>&nbsp;%&nbsp;=&nbsp;</span><span>${</span><span>monto</span><span>&nbsp;-&nbsp;((</span><span>monto</span><span>&nbsp;*&nbsp;</span><span>descuento</span><span>)/</span><span>100</span><span>)</span><span>}</span><span>`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aplicarDescuento</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aplicarDescuento</span><span>(</span><span>"w"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aplicarDescuento</span><span>(</span><span>122</span><span>,</span><span>0</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aplicarDescuento</span><span>(</span><span>100</span><span>,</span><span>20</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aplicarDescuento</span><span>(</span><span>100</span><span>,-</span><span>20</span><span>);</span></div>
+            <br />
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//17)&nbsp;Min:20&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;dada&nbsp;una&nbsp;fecha&nbsp;v&aacute;lida&nbsp;determine&nbsp;cuantos&nbsp;a&ntilde;os&nbsp;han&nbsp;pasado&nbsp;hasta&nbsp;el&nbsp;d&iacute;a&nbsp;de&nbsp;hoy,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;pe.&nbsp;miFuncion(new&nbsp;Date(1984,4,23))&nbsp;devolver&aacute;&nbsp;35&nbsp;a&ntilde;os&nbsp;(en&nbsp;2020).&lt;/li&gt;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>calcularAnios</span><span>&nbsp;=&nbsp;(</span><span>fecha</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>fecha</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;la&nbsp;fecha"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!(</span><span>fecha</span><span>&nbsp;</span><span>instanceof</span><span>&nbsp;</span><span>Date</span><span>))&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;fecha&nbsp;"</span><span>${</span><span>fecha</span><span>}</span><span>"&nbsp;ingresado,&nbsp;NO&nbsp;es&nbsp;una&nbsp;fecha&nbsp;v&aacute;lida`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>hoyMenosFecha</span><span>&nbsp;=&nbsp;</span><span>new</span><span>&nbsp;</span><span>Date</span><span>().</span><span>getTime</span><span>()&nbsp;-&nbsp;</span><span>fecha</span><span>.</span><span>getTime</span><span>(),</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aniosEnMS</span><span>&nbsp;=&nbsp;(((</span><span>1000</span><span>&nbsp;*&nbsp;</span><span>60</span><span>)&nbsp;*&nbsp;</span><span>60</span><span>)&nbsp;*&nbsp;</span><span>24</span><span>)&nbsp;*&nbsp;</span><span>365</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>aniosHumanos</span><span>&nbsp;=&nbsp;</span><span>Math</span><span>.</span><span>floor</span><span>(</span><span>hoyMenosFecha</span><span>&nbsp;/&nbsp;</span><span>aniosEnMS</span><span>);</span></div>
+            <br />
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>aniosHumanos</span><span>)&nbsp;===&nbsp;-</span><span>1</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`Faltan&nbsp;</span><span>${</span><span>Math</span><span>.</span><span>abs</span><span>(</span><span>aniosHumanos</span><span>)</span><span>}</span><span>&nbsp;a&ntilde;os&nbsp;para&nbsp;el&nbsp;</span><span>${</span><span>fecha</span><span>.</span><span>getFullYear</span><span>()</span><span>}</span><span>`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>aniosHumanos</span><span>)&nbsp;===&nbsp;</span><span>1</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`Han&nbsp;pasado&nbsp;</span><span>${</span><span>Math</span><span>.</span><span>abs</span><span>(</span><span>aniosHumanos</span><span>)</span><span>}</span><span>&nbsp;a&ntilde;os&nbsp;desde&nbsp;</span><span>${</span><span>fecha</span><span>.</span><span>getFullYear</span><span>()</span><span>}</span><span>`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`Estamos&nbsp;en&nbsp;el&nbsp;a&ntilde;o&nbsp;actual&nbsp;</span><span>${</span><span>fecha</span><span>.</span><span>getFullYear</span><span>()</span><span>}</span><span>`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calcularAnios</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calcularAnios</span><span>({});</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calcularAnios</span><span>(</span><span>false</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calcularAnios</span><span>(</span><span>new</span><span>&nbsp;</span><span>Date</span><span>());</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calcularAnios</span><span>(</span><span>new</span><span>&nbsp;</span><span>Date</span><span>(</span><span>1984</span><span>,</span><span>3</span><span>,</span><span>4</span><span>));</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>calcularAnios</span><span>(</span><span>new</span><span>&nbsp;</span><span>Date</span><span>(</span><span>2984</span><span>,</span><span>3</span><span>,</span><span>4</span><span>));</span></div>
+            <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+            </div>
+        <a href="javascript: history.go(-1)">Volver</a>
+</div>
+<script>
+    // 15) Min:2 Programa una función para convertir números de base binaria a decimal y viceversa,
+    //  pe. miFuncion(100,2) devolverá 4 base 10.
+    const convertirBinarioDecimal = (numero = undefined, base = undefined)=>{
+        if(numero === undefined) return console.warn("No ingresaste el número a convertir");
+        if(typeof numero !== "number") return console.error(`El valor "${numero}" ingresado, NO es un número`);
+        if(base === undefined) return console.warn("No ingresaste la base a convertir");
+        if(typeof base !== "number") return console.error(`El valor "${base}" ingresado, NO es un número`);
+        if(base === 2){
+            return console.info(`El número ${numero} en base ${base} = ${parseInt(numero,base)} base 10`);
+        }else if(base === 10){
+            return console.info(`El número ${numero} en base ${base} = ${numero.toString(2)} base 2`);
+        }else return console.error("La base NO es válidad");
+    }
+    convertirBinarioDecimal();
+    convertirBinarioDecimal("2");
+    convertirBinarioDecimal(100);
+    convertirBinarioDecimal(100,"2");
+    convertirBinarioDecimal(100,2);
+    convertirBinarioDecimal(101101010,2);
+    convertirBinarioDecimal(10,10);
+
+    // 16) Min: 12  Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, 
+    //pe. miFuncion(1000, 20) devolverá 800.</li>
+    const aplicarDescuento = (monto = undefined, descuento = 0)=>{
+        if(monto === undefined) return console.warn("No ingresaste el monto a convertir");
+        if(monto === 0) return console.warn("El monto No puede ser 0");
+        if(typeof monto !== "number") return console.error(`El valor monto "${monto}" ingresado, NO es un número`);
+        if(Math.sign(monto) === -1) return console.error(`El valor monto "${monto}" ingresado, NO es un número`);
+    
+        if(descuento === undefined) return console.warn("No ingresaste la base a convertir");
+        if(typeof descuento !== "number") return console.error(`El valor descuento "${descuento}" ingresado, NO es un número`);
+        if(Math.sign(descuento) === -1) return console.error(`El valor descuento "${descuento}" ingresado, NO es un número positivo`);
+        
+        return console.info(`${monto} - ${descuento} % = ${monto - ((monto * descuento)/100)}`);
+    }
+    aplicarDescuento();
+    aplicarDescuento("w");
+    aplicarDescuento(122,0);
+    aplicarDescuento(100,20);
+    aplicarDescuento(100,-20);
+
+    //17) Min:20 Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy,
+    // pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).</li> 
+    const calcularAnios = (fecha = undefined)=>{
+        if(fecha === undefined)  return console.warn("No ingresaste la fecha");
+        if(!(fecha instanceof Date)) return console.error(`El valor fecha "${fecha}" ingresado, NO es una fecha válida`);
+        let hoyMenosFecha = new Date().getTime() - fecha.getTime(),
+            aniosEnMS = (((1000 * 60) * 60) * 24) * 365,
+            aniosHumanos = Math.floor(hoyMenosFecha / aniosEnMS);
+
+        return (Math.sign(aniosHumanos) === -1)
+        ? console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+        : (Math.sign(aniosHumanos) === 1)
+           ? console.info(`Han pasado ${Math.abs(aniosHumanos)} años desde ${fecha.getFullYear()}`)
+           : console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
+    }
+    calcularAnios();
+    calcularAnios({});
+    calcularAnios(false);
+    calcularAnios(new Date());
+    calcularAnios(new Date(1984,3,4));
+    calcularAnios(new Date(2984,3,4));
+</script>
+</body>
+</html>

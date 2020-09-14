@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+            <h1>Json </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=d1XijkyZRvM">Video 59</a></li>              
+            <li><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON">Trabajando con JSON</a></li>
+       <li><a href="http://www.etnassoft.com/2010/12/30/tutorial-json/">Tutorial JSON etnasSoft</a></li>
+       <li> <a href="https://www.json.org/json-es.html">Introducción a JSON</a></li>
+          </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>json</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cadena:</span><span>&nbsp;</span><span>"Jon"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>numero:</span><span>&nbsp;</span><span>36</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>boolean:</span><span>&nbsp;</span><span>true</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>arreglo:</span><span>[</span><span>"correr"</span><span>,</span><span>"programar"</span><span>,</span><span>"cocinar"</span><span>],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>objecto:</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>twitter:</span><span>"@jonmircha"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>email:</span><span>"jonmircha@gmail.com"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nulo:</span><span>null</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span>console</span><span>.</span><span>log</span><span>(</span><span>json</span><span>);</span></div>
+        <div><span>/*&nbsp;Objeto&nbsp;JSON</span></div>
+        <div><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;"cadena":&nbsp;"Jon",</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;"numero":&nbsp;"36",</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;"boolean":&nbsp;"true",</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;"arreglo":["correr","programar","cocinar"],</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;"objecto":{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"twitter":"@jonmircha",</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email":"jonmircha@gmail.com"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;"nulo":"null"</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <div><span>*/</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"{}"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>parse</span><span>(</span><span>"{}"</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"[1,2,3]"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>parse</span><span>(</span><span>"[1,2,3]"</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"true"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>parse</span><span>(</span><span>"true"</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"19"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>parse</span><span>(</span><span>"19"</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>//console.log(JSON.parse("Hola&nbsp;Mundo"));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>parse</span><span>(</span><span>"null"</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>//console.log(JSON.parse("undefined"));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>({}));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>([</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>]));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>true</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>false</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>false</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>null</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>undefined</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>({</span><span>x:</span><span>2</span><span>,</span><span>y:</span><span>3</span><span>}));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>json</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</span><span>parse</span><span>(</span><span>'{"cadena":&nbsp;"Jon","numero":&nbsp;36,"boolean":&nbsp;true,&nbsp;"arreglo":["correr","programar","cocinar"],&nbsp;"objecto":{"twitter":"@jonmircha","email":"jonmircha@gmail.com"},"nulo":"null"}'</span><span>));</span></div>
+        <br /><br />
+        <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+<script>
+  const json = {
+    cadena: "Jon",
+    numero: 36,
+    boolean: true,
+    arreglo:["correr","programar","cocinar"],
+    objecto:{
+      twitter:"@jonmircha",
+      email:"jonmircha@gmail.com"
+    },
+    nulo:null
+  }
+
+console.log(json);
+/* Objeto JSON
+{
+    "cadena": "Jon",
+    "numero": "36",
+    "boolean": "true",
+    "arreglo":["correr","programar","cocinar"],
+    "objecto":{
+      "twitter":"@jonmircha",
+      "email":"jonmircha@gmail.com"
+    },
+    "nulo":"null"
+  }
+*/
+  console.log(JSON);
+  console.log("{}");
+  console.log(JSON.parse("{}"));
+  console.log("[1,2,3]");
+  console.log(JSON.parse("[1,2,3]"));
+  console.log("true");
+  console.log(JSON.parse("true"));
+  console.log("19");
+  console.log(JSON.parse("19"));
+  //console.log(JSON.parse("Hola Mundo"));
+  console.log(JSON.parse("null"));
+  //console.log(JSON.parse("undefined"));
+  console.log(JSON.stringify({}));
+  console.log(JSON.stringify([1,2,3]));
+  console.log(JSON.stringify(true));
+  console.log(JSON.stringify(false));
+  console.log(JSON.stringify(false));
+  console.log(JSON.stringify(null));
+  console.log(JSON.stringify(undefined));
+  console.log(JSON.stringify({x:2,y:3}));
+  console.log(JSON.stringify(json));
+  console.log(JSON.parse('{"cadena": "Jon","numero": 36,"boolean": true, "arreglo":["correr","programar","cocinar"], "objecto":{"twitter":"@jonmircha","email":"jonmircha@gmail.com"},"nulo":"null"}'));
+
+
+</script>
+</body>
+</html>

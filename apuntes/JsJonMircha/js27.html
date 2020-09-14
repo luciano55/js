@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Date</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=aIHQsAjRLYU">Video 27</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date">Date</a></li>
+                <li><a href="https://momentjs.com/">moment.js</a></li>
+            </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script> 
+  console.log(Date());
+  let fecha = new Date();
+  // día del mes
+  console.log("fecha.getDate():" , fecha.getDate()); // día del mes
+  console.log("fecha.getDay():" , fecha.getDay()); // día de la semana
+  console.log("fecha.getMonth():" ,fecha.getMonth()); // día de la semana
+  console.log("fecha.getFullYear():" ,fecha.getFullYear()); // año completo
+  console.log("fecha.getHours():" ,fecha.getHours());
+  console.log("fecha.getMinutes():", fecha.getMinutes());
+  console.log("fecha.getSeconds():" , fecha.getSeconds());
+  console.log("fecha.getMilliseconds():", fecha.getMilliseconds());
+  console.log("fecha.toString():" , fecha.toString());
+  console.log("fecha.toDateString():" , fecha.toDateString());
+  console.log("fecha.toLocaleString()" , fecha.toLocaleString());
+  console.log("fecha.toLocaleDateString()" , fecha.toLocaleDateString());
+  console.log("fecha.toLocaleTimeString()" , fecha.toLocaleTimeString());
+  console.log("fecha.getTimezoneOffset()" , fecha.getTimezoneOffset());
+  console.log("fecha.getUTCDate():",fecha.getUTCDate());
+  console.log("fecha.getUTCHours():",fecha.getUTCHours());
+  console.log("Date.now():", Date.now());
+ 
+ let cumpleJon = new Date(1984,4,23,3,15); 
+  console.log(cumpleJon);
+
+
+  </script>
+</body> 
+</html>

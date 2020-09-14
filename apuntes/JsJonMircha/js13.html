@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Expresiones y operadores</h1>
+            <div class = "paragraph05">   
+                <ul class="list-item-1">
+                    <li><a href="https://www.youtube.com/watch?v=_8Z5AeGVIXE&t=20s">Video 13</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Expressions_and_Operators">Expresiones y operadores</a></li>
+                    <li>Para la prioridad usar paréntesis</li>
+                    <li>Toda expresión se reduce a un valor único</li>      
+                    <li>=(asignación) ==(compara valor) ===(compara valor y tipo)</li>                              
+                </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        let a1 = 5 + 5 - 10 * 3; 
+       console.log(a1);  // -20
+       let a2 = 5 + (5 -10) * 3; 
+       console.log(a2);  // -10
+
+       let modulo = 5 % 2;
+       console.log(modulo);  // 1
+
+       console.log(8 > 9);  // false
+       console.log(9 > 8);  // true
+       console.log(8 >= 9);  // false
+       console.log(9 >= 8);  // true       
+       console.log(7 < 7);  // false
+       console.log(7 <= 7);  // true
+
+       console.log(7 == 7);  // true
+       console.log("7" == 7);  // true
+       console.log(0 == false);  // true
+
+       console.log(7 === 7);  // true
+       console.log("7" === 7);  // false
+       console.log(0 === false);  // false
+
+       let i = 0;
+       console.log(i++); // 0
+       console.log(++i); // 2
+       //console.log((++i)++); // Uncaught SyntaxError: Invalid left-hand side expression in postfix operation
+
+       console.log(!true);  // false
+       console.log(!false);  // true
+       console.log((9 === 9) || ("9" === 9));  // true
+       console.log((9 === 9) && ("9" === 9));  // false
+       console.log((9 === 9) && ("9" === "9"));  // true
+
+    </script>
+</body>
+</html>

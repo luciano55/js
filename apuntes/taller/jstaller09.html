@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Taller</h2>
+            <h1>Taller 09: jHarnina20.js</h1>
+            <div class = "paragraph05">                 
+                <ul class="list-item-1">
+                                    
+                    <li class='dropDown'> 
+                        <span class='colapse menuLook' id="semanaVisible">1. Días de Clase</span>   
+                        <ul class="list-item-1  hiddenPart" id="semana" >
+                            <li>Lunes</li> 
+                            <li>Martes</li>
+                            <li>Miércoles</li>
+                            <li>Jueves</li>
+                            <li>Viernes</li>
+                        </ul> 
+                    </li>
+
+
+                    <li class='dropDown'>  
+                        <span class='colapse menuLook' id="trimestre1Visible">2. Trimestre I</span>   
+                        <ul class="list-item-1 hiddenPart" id="trimestre1" >
+                            <li>Septiembre</li> 
+                            <li>Octubre</li>
+                            <li>Noviembre</li>
+                            <li>Diciembre</li>
+                          </ul>  
+                    </li>
+                
+                    <li class='dropDown'> 
+                        <span class='colapse menuLook' id="trimestre2Visible">3. Trimestre II</span>   
+                        <ul class="list-item-1 hiddenPart" id="trimestre2" >
+                            <li>Enero</li> 
+                            <li>Febrero</li>
+                            <li>Marzo</li>
+                          </ul>  
+                    </li>
+                    <li class='dropDown'> 
+                        <span class='colapse menuLook' id="trimestre3Visible">4. Trimestre III</span>   
+                        <ul class="list-item-1 hiddenPart" id="trimestre3" >
+                            <li>Abril</li> 
+                            <li>Mayo</li>
+                            <li>Junio</li>
+                          </ul>  
+                     </li> 
+                </ul> 
+                <div>
+                    <div><span>&lt;</span><span>script</span><span>&nbsp;</span><span>src</span><span>=</span><span>"js/jHarnina20.js"</span><span>&gt;&lt;/</span><span>script</span><span>&gt;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>'use&nbsp;strict'</span><span>;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Libreria&nbsp;jHarnina20.js</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;var&nbsp;$&nbsp;=&nbsp;function(string){}</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;function&nbsp;funcDelegate(obj,&nbsp;methodName)&nbsp;{}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;var&nbsp;HARNINA20&nbsp;=&nbsp;HARNINA20&nbsp;||&nbsp;{};</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;HARNINA20.namespace&nbsp;=&nbsp;function(namespace){}</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Menu&nbsp;Look</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Menu&nbsp;colapse</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>listaNodosLook</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>querySelectorAll</span><span>(</span><span>".colapse"</span><span>);</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>nodo</span><span>&nbsp;</span><span>of</span><span>&nbsp;</span><span>listaNodosLook</span><span>)&nbsp;{</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>new</span><span>&nbsp;</span><span>HARNINA20</span><span>.</span><span>myMenuLook</span><span>(</span><span>nodo</span><span>.</span><span>id</span><span>);</span></div>
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <br />
+                    <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span><span>&nbsp;</span></div>
+                    </div>     
+            </div>
+            <a href="javascript: history.go(-1)">Volver</a> 
+        </div>    
+    </div> 
+    
+   
+    <script>
+              'use strict';
+             var  HARNINA20 = {};
+         //   HARNINA20.menuDropDown = ".dropDown ul";
+           // otra forma
+       //    HARNINA20.menuDropDown = ".hiddenPart";
+         //   HARNINA20.menuDropDown = [".hiddenPart"];
+          //     HARNINA20.menuDropDown = [".hiddenPart",".dropDown ul"];    
+          
+          
+          
+          // HARNINA20.menuLook  = [".colapse"];
+
+    </script> 
+     <script src="js/jHarnina20v3.js"></script>    
+</body>
+</html>

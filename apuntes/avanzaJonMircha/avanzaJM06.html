@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+        <h1>Nuevas estructuras de datos</h1>
+        <h1>Symbols</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=XVBkTsj99so&t=794s">Video 49</a></li>   
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol">Symbol</a></li>
+                
+            </ul>         
+      </div>
+      <div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>id</span><span>&nbsp;=</span><span>"hola"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>id2</span><span>&nbsp;=</span><span>"hola"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>id</span><span>&nbsp;===&nbsp;</span><span>id2</span><span>);&nbsp;</span><span>//&nbsp;true</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>id3</span><span>&nbsp;=</span><span>Symbol</span><span>(</span><span>"hola"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>id4</span><span>&nbsp;=</span><span>Symbol</span><span>(</span><span>"hola"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>id3</span><span>&nbsp;===&nbsp;</span><span>id4</span><span>);&nbsp;</span><span>//&nbsp;false</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>id3</span><span>,&nbsp;</span><span>typeof</span><span>&nbsp;</span><span>id4</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>NOMBRE</span><span>&nbsp;=&nbsp;</span><span>Symbol</span><span>();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>persona</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>[</span><span>NOMBRE</span><span>]:</span><span>"Jon"</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>persona</span><span>.</span><span>NOMBRE</span><span>&nbsp;=&nbsp;</span><span>"Lucky"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>.</span><span>NOMBRE</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>[</span><span>NOMBRE</span><span>]);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>SALUDAR</span><span>&nbsp;=&nbsp;</span><span>Symbol</span><span>();</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>persona</span><span>[</span><span>SALUDAR</span><span>]&nbsp;=&nbsp;</span><span>function</span><span>(){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>"Hola"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>persona</span><span>[</span><span>SALUDAR</span><span>]();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>propiedad</span><span>&nbsp;</span><span>in</span><span>&nbsp;</span><span>persona</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>propiedad</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>persona</span><span>[</span><span>propiedad</span><span>]);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span>//&nbsp;No&nbsp;se&nbsp;ven&nbsp;los&nbsp;Symbols</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>Object</span><span>.</span><span>getOwnPropertySymbols</span><span>(</span><span>persona</span><span>));</span></div>
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+  <script>
+      let id ="hola";
+      let id2 ="hola";
+      console.log(id === id2); // true
+
+      let id3 =Symbol("hola");
+      let id4 =Symbol("hola");
+      console.log(id3 === id4); // false
+      console.log(typeof id3, typeof id4);
+
+      const NOMBRE = Symbol();
+
+      const persona = {
+          [NOMBRE]:"Jon",          
+      };
+      console.log(persona);
+      persona.NOMBRE = "Lucky";
+      console.log(persona);
+      console.log(persona.NOMBRE);
+      console.log(persona[NOMBRE]);
+
+      const SALUDAR = Symbol();
+      persona[SALUDAR] = function(){
+        console.log("Hola");
+      }
+      console.log(persona);
+     persona[SALUDAR]();
+
+     for(let propiedad in persona){
+         console.log(propiedad);
+         console.log(persona[propiedad]);
+     } // No se ven los Symbols
+
+     console.log(Object.getOwnPropertySymbols(persona));
+  </script>
+</body>
+</html>

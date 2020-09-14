@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Array</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=o3c8cW73weQ&t=13s">Video 11</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array">El Oject Array</a></li>
+                <li><a href="https://www.w3schools.com/js/js_array_iteration.asp">w3schools: JavaScript Array Iteration Methods</a></li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+        // Sintaxis
+       // [elemento0, elemento1, ..., elementoN]
+//new Array(elemento0, elemento1[, ...[, elementoN]])
+//new Array(longitudDelArray)
+
+
+      // Declaración       
+       const dia11 = []; 
+       console.dir(dia11); // Array vacío
+       const dia12 = new Array(); 
+       console.dir(dia12); // Array vacío
+       // conclusión puedes usar cualquiera de las dos expresiones
+
+       const dia21 = [9]; 
+       console.dir(dia21); // Array 1 elemento length: 1
+       const dia22 = new Array(9); 
+       console.dir(dia22); // Array vacío length: 9
+
+       const dia31 = [null,["Sunday","Lunes"],["Tuesday","Martes"],["Wednesday","Miércoles"]]; 
+       console.dir(dia31); // Array 4 elemento length: 4
+       const dia32 = new Array(null,["Sunday","Lunes"],["Tuesday","Martes"],["Wednesday","Miércoles"]); 
+       console.dir(dia32); // Array 4 elemento length: 4
+
+       //Add
+       dia31.push(["Thursday","Jueves"]);
+       dia32.push(["Thursday","Jueves"]);
+       console.dir(dia31); // Array 5 elemento length: 5
+       console.dir(dia32); // Array 5 elemento length: 5
+
+       // Update  vamos arrgeglar los días anglosajones
+       //dia31[5][0] = "Thursday"; Uncaught TypeError: Cannot set property '0' of undefined
+       // dia31[5][1] = "Viernes";   Uncaught TypeError: Cannot set property '0' of undefined
+       dia31.push(["Thursday","Viernes"]);
+       dia31[4][0] = dia31[3][0];
+       dia31[3][0] = dia31[2][0];
+       dia31[2][0] = dia31[1][0];
+       dia31[2][0] = "Monday";
+       console.dir(dia31); // Array 6 elemento length: 6
+       dia31.push(["Friday","Sábado"]);
+       dia31.push(["Saturday","Domingo"]);
+
+        // Select con for primitivo
+        for (let i = 0; i < dia31.length; i++) {
+            console.dir(dia31[i]);
+             // Como hay problemas si no es array
+            if (Array.isArray(dia31[i])){
+                for (let j = 0; j < dia31[i].length; j++)   {           
+                    console.dir(dia31[i][j]);
+                }
+            }
+        }     
+
+        // con forEach
+
+        dia31.forEach(function(ele,index){
+            console.log(`<li id="${index}">${ele}</li>`);
+            // Como hay problemas si no es array
+            if(Array.isArray(ele)){
+                ele.forEach(function(ele,index){
+                    console.log(`<li id="${index}">${ele}</li>`);
+                })
+            }
+            
+        })
+
+        // Con forEach  arrow
+
+        dia31.forEach((ele,index) => {
+            console.log(`<li id="${index}">${ele}</li>`);
+            // Como hay problemas si no es array
+            if(Array.isArray(ele)){
+                ele.forEach((ele,index)=>{
+                    console.log(`<li id="${index}">${ele}</li>`);
+                })
+            }
+        })
+       //Diariemente queremos anotar las temperaturas  máxima y mínima de Almendralejo para un año
+       
+        
+        
+        // Hoy 23 de abril maxima 22 y minima 11
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // const temperatureAlmendralejo0 = [][];  asi no se puede
+        const temperatureAlmendralejo = new Array(13); //nº de meses, nº de dias, la máxima y la mínima
+        const diaMes = [null,31,29,31,30,31,30,31,31,30,31,30,31];
+        
+        diaMes.forEach((mes,index)=>{
+            if (index > 0){
+                temperatureAlmendralejo[index] = new Array(mes+1);
+
+                for(let i=1; i < mes + 1; i++){
+                    temperatureAlmendralejo[index][i] = new Array(2);
+                }                    
+            }
+           
+         })
+
+       
+      temperatureAlmendralejo[4][12][0]= 12;
+      temperatureAlmendralejo[4][12][1]= 22;
+       
+      console.log(temperatureAlmendralejo);
+    </script>
+</body>
+</html>

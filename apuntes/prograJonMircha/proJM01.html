@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación I</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=Xh8p7aZBiaw">Video 35</a></li>
+                <li> 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.</li>
+                <li>2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".</li>
+                <li>3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].</li>
+                <li>4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.</li>
+            </ul>
+        </div>
+            <div>
+                <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;1)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;cuente&nbsp;el&nbsp;n&uacute;mero&nbsp;de&nbsp;caracteres&nbsp;de&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;pe.&nbsp;miFuncion("Hola&nbsp;Mundo")&nbsp;devolver&aacute;&nbsp;10.</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>/*function&nbsp;contarCaracteres(cadena&nbsp;=&nbsp;""){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!cadena){</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.warn("No&nbsp;ingresaste&nbsp;ninguna&nbsp;cadena");</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else&nbsp;{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.info(`La&nbsp;cadena&nbsp;"${cadena}"&nbsp;tiene&nbsp;${cadena.length}&nbsp;car&aacute;cteres`);</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}*/</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>contarCaracteres</span><span>&nbsp;=&nbsp;(</span><span>cadena</span><span>=</span><span>""</span><span>)</span><span>=&gt;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!</span><span>cadena</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;ninguna&nbsp;cadena"</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`La&nbsp;cadena&nbsp;"</span><span>${</span><span>cadena</span><span>}</span><span>"&nbsp;tiene&nbsp;</span><span>${</span><span>cadena</span><span>.</span><span>length</span><span>}</span><span>&nbsp;car&aacute;cteres`</span><span>);</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>contarCaracteres</span><span>();</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>contarCaracteres</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>);</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;min&nbsp;13</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;2)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;te&nbsp;devuelva&nbsp;el&nbsp;texto&nbsp;recortado&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;seg&uacute;n&nbsp;el&nbsp;n&uacute;mero&nbsp;de&nbsp;caracteres&nbsp;indicados,</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;pe.&nbsp;miFuncion("Hola&nbsp;Mundo",&nbsp;4)&nbsp;devolver&aacute;&nbsp;"Hola".</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>recortarTexto</span><span>&nbsp;=&nbsp;(</span><span>cadena</span><span>&nbsp;=&nbsp;</span><span>""</span><span>,&nbsp;</span><span>longitud</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!</span><span>cadena</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;ninguna&nbsp;cadena"</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:(</span><span>longitud</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;ninguna&nbsp;Longitud"</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>cadena</span><span>.</span><span>slice</span><span>(</span><span>0</span><span>,</span><span>longitud</span><span>));</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>recortarTexto</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>,</span><span>4</span><span>);&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>recortarTexto</span><span>(</span><span>""</span><span>,</span><span>4</span><span>);&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>recortarTexto</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>);&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>recortarTexto</span><span>(</span><span>4</span><span>);&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;min&nbsp;21</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;&nbsp;3)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;dada&nbsp;una&nbsp;String&nbsp;te&nbsp;devuelva&nbsp;un&nbsp;Array&nbsp;de&nbsp;textos&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;separados&nbsp;por&nbsp;cierto&nbsp;caracter,&nbsp;pe.&nbsp;miFuncion('hola&nbsp;que&nbsp;tal',&nbsp;'&nbsp;')&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;devolver&aacute;&nbsp;['hola',&nbsp;'que',&nbsp;'tal'].&lt;/li&gt;</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>cadenaAArreglo</span><span>&nbsp;=&nbsp;(</span><span>cadena</span><span>&nbsp;=&nbsp;</span><span>""</span><span>,&nbsp;</span><span>separador</span><span>&nbsp;=&nbsp;</span><span>undefined</span><span>)</span><span>=&gt;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(!</span><span>cadena</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;ninguna&nbsp;cadena"</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:(</span><span>separador</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;separador"</span><span>)</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span><span>console</span><span>.</span><span>info</span><span>(</span><span>cadena</span><span>.</span><span>split</span><span>(</span><span>separador</span><span>));</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cadenaAArreglo</span><span>(</span><span>"Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt"</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span><span>"&nbsp;&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.&nbsp;Ut&nbsp;enim&nbsp;ad&nbsp;minim&nbsp;veniam,&nbsp;quis&nbsp;nostrud&nbsp;exercitation&nbsp;ullamco&nbsp;laboris&nbsp;nisi&nbsp;"</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span><span>"&nbsp;ut&nbsp;aliquip&nbsp;ex&nbsp;ea&nbsp;commodo&nbsp;consequat.&nbsp;Duis&nbsp;aute&nbsp;irure&nbsp;dolor&nbsp;in&nbsp;reprehenderit&nbsp;in&nbsp;voluptate&nbsp;velit&nbsp;esse&nbsp;cillum&nbsp;dolore&nbsp;eu&nbsp;fugiat&nbsp;nulla&nbsp;pariatur.&nbsp;"</span><span>,&nbsp;</span><span>"&nbsp;"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//min&nbsp;27</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//4)&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;repita&nbsp;un&nbsp;texto&nbsp;X&nbsp;veces,&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//pe.&nbsp;miFuncion</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>repetirTexto</span><span>&nbsp;=&nbsp;(</span><span>texto</span><span>&nbsp;=&nbsp;</span><span>""</span><span>,</span><span>veces</span><span>=</span><span>undefined</span><span>)</span><span>=&gt;</span><span>{</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Validaci&oacute;n</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>texto</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;texto"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>veces</span><span>&nbsp;===&nbsp;</span><span>undefined</span><span>)&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;veces&nbsp;a&nbsp;repetir&nbsp;texto"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>veces</span><span>&nbsp;===&nbsp;</span><span>0</span><span>)&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"Las&nbsp;veces&nbsp;No&nbsp;puede&nbsp;ser&nbsp;0"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>Math</span><span>.</span><span>sign</span><span>(</span><span>veces</span><span>)&nbsp;===&nbsp;-</span><span>1</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>"Las&nbsp;veces&nbsp;No&nbsp;puede&nbsp;ser&nbsp;negativo"</span><span>);</span></div>
+                <br />
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>&nbsp;(</span><span>let</span><span>&nbsp;</span><span>i</span><span>=</span><span>1</span><span>;&nbsp;</span><span>i</span><span>&nbsp;&lt;=&nbsp;</span><span>veces</span><span>;&nbsp;</span><span>i</span><span>++)&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`</span><span>${</span><span>texto</span><span>}</span><span>,</span><span>${</span><span>i</span><span>}</span><span>`</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>repetirTexto</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>,</span><span>3</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>repetirTexto</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>,</span><span>0</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>repetirTexto</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>,-</span><span>3</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>repetirTexto</span><span>(</span><span>""</span><span>,</span><span>3</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>repetirTexto</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>);</span></div>
+                <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+                </div>
+      </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+   
+    <script>
+        // 1) Programa una función que cuente el número de caracteres de una cadena de texto,
+        // pe. miFuncion("Hola Mundo") devolverá 10.
+
+        /*function contarCaracteres(cadena = ""){
+            if(!cadena){
+                console.warn("No ingresaste ninguna cadena");
+            }else {
+                console.info(`La cadena "${cadena}" tiene ${cadena.length} carácteres`);
+
+            }
+        }*/
+
+        const contarCaracteres = (cadena="")=>
+        (!cadena)
+            ?console.warn("No ingresaste ninguna cadena")
+            :console.info(`La cadena "${cadena}" tiene ${cadena.length} carácteres`);
+
+        contarCaracteres();
+        contarCaracteres("Hola Mundo");
+
+        // min 13
+        // 2) Programa una función que te devuelva el texto recortado 
+        // según el número de caracteres indicados,
+        // pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+
+            const recortarTexto = (cadena = "", longitud = undefined)=>
+                (!cadena)
+                ?console.warn("No ingresaste ninguna cadena")
+                :(longitud === undefined)
+                    ?console.warn("No ingresaste ninguna Longitud")
+                    :console.info(cadena.slice(0,longitud));
+
+            recortarTexto("Hola Mundo",4); 
+            recortarTexto("",4); 
+            recortarTexto("Hola Mundo"); 
+            recortarTexto(4);  
+            
+           // min 21
+          //  3) Programa una función que dada una String te devuelva un Array de textos 
+          // separados por cierto caracter, pe. miFuncion('hola que tal', ' ') 
+          // devolverá ['hola', 'que', 'tal'].</li>
+
+          const cadenaAArreglo = (cadena = "", separador = undefined)=>
+            (!cadena)
+                ?console.warn("No ingresaste ninguna cadena")
+                :(separador === undefined)
+                    ?console.warn("No ingresaste separador")
+                    :console.info(cadena.split(separador));
+
+          cadenaAArreglo("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+          +"  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi "
+          +" ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ", " ");
+         
+        //min 27
+          //4) Programa una función que repita un texto X veces, 
+          //pe. miFuncion
+
+          const repetirTexto = (texto = "",veces=undefined)=>{
+            // Validación
+            if(!texto) return console.warn("No ingresaste texto");
+            if(veces === undefined)  return console.warn("No ingresaste veces a repetir texto");
+            if(veces === 0)  return console.error("Las veces No puede ser 0");
+            if(Math.sign(veces) === -1) return console.error("Las veces No puede ser negativo");
+
+            for (let i=1; i <= veces; i++) console.info(`${texto},${i}`);
+            
+          }
+          repetirTexto("Hola Mundo",3);
+          repetirTexto("Hola Mundo",0);
+          repetirTexto("Hola Mundo",-3);
+          repetirTexto("",3);
+          repetirTexto("Hola Mundo");
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Clases</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=C86JvqET61A">Video 24</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes">Clases</a></li>  
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>     
+
+        class Animal {
+            constructor(nombre,genero){
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+            sonar(){
+                        console.log("Hago sonidos porque soy un animal y estoy vivo");
+                    }  
+            saludar(){
+                        console.log(`Hola me llamo... ${this.nombre}.`);       
+                    }       
+
+        }
+
+        const mimi = new Animal("Mimi","Hembra"),
+            scooby = new Animal("Scooby","Macho");
+
+        console.log(mimi);
+        console.log(scooby);
+        mimi.saludar();
+        scooby.saludar();
+
+        class Perro extends Animal{
+            constructor(nombre,genero,tamanio){
+                // Con el método super() se manda a llamar al constructor de la clase padre
+                super(nombre,genero);
+                this.tamanio = tamanio;
+            }
+            sonar(){
+                        console.log("Hago sonidos porque soy un perro y estoy vivo");
+                    }  
+            ladrar(){
+                        console.log(`Guauuuu`);       
+                    }    
+        }
+        const nitri = new Perro("Nitri","Hembra","Mediano"),
+            rin = new Perro("Rin","Macho","pequeño");
+
+    
+
+        console.log(nitri);
+        console.log(rin);
+        nitri.saludar();
+        console.log(rin.tamanio);
+        rin.sonar();
+        rin.saludar();
+        rin.ladrar();
+
+
+    </script>
+</body> 
+</html>

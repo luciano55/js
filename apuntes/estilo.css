@@ -1,0 +1,55 @@
+
+.flexPlantilla {
+    display: flex;
+    flex-direction: row;
+    /* row | row-reverse | column | column-reverse */
+    justify-content: space-around;
+    /* flex-start | flex-end | center | space-between | space-around */
+    /* 1em = 16px */
+}
+
+body{
+     background-color:lightpink;
+     font-size: 16px; /* 1em */
+}
+.inColumn{ 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+}
+.inRow{ 
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    margin:20px;
+    
+}
+.center{
+    display:inline-block;
+    text-align:center;
+}
+
+.main{
+    background-color: gainsboro;
+    width: 90%;      
+}
+.mainwrapper{
+  display: flex; 
+  width: 70%;
+  border: 2px solid grey;
+  margin: 50px auto;
+  padding: 15px;
+  background-color: gainsboro;
+  background-image: url(grid.png);
+  background-repeat: repeat;
+  
+}
+.sizeColumn{
+    width: 25%;
+}
+.sizelogo{
+    width: 8em;
+    
+}
+
+

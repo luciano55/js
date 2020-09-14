@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Cortocircuito AND - OR</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=SK7CCXjzVgA">Video 29</a></li>
+               <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operadores_l%C3%B3gicos">Operadores lógicos</a></li>
+                <li><a href="https://riptutorial.com/es/javascript/example/1587/cortocircuito-en-operadores-booleanos-">Cortocircuito en operadores booleanos</a></li>
+            </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script> 
+        /*  OR
+         0  0  0
+         0  1  1
+         1  0  1
+         1  1  1
+
+         AND 
+         0  0  0
+         0  1  0
+         1  0  0
+         1  1  1     */
+
+        function saludar(nombre){
+            nombre = nombre || "Desconocido";
+            console.log(`Hola ${nombre}`);
+        }
+        saludar("Jon");
+        saludar();
+
+        console.log("cadena"|| "Valor de la cadena"); // cadena
+        console.log(19|| "Valor de la cadena"); //19
+        console.log(true|| "Valor de la cadena"); //true
+        console.log([]|| "Valor de la cadena"); // []
+        console.log({}|| "Valor de la cadena"); // {}
+        console.log(false|| "Valor de la cadena"); // "Valor de la cadena"
+        console.log(null|| "Valor de la cadena"); // "Valor de la cadena"
+        console.log(undefined|| "Valor de la cadena"); // "Valor de la cadena"
+        console.log(""|| "Valor de la cadena"); // "Valor de la cadena"
+        console.log(-2|| "Valor de la cadena"); // -2
+        console.log(0|| "Valor de la cadena"); // "Valor de la cadena"
+  
+        console.log("cadena" && "Valor de la cadena"); // "Valor de la cadena"
+        console.log(19 && "Valor de la cadena"); //"Valor de la cadena"
+        console.log(true && "Valor de la cadena"); // "Valor de la cadena"
+        console.log([] && "Valor de la cadena"); // "Valor de la cadena"
+        console.log({} && "Valor de la cadena"); // "Valor de la cadena"
+        console.log(false &&"Valor de la cadena"); // false
+        console.log(null && "Valor de la cadena"); // null
+        console.log(undefined || "Valor de la cadena"); // "Valor de la cade
+        console.log("" && "Valor de la cadena"); // 
+        console.log(-2 && "Valor de la cadena"); // "Valor de la cadeNna"
+        console.log(0 && "Valor de la cadena"); // 0
+
+        console.log(1 && 2 && 3 && 4);  // cuando todos son verdadero toma el último
+         </script>
+</body> 
+</html>

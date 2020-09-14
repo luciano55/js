@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS Avanzado Jon Mircha</h2>
+            <h1>Call, apply, bind  </h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+              <li><a href="https://www.youtube.com/watch?v=qy6IIjlykD0">Video 58</a></li>              
+             <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call">Call</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply">Function.prototype.apply()</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/bind">Function.prototype.bind()</a></li>    
+        </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>this</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>lugar</span><span>&nbsp;=&nbsp;</span><span>"Contexto&nbsp;Global"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>function</span><span>&nbsp;</span><span>saludar</span><span>(</span><span>saludo</span><span>,&nbsp;</span><span>aQuien</span><span>){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`</span><span>${</span><span>saludo</span><span>}</span><span>&nbsp;</span><span>${</span><span>aQuien</span><span>}</span><span>&nbsp;desde&nbsp;el&nbsp;</span><span>${</span><span>this</span><span>.</span><span>lugar</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>(</span><span>"Hola"</span><span>,</span><span>"kEnAi"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>obj</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>lugar:</span><span>&nbsp;</span><span>"Contexto&nbsp;Objecto"</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>.</span><span>call</span><span>(</span><span>obj</span><span>,</span><span>"Hola"</span><span>,</span><span>"Jon"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>.</span><span>call</span><span>(</span><span>null</span><span>,</span><span>"Hola"</span><span>,</span><span>"Jon"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>.</span><span>call</span><span>(</span><span>this</span><span>,</span><span>"Hola"</span><span>,</span><span>"Jon"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>.</span><span>apply</span><span>(</span><span>obj</span><span>,[</span><span>"Adios"</span><span>,&nbsp;</span><span>"Mircha"</span><span>]);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>.</span><span>apply</span><span>(</span><span>null</span><span>,[</span><span>"Adios"</span><span>,&nbsp;</span><span>"Mircha"</span><span>]);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>.</span><span>apply</span><span>(</span><span>this</span><span>,[</span><span>"Adios"</span><span>,&nbsp;</span><span>"Mircha"</span><span>]);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>persona</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>nombre:</span><span>"Jon"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>saludar</span><span>:</span><span>&nbsp;</span><span>function</span><span>(){</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>console</span><span>.</span><span>log</span><span>(</span><span>`Hola&nbsp;</span><span>${</span><span>this</span><span>.</span><span>nombre</span><span>}</span><span>`</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>persona</span><span>.</span><span>saludar</span><span>();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>this</span><span>.</span><span>nombre</span><span>&nbsp;=&nbsp;</span><span>"Window"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>otraPersona</span><span>&nbsp;=&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//saludar:&nbsp;persona.saludar.bind(persona)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>saludar:</span><span>&nbsp;</span><span>persona</span><span>.</span><span>saludar</span><span>.</span><span>bind</span><span>(</span><span>this</span><span>)</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>otraPersona</span><span>.</span><span>saludar</span><span>();</span></div>
+        <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>   
+ 
+ <p></p>
+<script>
+    console.log(this);
+    this.lugar = "Contexto Global";
+    function saludar(saludo, aQuien){
+        console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+    }
+    saludar("Hola","kEnAi");
+
+    const obj = {
+        lugar: "Contexto Objecto"
+    }
+   
+   saludar.call(obj,"Hola","Jon");
+   saludar.call(null,"Hola","Jon");
+   saludar.call(this,"Hola","Jon");
+   saludar.apply(obj,["Adios", "Mircha"]);
+   saludar.apply(null,["Adios", "Mircha"]);
+   saludar.apply(this,["Adios", "Mircha"]);
+
+   const persona = {
+       nombre:"Jon",
+       saludar: function(){
+           console.log(`Hola ${this.nombre}`);
+       }
+   }
+    persona.saludar();
+
+    this.nombre = "Window";
+    const otraPersona = {
+        //saludar: persona.saludar.bind(persona)
+        saludar: persona.saludar.bind(this)
+    }
+    otraPersona.saludar();
+</script>
+</body>
+</html>

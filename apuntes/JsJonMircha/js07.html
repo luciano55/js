@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Números: Number</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=o4p6p1z2P5A&t=20s">Video 07</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number"> Number es un Object</a></li>
+                <li>Js tiene poca presición numérica. Para ello usar librerias especificas</li>
+                <li>Se pude crear mediante asignación directa:  a = expresión; </li>
+                <li>Se pude crear mediante constructor: new Number(expresión); </li>
+                <li>Se pude crear mediante función: Number(expresión) </li>
+                <li>Si el argumento no puede ser convertido a un número, devuelve NaN.</li>
+                <li>Función isNaN para determinar si es número en caso contrario devuelve NaN</li>  
+                <li>Important! el operador typeof</li>
+                <li>parseInt y parseFloat son funciones de alto nivel y están asociadas al objeto Function.</li>
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>
+  
+    
+    <script>
+
+let n = new Number('123'); // n === 123 es false
+console.log(n==123,n===123);
+// ¿? Por que el tipo de  n es una referencia
+// y el de 123 es number
+var m = Number('123'); // m === 123 es true
+console.log(m==123,m===123);
+console.log(n instanceof Number); // es true
+console.log(m instanceof Number); // es false
+
+
+
+       let a = 2;
+       let b = new Number(1);
+       let c = 7.19;
+       console.log(a,b);
+       console.log(c.toFixed(1)); // 7.2
+       console.log(c.toFixed(5)); // 7.19000
+       console.log(parseInt(c)); // 7
+       console.log(parseFloat(c)); // 7.19
+       
+       let d = "5.6"
+       console.log(typeof c,typeof d); //number , string
+       console.log(a + b); // 3
+       console.log(c + d); // 7.195.6
+       console.log(c + parseInt(d));  // 12.190000000000001
+       console.log(c + parseFloat(d));  // 12.79
+       console.log(c + Number.parseInt(d));  // 12.190000000000001
+       console.log(c + Number.parseFloat(d));  // 12.79
+
+       // parseInt y parseFloat están en el prototype de Object
+
+       console.log(c + parseFloat(d));  // 12.79
+
+    </script>
+</body>
+</html>

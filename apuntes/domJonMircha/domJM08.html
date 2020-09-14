@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">  
+   
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>JS DOM Jon Mircha</h2>
+        <h1>DOM VIII: Creando Elementos y Fragmentos</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=tFSFX37Yah4">Video 68</a></li>        
+           
+        </ul>         
+      </div>
+      <div>
+        <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$figure</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"figure"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$img</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"img"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figcaption</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"figcaption"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figcaptionText</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createTextNode</span><span>(</span><span>"Animals"</span><span>),</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>getElementById</span><span>(</span><span>"cards"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$img</span><span>.</span><span>setAttribute</span><span>(</span><span>"src"</span><span>,</span><span>"https://placeimg.com/200/200/animals"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$img</span><span>.</span><span>setAttribute</span><span>(</span><span>"alt"</span><span>,&nbsp;</span><span>"Animals"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figure</span><span>.</span><span>classList</span><span>.</span><span>add</span><span>(</span><span>"card"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figcaption</span><span>.</span><span>appendChild</span><span>(</span><span>$figcaptionText</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figure</span><span>&nbsp;.</span><span>appendChild</span><span>(</span><span>$img</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figure</span><span>&nbsp;.</span><span>appendChild</span><span>(</span><span>$figcaption</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>appendChild</span><span>(</span><span>$figure</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;otra&nbsp;forma&nbsp;menos&nbsp;formal</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figure2</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"figure"</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figure2</span><span>.</span><span>innerHTML</span><span>&nbsp;=</span><span>`&nbsp;&lt;img&nbsp;src="https://placeimg.com/200/200/people"&nbsp;alt="People"&gt;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;figcaption&gt;People&lt;/figcaption&gt;&nbsp;`</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$figure2</span><span>.</span><span>classList</span><span>.</span><span>add</span><span>(</span><span>"card"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$cards</span><span>.</span><span>appendChild</span><span>(</span><span>$figure2</span><span>);</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>estaciones</span><span>&nbsp;=&nbsp;[</span><span>"Primavera"</span><span>,</span><span>"Verano"</span><span>,</span><span>"Oto&ntilde;o"</span><span>,</span><span>"Invierno"</span><span>]&nbsp;;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$ul</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"ul"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>document</span><span>.</span><span>write</span><span>(</span><span>"&lt;h3&gt;Estaciones&nbsp;del&nbsp;A&ntilde;o&lt;/h3&gt;"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>document</span><span>.</span><span>body</span><span>.</span><span>appendChild</span><span>(</span><span>$ul</span><span>);&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>estaciones</span><span>.</span><span>forEach</span><span>(</span><span>el</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$li</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"li"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$li</span><span>.</span><span>textContent</span><span>&nbsp;=&nbsp;</span><span>el</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$ul</span><span>.</span><span>appendChild</span><span>(</span><span>$li</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <br />
+        <div><span>&nbsp;</span><span>//&nbsp;Otra&nbsp;forma&nbsp;con&nbsp;innerHTML</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>continentes</span><span>&nbsp;=&nbsp;[</span><span>"&Aacute;frica"</span><span>,</span><span>"Am&eacute;rica"</span><span>,</span><span>"Asia"</span><span>,</span><span>"Europa"</span><span>,</span><span>"Ocean&iacute;a"</span><span>];</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$ul2</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"ul"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>document</span><span>.</span><span>write</span><span>(</span><span>"&lt;h3&gt;Continentes&nbsp;del&nbsp;Mundo&lt;/h3&gt;"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>document</span><span>.</span><span>body</span><span>.</span><span>appendChild</span><span>(</span><span>$ul2</span><span>);&nbsp;&nbsp;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$ul2</span><span>.</span><span>innerHTML</span><span>=</span><span>""</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>continentes</span><span>.</span><span>forEach</span><span>(</span><span>el</span><span>=&gt;</span><span>&nbsp;(</span><span>$ul2</span><span>.</span><span>innerHTML</span><span>&nbsp;+=&nbsp;</span><span>`&lt;li&gt;</span><span>${</span><span>el</span><span>}</span><span>&lt;/li&gt;`</span><span>));</span></div>
+        <br />
+        <div><span>//&nbsp;Fragmento&nbsp;molestar&nbsp;al&nbsp;DOM&nbsp;lo&nbsp;menos&nbsp;posible</span></div>
+        <div><span>const</span><span>&nbsp;</span><span>meses</span><span>&nbsp;=&nbsp;[</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Enero"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Febrero"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Marzo"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Abril"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Mayo"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Junio"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Julio"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Agosto"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Septiembre"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Octubre"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Noviembre"</span><span>,</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>"Diciembre"</span></div>
+        <div><span>],</span></div>
+        <div><span>$ul3</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"ul"</span><span>);</span></div>
+        <div><span>$fragment</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createDocumentFragment</span><span>();</span></div>
+        <div><span>meses</span><span>.</span><span>forEach</span><span>(</span><span>el</span><span>=&gt;</span><span>{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>const</span><span>&nbsp;</span><span>$li</span><span>&nbsp;=&nbsp;</span><span>document</span><span>.</span><span>createElement</span><span>(</span><span>"li"</span><span>);</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$li</span><span>.</span><span>textContent</span><span>&nbsp;=&nbsp;</span><span>el</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>$fragment</span><span>.</span><span>appendChild</span><span>(</span><span>$li</span><span>);</span></div>
+        <div><span>})</span></div>
+        <div><span>document</span><span>.</span><span>write</span><span>(</span><span>"&lt;h3&gt;Los&nbsp;meses&nbsp;del&nbsp;A&ntilde;o&lt;/h3&gt;"</span><span>);</span></div>
+        <div><span>$ul3</span><span>.</span><span>appendChild</span><span>(&nbsp;</span><span>$fragment</span><span>);</span></div>
+        <div><span>document</span><span>.</span><span>body</span><span>.</span><span>appendChild</span><span>(</span><span>$ul3</span><span>);&nbsp;</span></div>
+        <br /><br />
+        <div><span>&nbsp;&nbsp;</span><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+        </div>
+      <a href="javascript: history.go(-1)">Volver</a>
+    </div>
+  
+   <h3>Manejo del DOM</h3>
+ 
+<input type="text" name="nombre" placeholder="Nombre">
+<a class="link-dom" href="domJM04.html" style="background-color: #F7DF1E; color:#222;" data-id="1" data-description = "Document Object Model">DOM</a>
+<section id="cards">
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+    </figure >
+    <figure class="card" >
+        <img src="https://placeimg.com/200/200/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption>
+    </figure>
+    <figure class="card">
+        <img src="https://placeimg.com/200/200/archtech" alt="Arch">
+        <figcaption>Arch</figcaption>
+    </figure>
+    <figure >
+        <img src="https://placeimg.com/200/200/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+    </figure>
+</section>
+  
+  <script>
+    const $figure = document.createElement("figure"),
+      $img = document.createElement("img"),
+      $figcaption = document.createElement("figcaption"),
+      $figcaptionText = document.createTextNode("Animals"),
+      $cards = document.getElementById("cards");
+
+      
+
+      $img.setAttribute("src","https://placeimg.com/200/200/animals");
+      $img.setAttribute("alt", "Animals");
+      $figure.classList.add("card");
+      $figcaption.appendChild($figcaptionText);
+      $figure .appendChild($img);
+      $figure .appendChild($figcaption);
+      $cards.appendChild($figure);
+
+      // otra forma menos formal
+
+      $figure2 = document.createElement("figure");
+
+      $figure2.innerHTML =` <img src="https://placeimg.com/200/200/people" alt="People">
+        <figcaption>People</figcaption> `;
+      $figure2.classList.add("card");
+      $cards.appendChild($figure2);
+
+    const estaciones = ["Primavera","Verano","Otoño","Invierno"] ;
+    $ul = document.createElement("ul");
+    document.write("<h3>Estaciones del Año</h3>");
+    document.body.appendChild($ul);  
+    
+    estaciones.forEach(el=>{
+        const $li = document.createElement("li");
+        $li.textContent = el;
+        $ul.appendChild($li);
+    });
+
+ // Otra forma con innerHTML
+    const continentes = ["África","América","Asia","Europa","Oceanía"];
+    $ul2 = document.createElement("ul");
+    document.write("<h3>Continentes del Mundo</h3>");
+    document.body.appendChild($ul2);  
+    $ul2.innerHTML="";
+    continentes.forEach(el=> ($ul2.innerHTML += `<li>${el}</li>`));
+
+// Fragmento molestar al DOM lo menos posible
+const meses = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+],
+$ul3 = document.createElement("ul");
+$fragment = document.createDocumentFragment();
+meses.forEach(el=>{
+    const $li = document.createElement("li");
+    $li.textContent = el;
+    $fragment.appendChild($li);
+})
+document.write("<h3>Los meses del Año</h3>");
+$ul3.appendChild( $fragment);
+document.body.appendChild($ul3); 
+
+
+  </script>
+</body>
+</html>

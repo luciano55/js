@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Apuntes CSS 2020</title>
+    <link href="../css/app.css" rel="stylesheet">    
+  </head>
+  <body>
+    <div class = "paragraph01">
+         <h1>BOM (BROWSER OBJECT MODEL)</h1>
+         
+          <ul class="list-item-1">
+              <li><a href="#e01">1.INTRODUCCIÓN A BOM</a></li>
+             <li><a href="#e02">2. EL OBJETO WINDOW</a></li>
+             <li><a href="#e0201">2.1. Ejecutar sentencias</a></li>
+             <li><a href="#e0202">2.2. Ventanas del Object WINDOW</a>
+             </li>
+             <li><a href="#e03">3. EL OBJETO LOCATION</a>
+             <li><a href="#e04">4. EL OBJETO NAVIGATOR</a>
+             <li><a href="#e05">5. EL OBJETO SCREEN</a>
+             <li><a href="#e06">6. EL OBJETO HISTORY</a>
+             <li><a href="#e07">7. EL OBJETO DOCUMENT DOM</a>
+         </ul>
+</div>
+    <div class = "paragraph01">  
+        <a name="e01"></a>       
+         <h2>1.INTRODUCCIÓN A BOM</h2>
+          
+         <div class = "paragraph03" >
+            <p>Las versiones 3.0 de los navegadores Internet Explorer y Netscape Navigator introdujeron el concepto de Browser Object Model o BOM, que permite acceder y modificar las propiedades de las ventanas del propio navegador.</p>       
+            <p>Mediante BOM, es posible redimensionar y mover la ventana del navegador, modificar el texto que se muestra en la barra de estado y realizar muchas otras manipulaciones no relacionadas con el contenido de la página HTML.
+                El mayor inconveniente de BOM es que ninguna entidad se encarga de estandarizarlo o definir unos mínimos de interoperabilidad entre navegadores.</p>
+                
+           <p>    Algunos de los elementos que forman el BOM son los siguientes:</p> 
+           <div class="mainwrapper inColumn aiCenter"> 
+           <ul class="list-item-1">
+	            <li>Crear, mover, redimensionar y cerrar ventanas de navegador.</li>
+	            <li>Obtener información sobre el propio navegador.</li>
+                <li>Propiedades de la página actual y de la pantalla del usuario.</li>
+                <li>	Gestión de cookies.</li>
+            </ul>
+             </div>
+            <p> El BOM está compuesto por varios objetos relacionados entre sí. El siguiente esquema muestra los objetos de BOM y su relación:              
+            </p>  
+        <div class="mainwrapper inColumn aiCenter">
+          <img src="img/jerarquia.png" alt="">
+          <div>Figura 14.1 Jerarquía de objetos que forman el BOM</div>
+             </div>
+          <p>En el esquema anterior, los objetos mostrados con varios recuadros superpuestos son arrays. El resto de objetos, representados por un rectángulo individual, son objetos simples. En cualquier caso, todos los objetos derivan del objeto window.   </p>
+        </div>
+    </div>
+    <div class = "paragraph01">
+           <a name="e02"></a> 
+         <h2>2. EL OBJETO WINDOW</h2>
+        <div class = "paragraph03" >
+            <p>El objeto window representa la ventana completa del navegador. Mediante este objeto, es posible mover, redimensionar y manipular la ventana actual del navegador. Incluso es posible abrir y cerrar nuevas ventanas de navegador.</p>
+            <p>Como todos los demás objetos heredan directa o indirectamente del objeto window, no es necesario indicarlo de forma explícita en el código JavaScript. En otras palabras:
+            </p>
+        </div>
+        <div class = "paragraph05" >
+            <p>window.forms[0] === forms[0]</p>
+            <p>window.document === document</p>
+        </div>
+        <div class = "paragraph03" >
+           <p>Window propiedades y métodos:</p>
+           <p><a href="https://www.w3schools.com/jsref/obj_window.asp" title="Propertys">Window propiedades</a></p>            
+            <p>Window define cuatro métodos para manipular el tamaño y la posición de la ventana:</p>
+            <div class="mainwrapper inColumn aiCenter">
+             <ul class="list-item-1">
+                 <li><b>moveBy(x, y)</b> desplaza la posición de la ventana x píxel hacia la derecha y y píxel hacia abajo. Se permiten desplazamientos negativos para mover la ventana hacia la izquierda o hacia arriba.</li>
+                 <li><b>moveTo(x, y)</b> desplaza la ventana del navegador hasta que la esquina superior izquierda se encuentre en la posición (x, y) de la pantalla del usuario. Se permiten desplazamientos negativos, aunque ello suponga que parte de la ventana no se visualiza en la pantalla.</li>
+                 <li><b>resizeBy(x, y)</b> redimensiona la ventana del navegador de forma que su nueva anchura sea igual a (anchura_anterior + x) y su nueva altura sea igual a (altura_anterior + y). Se pueden emplear valores negativos para reducir la anchura y/o altura de la ventana.</li>
+                 <li><b>resizeTo(x, y)</b> redimensiona la ventana del navegador hasta que su anchura sea igual a x y su altura sea igual a y. No se permiten valores negativos.</li>
+            </ul>
+            </div>
+            <p>Los navegadores son cada vez menos permisivos con la modificación mediante JavaScript de las propiedades de sus ventanas. De hecho, la mayoría de navegadores permite a los usuarios bloquear el uso de JavaScript para realizar cambios de este tipo. De esta forma, una aplicación nunca debe suponer que este tipo de funciones están disponibles y funcionan de forma correcta.</p>
+            <p>A continuación se muestran algunos ejemplos de uso de estas funciones:</p>
+        </div>
+        <div class = "paragraph05" >
+           <p> Mover la ventana 20 píxel hacia la derecha y 30 píxel hacia abajo</p> 
+           <p>window.moveBy(20, 30);</p>
+
+            <p>Redimensionar la ventana hasta un tamaño de 250 x 250</p>
+            <p>window.resizeTo(250, 250);</p> 
+
+             <p>Agrandar la altura de la ventana en 50 píxel</p>
+            <p>window.resizeBy(0, 50);</p> 
+            
+             <p>Colocar la ventana en la esquina izquierda superior de la ventana</p>
+            <p>window.moveTo(0, 0);</p> 
+        </div>
+         <div class = "paragraph03" >
+            <p>Además de desplazar y redimensionar la ventana del navegador, es posible averiguar la posición y tamaño actual de la ventana. Sin embargo, la ausencia de un estándar para BOM provoca que cada navegador implemente su propio método:</p>
+             <p>Internet Explorer proporciona las propiedades window.screenLeft y window.screenTop para obtener las coordenadas de la posición de la ventana. No es posible obtener el tamaño de la ventana completa, sino solamente del área visible de la página (es decir, sin barra de estado ni menús). Las propiedades que proporcionan estas dimensiones son  <b>document.body.offsetWidth </b>y  <b>document.body.offsetHeight.</b></p>
+             <p>
+                Los navegadores de la familia Mozilla, Safari y Opera proporcionan las propiedades window.screenX y window.screenY para obtener la posición de la ventana. El tamaño de la zona visible de la ventana se obtiene mediante <span class="probar">window.innerWidth</span> y <span class="probar">window.innerHeight</span>, mientras que el tamaño total de la ventana se obtiene mediante <span class="probar">window.outerWidth</span> y <span class="probar">window.outerHeight</span>.
+             </p>
+        </div>
+    </div>
+    <div class = "paragraph01">
+        <a name="e0201"></a>
+        <h3>2.1. Ejecutar sentencias</h3>
+        <div class = "paragraph03" >
+        <p>Para ejecutar sentencias en el navegador usaremos un lenguaje de programación (JavaScript), para ello abra el navegador por ejemplo Chrome.
+Con botón derecho sobre cualquier página seleccionamos Inspeccionar, acto seguido aparecerá un menú principal del cual elegimos console que es la consola de comando para lanzar nuestras órdenes.
+Todo lo que esté en verde podéis probarlo. ¡Suerte!
+</p>
+        </div>
+    </div>   
+    <div class = "paragraph01">
+        <a name="e0202"></a>
+        <h3>2.2. VENTANAS DEFINIDAS EN  WINDOW</h3>
+        <div class = "paragraph03" >
+        <P>Fijaos bien: nombre con parentesis = funciones.</P>
+       </div> 
+       <ul class="list-item-1">
+          <li>	 Alert(mensaje) muestra un mensaje(una constante, una variable o expresión) en una ventana.
+              <p class ="probar">alert("Hola Mundo");</p>
+              <p class ="probar">alert(location.href);</p>
+          </li>
+           <li>	Confirm(mensaje) debes confirmar generalmente una pregunta.
+              <p class ="probar">confirm("¿Seguimos? ");</p>
+              <p class ="probar">confirm("Press a button!\nEither OK or Cancel.");</p>
+          </li>
+           <li>	Prompt(mensaje) muestra un cuadro de diálogo para solicitar al usuario que ingrese un valor.
+              <p class ="probar">prompt("Introduce tu nombre ");</p>     
+          </li>
+           
+       </ul>  
+       <p>El signo más concatena expresiones</p>
+       <p class ="probar">alert("Te llamas… " + prompt("Introduce tu nombre "));</p>      
+   </div>
+    <div class = "paragraph01">
+       <a name="e03"></a>
+        <h2>3. EL OBJETO LOCATION</h2>
+        <div class = "paragraph03" >
+            <p>El objeto location es uno de los objetos más útiles del BOM. Debido a la falta de estandarización, location es una propiedad tanto del objeto window como del objeto document.</p>
+            <p>El objeto location representa la URL de la página HTML que se muestra en la ventana del navegador y proporciona varias propiedades útiles para el manejo de la URL:</p>
+            <div class="bill">
+                <div class="billFila">
+                    <span class="billCol billSubTitle">Propiedad</span>
+                    <span class="billCol billSubTitle">Descripción</span>  
+                </div>
+                <div><hr></div>
+                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>hash</code></span> 
+                   <span class="billCol billValue">El contenido de la URL que se encuentra después del signo <code>#</code> (para los enlaces de las anclas) <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion hash</code> = <code>#seccion</code></span>
+                </div>
+                <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>host</code></span> 
+                   <span class="billCol billValue">El nombre del servidor <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion host</code> = <code>www.ejemplo.com</code></span>
+                </div>
+                <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>hostname</code></span> 
+                   <span class="billCol billValue">La mayoría de las veces coincide con <code>host</code>, aunque en ocasiones, se eliminan las <code>www</code> del principio <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion hostname</code> = <code>www.ejemplo.com</code></span>
+                </div>
+                <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>href</code></span> 
+                   <span class="billCol billValue">La URL completa de la página actual <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion URL</code> = <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion</code></span>
+                </div>
+                <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>pathname</code></span> 
+                   <span class="billCol billValue">Todo el contenido que se encuentra después del host <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion pathname</code> = <code>/ruta1/ruta2/pagina.html</code></span>
+                </div>
+                 <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>port</code></span> 
+                   <span class="billCol billValue">Si se especifica en la URL, el puerto accedido <code>http://www.ejemplo.com:8080/ruta1/ruta2/pagina.html#seccion port</code> = <code>8080</code> La mayoría de URL no proporcionan un puerto, por lo que su contenido es vacío <code>http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion port</code> = (vacío)</span>
+                </div>
+                 <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>protocol</code></span> 
+                   <span class="billCol billValue">El protocolo empleado por la URL, es decir, todo lo que se encuentra antes de las dos barras inclinadas <code>// http://www.ejemplo.com/ruta1/ruta2/pagina.html#seccion protocol</code> = <code>http:</code></span>
+                </div>
+                 <hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>search</code></span> 
+                   <span class="billCol billValue">Todo el contenido que se encuentra tras el símbolo <code>?</code>, es decir, la consulta o <em>"query string"</em> <code>http://www.ejemplo.com/pagina.php?variable1=valor1&amp;variable2=valor2 search</code> = <code>?variable1=valor1&amp;variable2=valor2</code></span>
+                </div>
+            </div>
+
+          <p>Para ver las propiedades anteriores podéis por ejemplo:  <span class="probar">alert(location.href);</span></p>
+ 
+
+
+</div>
+    </div>
+    <div class = "paragraph01">
+       <a name="e04"></a>
+        <h2>4. EL OBJETO NAVIGATOR</h2>
+        <div class = "paragraph03" >
+        <p>El objeto navigator es uno de los primeros objetos que incluyó el BOM y permite obtener información sobre el propio navegador. En Internet Explorer, el objeto navigator también se puede acceder a través del objeto clientInformation.</p>
+        <p>Aunque es uno de los objetos menos estandarizados, algunas de sus propiedades son comunes en casi todos los navegadores. A continuación se muestran algunas de esas propiedades:</p>
+        </div>
+          <div class="bill">
+                <div class="billFila">
+                    <span class="billCol billSubTitle">Propiedad</span>
+                    <span class="billCol billSubTitle">Descripción</span>  
+                </div>
+                <div><hr></div>
+                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>appCodeName</code></span> 
+                   <span class="billCol billValue">Cadena que representa el nombre del navegador (normalmente es <code>Mozilla</code>)</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>appName</code></span> 
+                   <span class="billCol billValue">Cadena que representa el nombre oficial del navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>appMinorVersion</code></span> 
+                   <span class="billCol billValue">(Sólo Internet Explorer) Cadena que representa información extra sobre la versión del navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>appVersion</code></span> 
+                   <span class="billCol billValue">Cadena que representa la versión del navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>browserLanguage</code></span> 
+                   <span class="billCol billValue">Cadena que representa el idioma del navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>porcookieEnabledt</code></span> 
+                   <span class="billCol billValue">Boolean que indica si las cookies están habilitadas</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>cpuClass</code></span> 
+                   <span class="billCol billValue">(Sólo Internet Explorer) Cadena que representa el tipo de CPU del usuario ("x86", "68K", "PPC", "Alpha", "Other")</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>javaEnabled</code></span> 
+                   <span class="billCol billValue">Boolean que indica si Java está habilitado</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>language</code></span> 
+                   <span class="billCol billValue">Cadena que representa el idioma del navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>mimeTypes</code></span> 
+                   <span class="billCol billValue">Array de los tipos MIME registrados por el navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>onLine</code></span> 
+                   <span class="billCol billValue">(Sólo Internet Explorer) Boolean que indica si el navegador está conectado a Internet</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>oscpu</code></span> 
+                   <span class="billCol billValue">(Sólo Firefox) Cadena que representa el sistema operativo o la CPU</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>platform</code></span> 
+                   <span class="billCol billValue">Cadena que representa la plataforma sobre la que se ejecuta el navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>plugins</code></span> 
+                   <span class="billCol billValue">Array con la lista de plugins instalados en el navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>preference()</code></span> 
+                   <span class="billCol billValue">(Sólo Firefox) Método empleado para establecer preferencias en el navegador</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>product</code></span> 
+                   <span class="billCol billValue">Cadena que representa el nombre del producto (normalmente, es Gecko)</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>productSub</code></span> 
+                   <span class="billCol billValue">Cadena que representa información adicional sobre el producto (normalmente, la versión del motor Gecko)</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>securityPolicy</code></span> 
+                   <span class="billCol billValue">Sólo Firefox</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>systemLanguage</code></span> 
+                   <span class="billCol billValue">(Sólo Internet Explorer) Cadena que representa el idioma del sistema operativo</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>userAgent</code></span> 
+                   <span class="billCol billValue">Cadena que representa la cadena que el navegador emplea para identificarse en los servidores</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>userLanguage</code></span> 
+                   <span class="billCol billValue">(Sólo Explorer) Cadena que representa el idioma del sistema operativo</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>userProfile</code></span> 
+                   <span class="billCol billValue">(Sólo Explorer) Objeto que permite acceder al perfil del usuario</span>
+                </div>
+            </div>
+       <p>El objeto navigator se emplea habitualmente para detectar el tipo y/o versión del navegador en las aplicaciones cuyo código difiere para cada navegador. Además, se emplea para detectar si el navegador tiene habilitadas las cookies y Java y también para comprobar los plugins disponibles en el navegador.</p>
+      <p>Para ver las propiedades anteriores podéis hacerlo por ejemplo:  <span class="probar">alert(navigator.appName);</span></p>
+      </div>
+    <div class = "paragraph01">
+       <a name="e05"></a>
+        <h2>5. EL OBJETO SCREEN</h2>
+        <div class = "paragraph03" >
+            <p>El objeto screen se utiliza para obtener información sobre la pantalla del usuario. Uno de los datos más importantes que proporciona el objeto screen es la resolución del monitor en el que se están visualizando las páginas.</p>
+            <p>Las siguientes propiedades están disponibles en el objeto screen:</p>
+            <div class="bill">
+                <div class="billFila">
+                    <span class="billCol billSubTitle">Propiedad</span>
+                    <span class="billCol billSubTitle">Descripción</span>  
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>availHeight</code></span> 
+                   <span class="billCol billValue">Altura de pantalla disponible para las ventanas</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>availWidth</code></span> 
+                   <span class="billCol billValue">Anchura de pantalla disponible para las ventanas</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>colorDepth</code></span> 
+                   <span class="billCol billValue">Profundidad de color de la pantalla (32 bits normalmente)</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>height</code></span> 
+                   <span class="billCol billValue">Altura total de la pantalla en píxel</span>
+                </div><hr>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>width</code></span> 
+                   <span class="billCol billValue">Anchura total de la pantalla en píxel</span>
+                </div><hr>
+            </div>
+            <p>La altura/anchura de pantalla disponible para las ventanas es menor que la altura/anchura total de la pantalla, ya que se tiene en cuenta el tamaño de los elementos del sistema operativo como por ejemplo la barra de tareas y los bordes de las ventanas del navegador.</p>
+            <p>Además de la elaboración de estadísticas de los equipos de los usuarios, las propiedades del objeto screen se utilizan por ejemplo para determinar cómo y cuándo se puede redimensionar una ventana y para colocar una ventana centrada en la pantalla del usuario.</p>
+            <p>El siguiente ejemplo redimensiona una nueva ventana al tamaño máximo posible según la pantalla del usuario:</p>
+          </div>
+          <div class = "paragraph05" >
+            <p>window.moveTo(0, 0);</p>
+            <p>window.resizeTo(screen.availWidth, screen.availHeight);</p>
+        </div>
+        <p>Para ver las propiedades anteriores podéis hacerlo con:  <span class="probar">alert(screen.width);</span></p>
+      </div>
+    <div class = "paragraph01">
+       <a name="e06"></a>
+        <h2>6. EL OBJETO HISTORY</h2>
+        <div class = "paragraph03" >
+        <p>El objeto window proporciona acceso al historial del navegador a través del objeto history . Este da acceso a métodos y propiedades útiles que permiten avanzar y retroceder a través del historial del usuario, así como --a partir de HTML5-- manipular el contenido del historial.</p>
+        <p>Retroceder y avanzar a través del historial del usuario utilizando los métodos back(), forward() y go(). </p>
+        <p>Para ver las propiedades anteriores podéis hacerlo por ejemplo:  <span class="probar">window.history.back();</span></p>
+        <p>Esto actuará exactamente como si el usuario hiciera clic en el botón "atrás" en la barra de herramientas del navegador.</p>
+        <p>Puedes obtener el número de páginas en la pila del historial consultando el valor de la propiedad length <span class="probar">alert(window.history.length);</span>
+
+</p>
+        </div>
+    </div>
+    <div class = "paragraph01">
+       <a name="e07"></a>
+        <h2>7. EL OBJETO DOCUMENT DOM</h2>
+        <div class = "paragraph03" >
+        <p>El objeto <b>document</b> es el único que pertenece tanto al DOM (como veremos en el capítulo siguiente) como al BOM. Desde el punto de vista del BOM, el objeto document proporciona información sobre la propia página HTML.</p>
+        <p>Algunas de las propiedades más importantes definidas por el objeto document son:</p>
+        </div>
+        <div class="bill">
+                <div class="billFila">
+                    <span class="billCol billSubTitle">Propiedad</span>
+                    <span class="billCol billSubTitle">Descripción</span>  
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>lastModified</code></span> 
+                   <span class="billCol billValue">La fecha de la última modificación de la página</span>
+                </div>
+                <div><hr></div>                            
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>referrer</code></span> 
+                   <span class="billCol billValue">La URL desde la que se accedió a la página (es decir, la página anterior en el array history)</span>
+                </div>
+                 <div><hr></div>
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>title</code></span> 
+                   <span class="billCol billValue">El texto de la etiqueta "title"</span>
+                </div>
+                  
+                <div><hr></div>                
+                              
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>URL</code></span> 
+                   <span class="billCol billValue">La URL de la página actual del navegador</span>
+                </div>
+             </div>   
+        <p>Las propiedades title y URL son de lectura y escritura, por lo que además de obtener su valor, se puede establecer de forma directa:</p>
+        <div class = "paragraph05" >           
+            <p>modificar el título de la página</p>
+            <p>document.title = "Nuevo titulo";</p>
+            <p>llevar al usuario a otra página diferente</p>
+            <p>document.URL = "http://nueva_pagina";</p>
+        </div>
+        <p>Además de propiedades, el objeto document contiene varios arrays con información sobre algunos elementos de la página:</p>
+        <div class="bill">
+                <div class="billFila">
+                    <span class="billCol billSubTitle">Array</span>
+                    <span class="billCol billSubTitle">Descripción</span>  
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>anchors</code></span> 
+                   <span class="billCol billValue">Contiene todas las "anclas" de la página (los enlaces de tipo <a name="nombre_ancla"></a>)</span>
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>applets</code></span> 
+                   <span class="billCol billValue">Contiene todos los applets de la página</span>
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>embeds</code></span> 
+                   <span class="billCol billValue">Contiene todos los objetos embebidos en la página mediante la etiqueta <embed></span>
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>forms</code></span> 
+                   <span class="billCol billValue">Contiene todos los formularios de la página</span>
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>images</code></span> 
+                   <span class="billCol billValue">Contiene todas las imágenes de la página</span>
+                </div>
+                <div><hr></div>                
+                <div class="billFila">                         
+                   <span class="billCol billValue"><code>links</code></span> 
+                   <span class="billCol billValue">Contiene todos los enlaces de la página (los elementos de tipo <a href="enlace.html"></a>)</span>
+                </div>
+        </div>
+        <p>Los elementos de cada array del objeto document se pueden acceder mediante su índice numérico o mediante el nombre del elemento en la página HTML. Si se considera por ejemplo la siguiente página HTML:</p>
+         <div class = "paragraph05" > 
+            <p>&lt;html&gt;</p>
+            <p>&nbsp; &lt;head&gt;&lt;title&gt;Pagina de ejemplo&lt;/title&gt;&lt;/head&gt;</p>
+            <p>&nbsp; &lt;body&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp; &lt;p&gt;Primer parrafo de la pagina&lt;/p&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp; &lt;a href="otra_pagina.html"&gt;Un enlace&lt;/a&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp; &lt;img src="logo.jpg" name="logotipo"/&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp; &lt;form method="post" name="consultas"&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="text" name="id" /&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="submit" value="Enviar"&gt;</p>
+            <p>&nbsp;&nbsp;&nbsp; &lt;/form&gt;</p>
+            <p>&nbsp; &lt;/body&gt;</p>
+            <p>&lt;/html&gt;</p>            
+        </div>
+        <p>Para acceder a los elementos de la página se pueden emplear las funciones DOM o los objetos de BOM:</p>
+    <div class="mainwrapper inColumn aiCenter">
+        <ul class="list-item-1">
+            <li>Párrafo: document.getElementsByTagName("p")</li>
+            <li>Enlace: document.links[0]</li>
+            <li>Imagen: document.images[0] o document.images["logotipo"]</li>
+            <li>Formulario: document.forms[0] o document.forms["consultas"]</li>
+        </ul>
+        </div>
+        <p>Una vez obtenida la referencia al elemento, se puede acceder al valor de sus atributos HTML utilizando las propiedades de DOM. De esta forma, el método del formulario se obtiene mediante document.forms["consultas"].method y la ruta de la imagen es document.images[0].src.</p>
+      </div>
+  </body>
+</html>

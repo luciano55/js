@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="mainWrapperMovil">
+        <div class = "paragraph03">
+            <h2>JavaScript Fundamentos</h2>
+            <h1>Valores Primitivos: null, undefined y NaN</h1>
+            <div class = "paragraph05">   
+             <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=dux1Uv2eLfw&t=323s">Video 09</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/null"> Null: ausencia de valor</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined">Undefined: sin definir en memoria</a></li>        
+                <li>Una variable a la que no se le ha asignado valor, o no se ha declarado en absoluto (no se declara, no existe) son de tipo undefined</li>
+                <li>Un método o sentencia también devuelve undefined si la variable que se está evaluando no tiene asignado un valor.</li>
+                <li>Una función devuelve undefined si no se ha devuelto un valor.</li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/NaN">NaN Not-A-Number</a></li>           
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/isNaN">La función isNaN() determina cuando el valor es NaN o no</a></li>           
+            </ul>
+          </div>
+          <a href="javascript: history.go(-1)">Volver</a>
+        </div>
+    </div>    
+    <script>
+
+        // null
+        let nulo = null;
+        console.log(nulo);  // null
+
+        // undefined
+        let indefinida;
+        console.log(indefinida);  // undefined
+     //   console.log(Marta);  // js09.html:31 Uncaught ReferenceError: Marta is not defined
+      
+        // NaN
+        let noEsUnNumero = "hola" * 3.141516;
+        console.log(noEsUnNumero);  // NaN
+    </script>
+</body>
+</html>

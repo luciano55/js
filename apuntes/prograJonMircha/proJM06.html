@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fundamentos 2020</title>
+    <link href="../../css/app.css" rel="stylesheet">    
+</head>
+<body>
+    <div class = "paragraph03">
+        <h2>Programación Jon Mircha</h2>
+        <h1>Programación VI</h1>
+        <div class = "paragraph05">   
+            <ul class="list-item-1">
+                <li><a href="https://www.youtube.com/watch?v=9BavKzWBr3c">Video 40</a></li>
+                <li> 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.</li>
+                <li> 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.</li>
+                <li> 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero</li>           
+            <li>
+                La expresión regular que uso para el email en este video /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i</li>
+            </ul> 
+      </div>
+    <div>      
+   
+            <div><span>&lt;</span><span>script</span><span>&gt;</span></div>
+            <div><span>//&nbsp;18)&nbsp;Min:&nbsp;2.&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;dada&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto&nbsp;cuente&nbsp;el&nbsp;n&uacute;mero&nbsp;de&nbsp;vocales&nbsp;y&nbsp;consonantes,&nbsp;</span></div>
+            <div><span>//&nbsp;pe.&nbsp;miFuncion("Hola&nbsp;Mundo")&nbsp;devuelva&nbsp;Vocales:&nbsp;4,&nbsp;Consonantes:&nbsp;5.</span></div>
+            <div><span>const</span><span>&nbsp;</span><span>contarLetras</span><span>&nbsp;=&nbsp;(</span><span>cadena</span><span>&nbsp;=</span><span>""</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>cadena</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>cadena</span><span>&nbsp;!==&nbsp;</span><span>"string"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>cadena</span><span>}</span><span>"&nbsp;&nbsp;ingresado&nbsp;No&nbsp;es&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>vocales</span><span>&nbsp;=&nbsp;</span><span>0</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>consonantes</span><span>&nbsp;=&nbsp;</span><span>0</span><span>;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cadena</span><span>&nbsp;=&nbsp;</span><span>cadena</span><span>.</span><span>toLocaleLowerCase</span><span>();</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>for</span><span>(</span><span>let</span><span>&nbsp;</span><span>letra</span><span>&nbsp;</span><span>of</span><span>&nbsp;</span><span>cadena</span><span>){</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>/</span><span>[</span><span>aeiou&aacute;&eacute;&iacute;&oacute;&uacute;&uuml;</span><span>]</span><span>/</span><span>.</span><span>test</span><span>(</span><span>letra</span><span>))</span><span>vocales</span><span>++;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>/</span><span>[</span><span>bcdfghjklmn&ntilde;pqrstvwxyz</span><span>]</span><span>/</span><span>.</span><span>test</span><span>(</span><span>letra</span><span>))</span><span>consonantes</span><span>++;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>info</span><span>({</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cadena</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vocales</span><span>,</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>consonantes</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>}</span></div>
+            <div><span>contarLetras</span><span>();</span></div>
+            <div><span>contarLetras</span><span>(</span><span>3</span><span>);</span></div>
+            <div><span>contarLetras</span><span>(</span><span>"Hola&nbsp;Mundo"</span><span>);</span></div>
+            <br />
+            <div><span>//19)&nbsp;Min:13&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;valide&nbsp;que&nbsp;un&nbsp;texto&nbsp;sea&nbsp;un&nbsp;nombre&nbsp;v&aacute;lido,&nbsp;</span></div>
+            <div><span>//pe.&nbsp;miFuncion("Jonathan&nbsp;MirCha")&nbsp;devolver&aacute;&nbsp;verdadero.</span></div>
+            <div><span>const</span><span>&nbsp;</span><span>validarNombre</span><span>&nbsp;=&nbsp;(</span><span>nombre</span><span>&nbsp;=</span><span>""</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>nombre</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;&nbsp;un&nbsp;&nbsp;nombre"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>nombre</span><span>&nbsp;!==&nbsp;</span><span>"string"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>nombre</span><span>}</span><span>"&nbsp;&nbsp;ingresado&nbsp;No&nbsp;es&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>expReg</span><span>&nbsp;=</span><span>&nbsp;/</span><span>^</span><span>[</span><span>A-Za-z&ntilde;&Ntilde;&aacute;&eacute;&iacute;&oacute;&uacute;&uuml;&Aacute;&Eacute;&Iacute;&Oacute;&Uacute;&Uuml;\s</span><span>]</span><span>+</span><span>$</span><span>/</span><span>g</span><span>.</span><span>test</span><span>(</span><span>nombre</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>expReg</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`"</span><span>${</span><span>nombre</span><span>}</span><span>",&nbsp;es&nbsp;un&nbsp;nombre&nbsp;v&aacute;lido`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;:&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>`"</span><span>${</span><span>nombre</span><span>}</span><span>",&nbsp;NO&nbsp;es&nbsp;un&nbsp;nombre&nbsp;v&aacute;lido`</span><span>)</span></div>
+            <div><span>}</span></div>
+            <div><span>validarNombre</span><span>();</span></div>
+            <div><span>validarNombre</span><span>(</span><span>"3"</span><span>);</span></div>
+            <div><span>validarNombre</span><span>(</span><span>3</span><span>);</span></div>
+            <div><span>validarNombre</span><span>(</span><span>"Jonathan&nbsp;"</span><span>);</span></div>
+            <br />
+            <div><span>//&nbsp;20)&nbsp;Min:&nbsp;19&nbsp;Programa&nbsp;una&nbsp;funci&oacute;n&nbsp;que&nbsp;valide&nbsp;que&nbsp;un&nbsp;texto&nbsp;sea&nbsp;un&nbsp;email&nbsp;v&aacute;lido,</span></div>
+            <div><span>//&nbsp;pe.&nbsp;miFuncion("jonmircha@gmail.com")&nbsp;devolver&aacute;&nbsp;verdadero&lt;/li&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>const</span><span>&nbsp;</span><span>validarEmail</span><span>&nbsp;=&nbsp;(</span><span>email</span><span>&nbsp;=</span><span>""</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>email</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;&nbsp;un&nbsp;&nbsp;email"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>email</span><span>&nbsp;!==&nbsp;</span><span>"string"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>email</span><span>}</span><span>"&nbsp;&nbsp;ingresado&nbsp;No&nbsp;es&nbsp;un&nbsp;email`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>expReg</span><span>&nbsp;=</span><span>&nbsp;/</span><span>[</span><span>a-z0-9</span><span>]</span><span>+</span><span>(</span><span>\.</span><span>[</span><span>a-z0-9</span><span>]</span><span>+</span><span>)</span><span>*</span><span>@</span><span>[</span><span>a-z0-9-</span><span>]</span><span>+</span><span>(</span><span>\.</span><span>[</span><span>a-z0-9-</span><span>]</span><span>+</span><span>)</span><span>*</span><span>(</span><span>\.</span><span>[</span><span>a-z</span><span>]</span><span>{2,15}</span><span>)</span><span>/</span><span>i</span><span>.</span><span>test</span><span>(</span><span>email</span><span>);</span></div>
+            <div><span>&nbsp;</span><span>//&nbsp;let&nbsp;expReg&nbsp;=&nbsp;/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>expReg</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`"</span><span>${</span><span>email</span><span>}</span><span>",&nbsp;es&nbsp;un&nbsp;email&nbsp;v&aacute;lido`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;:&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>`"</span><span>${</span><span>email</span><span>}</span><span>",&nbsp;NO&nbsp;es&nbsp;un&nbsp;email&nbsp;v&aacute;lido`</span><span>)</span></div>
+            <div><span>}</span></div>
+            <div><span>validarEmail</span><span>();</span></div>
+            <div><span>validarEmail</span><span>(</span><span>"3"</span><span>);</span></div>
+            <div><span>validarEmail</span><span>(</span><span>34</span><span>);</span></div>
+            <div><span>validarEmail</span><span>(</span><span>"jonmircha@gmail.com"</span><span>);</span></div>
+            <br />
+            <div><span>//&nbsp;Function&nbsp;Generica&nbsp;de&nbsp;validaci&oacute;n</span></div>
+            <br />
+            <div><span>const</span><span>&nbsp;</span><span>validarPatron</span><span>&nbsp;=&nbsp;(</span><span>cadena</span><span>&nbsp;=&nbsp;</span><span>""</span><span>&nbsp;,&nbsp;</span><span>patron</span><span>&nbsp;=&nbsp;</span><span>""</span><span>)</span><span>=&gt;</span><span>{</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>cadena</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto&nbsp;a&nbsp;evaluar"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(</span><span>typeof</span><span>&nbsp;</span><span>cadena</span><span>&nbsp;!==&nbsp;</span><span>"string"</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>cadena</span><span>}</span><span>"&nbsp;&nbsp;ingresado&nbsp;No&nbsp;es&nbsp;una&nbsp;cadena&nbsp;de&nbsp;texto`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>patron</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>"No&nbsp;ingresaste&nbsp;&nbsp;un&nbsp;patr&oacute;n&nbsp;a&nbsp;evaluar"</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>if</span><span>(!</span><span>patron</span><span>&nbsp;</span><span>instanceof</span><span>&nbsp;</span><span>RegExp</span><span>)&nbsp;</span><span>return</span><span>&nbsp;</span><span>console</span><span>.</span><span>error</span><span>(</span><span>`El&nbsp;valor&nbsp;"</span><span>${</span><span>patron</span><span>}</span><span>"&nbsp;&nbsp;ingresado&nbsp;No&nbsp;es&nbsp;una&nbsp;Expresi&oacute;n&nbsp;Regualar`</span><span>);</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>let</span><span>&nbsp;</span><span>expReg</span><span>&nbsp;=&nbsp;</span><span>patron</span><span>.</span><span>test</span><span>(</span><span>cadena</span><span>);&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;</span><span>return</span><span>&nbsp;(</span><span>expReg</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;?&nbsp;</span><span>console</span><span>.</span><span>info</span><span>(</span><span>`"</span><span>${</span><span>cadena</span><span>}</span><span>",&nbsp;cumple&nbsp;con&nbsp;el&nbsp;patr&oacute;n&nbsp;indicado`</span><span>)</span></div>
+            <div><span>&nbsp;&nbsp;&nbsp;:&nbsp;</span><span>console</span><span>.</span><span>warn</span><span>(</span><span>`"</span><span>${</span><span>cadena</span><span>}</span><span>",&nbsp;NO&nbsp;cumple&nbsp;con&nbsp;el&nbsp;patr&oacute;n&nbsp;indicado`</span><span>)</span></div>
+            <div><span>}</span></div>
+            <br />
+            <div><span>validarPatron</span><span>();</span></div>
+            <div><span>validarPatron</span><span>(</span><span>"jonmircha@gmail.com"</span><span>,</span><span>/</span><span>[</span><span>a-z0-9</span><span>]</span><span>+</span><span>(</span><span>\.</span><span>[</span><span>_a-z0-9</span><span>]</span><span>+</span><span>)</span><span>*</span><span>@</span><span>[</span><span>a-z0-9-</span><span>]</span><span>+</span><span>(</span><span>\.</span><span>[</span><span>a-z0-9-</span><span>]</span><span>+</span><span>)</span><span>*</span><span>(</span><span>\.</span><span>[</span><span>a-z</span><span>]</span><span>{2,15}</span><span>)</span><span>/</span><span>i</span><span>);</span></div>
+            <div><span>validarPatron</span><span>(</span><span>"jonmircha@gmail"</span><span>,&nbsp;</span><span>new</span><span>&nbsp;</span><span>RegExp</span><span>(</span><span>"/[a-z0-9]+(</span><span>\.</span><span>[_a-z0-9]+)*@[a-z0-9-]+(</span><span>\.</span><span>[a-z0-9-]+)*(</span><span>\.</span><span>[a-z]{2,15})"</span><span>,</span><span>"i"</span><span>));</span></div>
+            <div><span>&lt;/</span><span>script</span><span>&gt;</span></div>
+            </div>
+        <a href="javascript: history.go(-1)">Volver</a>
+</div>
+<script>
+// 18) Min: 2. Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, 
+// pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+const contarLetras = (cadena ="")=>{
+    if(!cadena) return console.warn("No ingresaste  una cadena de texto");
+    if(typeof cadena !== "string") return console.error(`El valor "${cadena}"  ingresado No es una cadena de texto`);
+    let vocales = 0,
+        consonantes = 0;
+    
+    cadena = cadena.toLocaleLowerCase();
+    for(let letra of cadena){
+        if(/[aeiouáéíóúü]/.test(letra))vocales++;
+        if(/[bcdfghjklmnñpqrstvwxyz]/.test(letra))consonantes++;
+    }
+    return console.info({
+        cadena,
+        vocales,
+        consonantes
+    })   
+}
+contarLetras();
+contarLetras(3);
+contarLetras("Hola Mundo");
+
+//19) Min:13 Programa una función que valide que un texto sea un nombre válido, 
+//pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+const validarNombre = (nombre ="")=>{
+    if(!nombre) return console.warn("No ingresaste  un  nombre");
+    if(typeof nombre !== "string") return console.error(`El valor "${nombre}"  ingresado No es una cadena de texto`);
+   let expReg = /^[A-Za-zñÑáéíóúüÁÉÍÓÚÜ\s]+$/g.test(nombre);
+   return (expReg)
+   ? console.info(`"${nombre}", es un nombre válido`)
+   : console.warn(`"${nombre}", NO es un nombre válido`)
+}
+validarNombre();
+validarNombre("3");
+validarNombre(3);
+validarNombre("Jonathan ");
+
+// 20) Min: 19 Programa una función que valide que un texto sea un email válido,
+// pe. miFuncion("jonmircha@gmail.com") devolverá verdadero</li>           
+const validarEmail = (email ="")=>{
+    if(!email) return console.warn("No ingresaste  un  email");
+    if(typeof email !== "string") return console.error(`El valor "${email}"  ingresado No es un email`);
+   let expReg = /[a-z0-9]+(\.[a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+ // let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+   return (expReg)
+   ? console.info(`"${email}", es un email válido`)
+   : console.warn(`"${email}", NO es un email válido`)
+}
+validarEmail();
+validarEmail("3");
+validarEmail(34);
+validarEmail("jonmircha@gmail.com");
+
+// Function Generica de validación
+
+const validarPatron = (cadena = "" , patron = "")=>{
+    if(!cadena) return console.warn("No ingresaste  una cadena de texto a evaluar");
+    if(typeof cadena !== "string") return console.error(`El valor "${cadena}"  ingresado No es una cadena de texto`);
+    if(!patron) return console.warn("No ingresaste  un patrón a evaluar");
+    if(!patron instanceof RegExp) return console.error(`El valor "${patron}"  ingresado No es una Expresión Regualar`);
+   
+    let expReg = patron.test(cadena);  
+  
+   return (expReg)
+   ? console.info(`"${cadena}", cumple con el patrón indicado`)
+   : console.warn(`"${cadena}", NO cumple con el patrón indicado`)
+}
+
+validarPatron();
+validarPatron("jonmircha@gmail.com",/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i);
+validarPatron("jonmircha@gmail", new RegExp("/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})","i"));
+</script>
+</body>
+</html>
